@@ -1,0 +1,4 @@
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.AssemblyReference.cache
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.DashboardControl.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MyForm.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache
