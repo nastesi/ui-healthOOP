@@ -61,6 +61,10 @@ namespace uihealth {
 	private: System::Windows::Forms::TextBox^ textBoxPortionsRecipes;
 	private: System::Windows::Forms::Button^ buttonAddNewProduct;
 	private: System::Windows::Forms::Button^ buttonAddNewRecipe;
+	private: System::Windows::Forms::Button^ buttonAdd1;
+	private: System::Windows::Forms::Button^ buttonAdd2;
+	private: System::Windows::Forms::Button^ buttonAdd3;
+	private: System::Windows::Forms::Button^ buttonAdd4;
 
 
 
@@ -98,17 +102,21 @@ namespace uihealth {
 			this->textBoxWaterAdd = (gcnew System::Windows::Forms::TextBox());
 			this->buttonSaveMeal = (gcnew System::Windows::Forms::Button());
 			this->panelSelectedFood = (gcnew System::Windows::Forms::Panel());
-			this->labelSelectedFood = (gcnew System::Windows::Forms::Label());
+			this->buttonRemoveFood = (gcnew System::Windows::Forms::Button());
 			this->labelSelectedFoodlist = (gcnew System::Windows::Forms::Label());
+			this->labelSelectedFood = (gcnew System::Windows::Forms::Label());
 			this->textBoxGramsProducts = (gcnew System::Windows::Forms::TextBox());
 			this->labelGramsProducts = (gcnew System::Windows::Forms::Label());
 			this->textBoxPortionsDishes = (gcnew System::Windows::Forms::TextBox());
 			this->labelPortionsDishes = (gcnew System::Windows::Forms::Label());
 			this->labelPortionsRecipes = (gcnew System::Windows::Forms::Label());
 			this->textBoxPortionsRecipes = (gcnew System::Windows::Forms::TextBox());
-			this->buttonRemoveFood = (gcnew System::Windows::Forms::Button());
 			this->buttonAddNewProduct = (gcnew System::Windows::Forms::Button());
 			this->buttonAddNewRecipe = (gcnew System::Windows::Forms::Button());
+			this->buttonAdd1 = (gcnew System::Windows::Forms::Button());
+			this->buttonAdd2 = (gcnew System::Windows::Forms::Button());
+			this->buttonAdd3 = (gcnew System::Windows::Forms::Button());
+			this->buttonAdd4 = (gcnew System::Windows::Forms::Button());
 			this->panelSelectedFood->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -190,7 +198,7 @@ namespace uihealth {
 			this->labelSearchDishes->AutoSize = true;
 			this->labelSearchDishes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelSearchDishes->Location = System::Drawing::Point(66, 232);
+			this->labelSearchDishes->Location = System::Drawing::Point(67, 268);
 			this->labelSearchDishes->Name = L"labelSearchDishes";
 			this->labelSearchDishes->Size = System::Drawing::Size(143, 25);
 			this->labelSearchDishes->TabIndex = 16;
@@ -200,7 +208,7 @@ namespace uihealth {
 			// comboBoxDishes
 			// 
 			this->comboBoxDishes->FormattingEnabled = true;
-			this->comboBoxDishes->Location = System::Drawing::Point(233, 232);
+			this->comboBoxDishes->Location = System::Drawing::Point(234, 268);
 			this->comboBoxDishes->Name = L"comboBoxDishes";
 			this->comboBoxDishes->Size = System::Drawing::Size(378, 24);
 			this->comboBoxDishes->TabIndex = 17;
@@ -210,7 +218,7 @@ namespace uihealth {
 			this->labelSearchOwnRecipes->AutoSize = true;
 			this->labelSearchOwnRecipes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSearchOwnRecipes->Location = System::Drawing::Point(67, 319);
+			this->labelSearchOwnRecipes->Location = System::Drawing::Point(67, 397);
 			this->labelSearchOwnRecipes->Name = L"labelSearchOwnRecipes";
 			this->labelSearchOwnRecipes->Size = System::Drawing::Size(190, 25);
 			this->labelSearchOwnRecipes->TabIndex = 18;
@@ -221,7 +229,7 @@ namespace uihealth {
 			// comboBoxRecipes
 			// 
 			this->comboBoxRecipes->FormattingEnabled = true;
-			this->comboBoxRecipes->Location = System::Drawing::Point(260, 319);
+			this->comboBoxRecipes->Location = System::Drawing::Point(260, 397);
 			this->comboBoxRecipes->Name = L"comboBoxRecipes";
 			this->comboBoxRecipes->Size = System::Drawing::Size(352, 24);
 			this->comboBoxRecipes->TabIndex = 19;
@@ -231,7 +239,7 @@ namespace uihealth {
 			this->labelAddWater->AutoSize = true;
 			this->labelAddWater->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelAddWater->Location = System::Drawing::Point(72, 404);
+			this->labelAddWater->Location = System::Drawing::Point(73, 516);
 			this->labelAddWater->Name = L"labelAddWater";
 			this->labelAddWater->Size = System::Drawing::Size(120, 25);
 			this->labelAddWater->TabIndex = 20;
@@ -240,7 +248,7 @@ namespace uihealth {
 			// 
 			// textBoxWaterAdd
 			// 
-			this->textBoxWaterAdd->Location = System::Drawing::Point(198, 406);
+			this->textBoxWaterAdd->Location = System::Drawing::Point(199, 518);
 			this->textBoxWaterAdd->Name = L"textBoxWaterAdd";
 			this->textBoxWaterAdd->Size = System::Drawing::Size(75, 22);
 			this->textBoxWaterAdd->TabIndex = 21;
@@ -265,18 +273,15 @@ namespace uihealth {
 			this->panelSelectedFood->Size = System::Drawing::Size(346, 504);
 			this->panelSelectedFood->TabIndex = 23;
 			// 
-			// labelSelectedFood
+			// buttonRemoveFood
 			// 
-			this->labelSelectedFood->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->labelSelectedFood->AutoSize = true;
-			this->labelSelectedFood->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelSelectedFood->Location = System::Drawing::Point(116, 12);
-			this->labelSelectedFood->Name = L"labelSelectedFood";
-			this->labelSelectedFood->Size = System::Drawing::Size(89, 25);
-			this->labelSelectedFood->TabIndex = 14;
-			this->labelSelectedFood->Text = L"Selected";
-			this->labelSelectedFood->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->buttonRemoveFood->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->buttonRemoveFood->Location = System::Drawing::Point(258, 468);
+			this->buttonRemoveFood->Name = L"buttonRemoveFood";
+			this->buttonRemoveFood->Size = System::Drawing::Size(75, 23);
+			this->buttonRemoveFood->TabIndex = 30;
+			this->buttonRemoveFood->Text = L"Remove";
+			this->buttonRemoveFood->UseVisualStyleBackColor = true;
 			// 
 			// labelSelectedFoodlist
 			// 
@@ -291,6 +296,19 @@ namespace uihealth {
 			this->labelSelectedFoodlist->Text = L"Apple - 100 g";
 			this->labelSelectedFoodlist->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->labelSelectedFoodlist->Click += gcnew System::EventHandler(this, &MealsControl::label1_Click);
+			// 
+			// labelSelectedFood
+			// 
+			this->labelSelectedFood->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->labelSelectedFood->AutoSize = true;
+			this->labelSelectedFood->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSelectedFood->Location = System::Drawing::Point(116, 12);
+			this->labelSelectedFood->Name = L"labelSelectedFood";
+			this->labelSelectedFood->Size = System::Drawing::Size(89, 25);
+			this->labelSelectedFood->TabIndex = 14;
+			this->labelSelectedFood->Text = L"Selected";
+			this->labelSelectedFood->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// textBoxGramsProducts
 			// 
@@ -314,7 +332,7 @@ namespace uihealth {
 			// 
 			// textBoxPortionsDishes
 			// 
-			this->textBoxPortionsDishes->Location = System::Drawing::Point(167, 278);
+			this->textBoxPortionsDishes->Location = System::Drawing::Point(168, 314);
 			this->textBoxPortionsDishes->Name = L"textBoxPortionsDishes";
 			this->textBoxPortionsDishes->Size = System::Drawing::Size(75, 22);
 			this->textBoxPortionsDishes->TabIndex = 26;
@@ -325,7 +343,7 @@ namespace uihealth {
 			this->labelPortionsDishes->AutoSize = true;
 			this->labelPortionsDishes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelPortionsDishes->Location = System::Drawing::Point(72, 275);
+			this->labelPortionsDishes->Location = System::Drawing::Point(73, 311);
 			this->labelPortionsDishes->Name = L"labelPortionsDishes";
 			this->labelPortionsDishes->Size = System::Drawing::Size(89, 25);
 			this->labelPortionsDishes->TabIndex = 27;
@@ -337,7 +355,7 @@ namespace uihealth {
 			this->labelPortionsRecipes->AutoSize = true;
 			this->labelPortionsRecipes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelPortionsRecipes->Location = System::Drawing::Point(72, 359);
+			this->labelPortionsRecipes->Location = System::Drawing::Point(72, 437);
 			this->labelPortionsRecipes->Name = L"labelPortionsRecipes";
 			this->labelPortionsRecipes->Size = System::Drawing::Size(89, 25);
 			this->labelPortionsRecipes->TabIndex = 29;
@@ -346,20 +364,10 @@ namespace uihealth {
 			// 
 			// textBoxPortionsRecipes
 			// 
-			this->textBoxPortionsRecipes->Location = System::Drawing::Point(167, 362);
+			this->textBoxPortionsRecipes->Location = System::Drawing::Point(167, 440);
 			this->textBoxPortionsRecipes->Name = L"textBoxPortionsRecipes";
 			this->textBoxPortionsRecipes->Size = System::Drawing::Size(75, 22);
 			this->textBoxPortionsRecipes->TabIndex = 28;
-			// 
-			// buttonRemoveFood
-			// 
-			this->buttonRemoveFood->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->buttonRemoveFood->Location = System::Drawing::Point(258, 468);
-			this->buttonRemoveFood->Name = L"buttonRemoveFood";
-			this->buttonRemoveFood->Size = System::Drawing::Size(75, 23);
-			this->buttonRemoveFood->TabIndex = 30;
-			this->buttonRemoveFood->Text = L"Remove";
-			this->buttonRemoveFood->UseVisualStyleBackColor = true;
 			// 
 			// buttonAddNewProduct
 			// 
@@ -372,17 +380,57 @@ namespace uihealth {
 			// 
 			// buttonAddNewRecipe
 			// 
-			this->buttonAddNewRecipe->Location = System::Drawing::Point(631, 320);
+			this->buttonAddNewRecipe->Location = System::Drawing::Point(631, 398);
 			this->buttonAddNewRecipe->Name = L"buttonAddNewRecipe";
 			this->buttonAddNewRecipe->Size = System::Drawing::Size(100, 23);
 			this->buttonAddNewRecipe->TabIndex = 31;
 			this->buttonAddNewRecipe->Text = L"+ add new";
 			this->buttonAddNewRecipe->UseVisualStyleBackColor = true;
 			// 
+			// buttonAdd1
+			// 
+			this->buttonAdd1->Location = System::Drawing::Point(73, 218);
+			this->buttonAdd1->Name = L"buttonAdd1";
+			this->buttonAdd1->Size = System::Drawing::Size(70, 24);
+			this->buttonAdd1->TabIndex = 32;
+			this->buttonAdd1->Text = L"Add";
+			this->buttonAdd1->UseVisualStyleBackColor = true;
+			// 
+			// buttonAdd2
+			// 
+			this->buttonAdd2->Location = System::Drawing::Point(73, 351);
+			this->buttonAdd2->Name = L"buttonAdd2";
+			this->buttonAdd2->Size = System::Drawing::Size(70, 24);
+			this->buttonAdd2->TabIndex = 34;
+			this->buttonAdd2->Text = L"Add";
+			this->buttonAdd2->UseVisualStyleBackColor = true;
+			// 
+			// buttonAdd3
+			// 
+			this->buttonAdd3->Location = System::Drawing::Point(78, 479);
+			this->buttonAdd3->Name = L"buttonAdd3";
+			this->buttonAdd3->Size = System::Drawing::Size(70, 24);
+			this->buttonAdd3->TabIndex = 35;
+			this->buttonAdd3->Text = L"Add";
+			this->buttonAdd3->UseVisualStyleBackColor = true;
+			// 
+			// buttonAdd4
+			// 
+			this->buttonAdd4->Location = System::Drawing::Point(78, 555);
+			this->buttonAdd4->Name = L"buttonAdd4";
+			this->buttonAdd4->Size = System::Drawing::Size(70, 24);
+			this->buttonAdd4->TabIndex = 36;
+			this->buttonAdd4->Text = L"Add";
+			this->buttonAdd4->UseVisualStyleBackColor = true;
+			// 
 			// MealsControl
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->buttonAdd4);
+			this->Controls->Add(this->buttonAdd3);
+			this->Controls->Add(this->buttonAdd2);
+			this->Controls->Add(this->buttonAdd1);
 			this->Controls->Add(this->buttonAddNewRecipe);
 			this->Controls->Add(this->buttonAddNewProduct);
 			this->Controls->Add(this->labelPortionsRecipes);

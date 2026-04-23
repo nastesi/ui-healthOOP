@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddNewProductMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\AddNewProductMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddRecipeMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\AddRecipeMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddNewProductMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\AddNewProductMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,23 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddRecipeMEALS.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddRecipeMEALS.h",
-              "RelativeDocumentMoniker": "ui-health\\AddRecipeMEALS.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddRecipeMEALS.h [Design]",
-              "RelativeToolTip": "ui-health\\AddRecipeMEALS.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-21T11:56:05.933Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AddNewProductMEALS.h",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddNewProductMEALS.h",
               "RelativeDocumentMoniker": "ui-health\\AddNewProductMEALS.h",
@@ -71,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MealsControl.h",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
               "RelativeDocumentMoniker": "ui-health\\MealsControl.h",
@@ -84,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MealsControl.h [Design]",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
               "RelativeDocumentMoniker": "ui-health\\MealsControl.h",
@@ -96,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\main.cpp",
               "RelativeDocumentMoniker": "ui-health\\main.cpp",
@@ -109,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "DashboardControl.h [Design]",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h",
               "RelativeDocumentMoniker": "ui-health\\DashboardControl.h",
@@ -121,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "MyForm.h",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
               "RelativeDocumentMoniker": "ui-health\\MyForm.h",
@@ -134,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MyForm.h [Design]",
               "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
               "RelativeDocumentMoniker": "ui-health\\MyForm.h",

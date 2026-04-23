@@ -1,3 +1,6 @@
-﻿  main.cpp
-  DashboardControl.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  AddNewProductMEALS.cpp
+  AddRecipeMEALS.cpp
+  MealsControl.cpp
+  Generating Code...
+  AddNewProductMEALS.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   ui-health.vcxproj -> C:\Users\Anastasia\source\repos\ui-health\x64\Debug\ui-health.exe
