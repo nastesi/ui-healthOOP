@@ -1,10 +1,3 @@
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.AssemblyReference.cache
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.DashboardControl.resources
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MyForm.resources
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.AddNewProductMEALS.resources
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.AddRecipeMEALS.resources
-C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MealsControl.resources
 D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\ui-health.vcxproj.AssemblyReference.cache
 D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.AddNewProductMEALS.resources
 D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.AddRecipeMEALS.resources
@@ -15,3 +8,13 @@ D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.MealsControl.resources
 D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.MyForm.resources
 D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.UserSetup.resources
 D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.AssemblyReference.cache
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.AddNewProductMEALS.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.AddRecipeMEALS.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.DairyControl.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.DashboardControl.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.ExcerciseControl.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MealsControl.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MyForm.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.UserSetup.resources
+C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache

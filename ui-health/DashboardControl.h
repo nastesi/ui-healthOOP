@@ -1,5 +1,6 @@
 #pragma once
-
+#include "MealsControl.h"
+#include "ExcerciseControl.h"
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -23,7 +24,8 @@ namespace uihealth {
 			//TODO: Add the constructor code here
 			//
 		}
-
+	public:
+		System::EventHandler^ MealsRequested;
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -88,37 +90,37 @@ namespace uihealth {
 			this->panelGreeting = (gcnew System::Windows::Forms::Panel());
 			this->labelGreeting = (gcnew System::Windows::Forms::Label());
 			this->panelSummary = (gcnew System::Windows::Forms::Panel());
-			this->labelSummary = (gcnew System::Windows::Forms::Label());
-			this->labelConsumed = (gcnew System::Windows::Forms::Label());
-			this->labelBurned = (gcnew System::Windows::Forms::Label());
-			this->labelwater = (gcnew System::Windows::Forms::Label());
-			this->labelMood = (gcnew System::Windows::Forms::Label());
-			this->labelConsumednumber = (gcnew System::Windows::Forms::Label());
-			this->labelBurnednumber = (gcnew System::Windows::Forms::Label());
-			this->labelWaternumber = (gcnew System::Windows::Forms::Label());
 			this->labelMoodoption = (gcnew System::Windows::Forms::Label());
+			this->labelWaternumber = (gcnew System::Windows::Forms::Label());
+			this->labelBurnednumber = (gcnew System::Windows::Forms::Label());
+			this->labelConsumednumber = (gcnew System::Windows::Forms::Label());
+			this->labelMood = (gcnew System::Windows::Forms::Label());
+			this->labelwater = (gcnew System::Windows::Forms::Label());
+			this->labelBurned = (gcnew System::Windows::Forms::Label());
+			this->labelConsumed = (gcnew System::Windows::Forms::Label());
+			this->labelSummary = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->labelProgresspanel = (gcnew System::Windows::Forms::Label());
-			this->labelSteps = (gcnew System::Windows::Forms::Label());
-			this->labelWeight = (gcnew System::Windows::Forms::Label());
-			this->labelGoal = (gcnew System::Windows::Forms::Label());
-			this->labelActivity = (gcnew System::Windows::Forms::Label());
-			this->labelStepsnumber = (gcnew System::Windows::Forms::Label());
-			this->labelWeightnumber = (gcnew System::Windows::Forms::Label());
-			this->labelWeightgoal = (gcnew System::Windows::Forms::Label());
 			this->labelActivityoption = (gcnew System::Windows::Forms::Label());
+			this->labelWeightgoal = (gcnew System::Windows::Forms::Label());
+			this->labelWeightnumber = (gcnew System::Windows::Forms::Label());
+			this->labelStepsnumber = (gcnew System::Windows::Forms::Label());
+			this->labelActivity = (gcnew System::Windows::Forms::Label());
+			this->labelGoal = (gcnew System::Windows::Forms::Label());
+			this->labelWeight = (gcnew System::Windows::Forms::Label());
+			this->labelSteps = (gcnew System::Windows::Forms::Label());
+			this->labelProgresspanel = (gcnew System::Windows::Forms::Label());
 			this->panelQuickactions = (gcnew System::Windows::Forms::Panel());
-			this->labelQuickActions = (gcnew System::Windows::Forms::Label());
-			this->buttonAddMeal = (gcnew System::Windows::Forms::Button());
-			this->buttonAddActivity = (gcnew System::Windows::Forms::Button());
-			this->buttonAddNote = (gcnew System::Windows::Forms::Button());
 			this->buttonAddMedicine = (gcnew System::Windows::Forms::Button());
+			this->buttonAddNote = (gcnew System::Windows::Forms::Button());
+			this->buttonAddActivity = (gcnew System::Windows::Forms::Button());
+			this->buttonAddMeal = (gcnew System::Windows::Forms::Button());
+			this->labelQuickActions = (gcnew System::Windows::Forms::Label());
 			this->panelAddMood = (gcnew System::Windows::Forms::Panel());
-			this->labelHowDoTouFeel = (gcnew System::Windows::Forms::Label());
-			this->radioButtonMood1 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButtonMood2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButtonMood3 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButtonMood4 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButtonMood3 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButtonMood2 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButtonMood1 = (gcnew System::Windows::Forms::RadioButton());
+			this->labelHowDoTouFeel = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
 			this->panelGreeting->SuspendLayout();
 			this->panelSummary->SuspendLayout();
@@ -165,95 +167,18 @@ namespace uihealth {
 			this->panelSummary->Size = System::Drawing::Size(240, 200);
 			this->panelSummary->TabIndex = 1;
 			// 
-			// labelSummary
+			// labelMoodoption
 			// 
-			this->labelSummary->AutoSize = true;
-			this->labelSummary->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelMoodoption->AutoSize = true;
+			this->labelMoodoption->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelMoodoption->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelSummary->Location = System::Drawing::Point(51, 10);
-			this->labelSummary->Name = L"labelSummary";
-			this->labelSummary->Size = System::Drawing::Size(140, 25);
-			this->labelSummary->TabIndex = 8;
-			this->labelSummary->Text = L"Daily summary";
-			this->labelSummary->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelConsumed
-			// 
-			this->labelConsumed->AutoSize = true;
-			this->labelConsumed->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelConsumed->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelConsumed->Location = System::Drawing::Point(16, 50);
-			this->labelConsumed->Name = L"labelConsumed";
-			this->labelConsumed->Size = System::Drawing::Size(94, 20);
-			this->labelConsumed->TabIndex = 9;
-			this->labelConsumed->Text = L"Consumed:";
-			this->labelConsumed->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelBurned
-			// 
-			this->labelBurned->AutoSize = true;
-			this->labelBurned->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelBurned->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelBurned->Location = System::Drawing::Point(17, 83);
-			this->labelBurned->Name = L"labelBurned";
-			this->labelBurned->Size = System::Drawing::Size(68, 20);
-			this->labelBurned->TabIndex = 10;
-			this->labelBurned->Text = L"Burned:";
-			this->labelBurned->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelwater
-			// 
-			this->labelwater->AutoSize = true;
-			this->labelwater->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelwater->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelwater->Location = System::Drawing::Point(17, 119);
-			this->labelwater->Name = L"labelwater";
-			this->labelwater->Size = System::Drawing::Size(59, 20);
-			this->labelwater->TabIndex = 11;
-			this->labelwater->Text = L"Water:";
-			this->labelwater->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelMood
-			// 
-			this->labelMood->AutoSize = true;
-			this->labelMood->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelMood->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelMood->Location = System::Drawing::Point(17, 154);
-			this->labelMood->Name = L"labelMood";
-			this->labelMood->Size = System::Drawing::Size(55, 20);
-			this->labelMood->TabIndex = 12;
-			this->labelMood->Text = L"Mood:";
-			this->labelMood->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelConsumednumber
-			// 
-			this->labelConsumednumber->AutoSize = true;
-			this->labelConsumednumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelConsumednumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelConsumednumber->Location = System::Drawing::Point(116, 50);
-			this->labelConsumednumber->Name = L"labelConsumednumber";
-			this->labelConsumednumber->Size = System::Drawing::Size(81, 20);
-			this->labelConsumednumber->TabIndex = 13;
-			this->labelConsumednumber->Text = L"2300 ccal";
-			this->labelConsumednumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelBurnednumber
-			// 
-			this->labelBurnednumber->AutoSize = true;
-			this->labelBurnednumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelBurnednumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelBurnednumber->Location = System::Drawing::Point(91, 83);
-			this->labelBurnednumber->Name = L"labelBurnednumber";
-			this->labelBurnednumber->Size = System::Drawing::Size(72, 20);
-			this->labelBurnednumber->TabIndex = 14;
-			this->labelBurnednumber->Text = L"500 ccal";
-			this->labelBurnednumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelMoodoption->Location = System::Drawing::Point(82, 154);
+			this->labelMoodoption->Name = L"labelMoodoption";
+			this->labelMoodoption->Size = System::Drawing::Size(49, 20);
+			this->labelMoodoption->TabIndex = 16;
+			this->labelMoodoption->Text = L"Good";
+			this->labelMoodoption->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelWaternumber
 			// 
@@ -268,18 +193,95 @@ namespace uihealth {
 			this->labelWaternumber->Text = L"1.5 l";
 			this->labelWaternumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// labelMoodoption
+			// labelBurnednumber
 			// 
-			this->labelMoodoption->AutoSize = true;
-			this->labelMoodoption->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelMoodoption->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->labelBurnednumber->AutoSize = true;
+			this->labelBurnednumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelBurnednumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelBurnednumber->Location = System::Drawing::Point(91, 83);
+			this->labelBurnednumber->Name = L"labelBurnednumber";
+			this->labelBurnednumber->Size = System::Drawing::Size(72, 20);
+			this->labelBurnednumber->TabIndex = 14;
+			this->labelBurnednumber->Text = L"500 ccal";
+			this->labelBurnednumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelConsumednumber
+			// 
+			this->labelConsumednumber->AutoSize = true;
+			this->labelConsumednumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelConsumednumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelConsumednumber->Location = System::Drawing::Point(116, 50);
+			this->labelConsumednumber->Name = L"labelConsumednumber";
+			this->labelConsumednumber->Size = System::Drawing::Size(81, 20);
+			this->labelConsumednumber->TabIndex = 13;
+			this->labelConsumednumber->Text = L"2300 ccal";
+			this->labelConsumednumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelMood
+			// 
+			this->labelMood->AutoSize = true;
+			this->labelMood->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelMood->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelMoodoption->Location = System::Drawing::Point(82, 154);
-			this->labelMoodoption->Name = L"labelMoodoption";
-			this->labelMoodoption->Size = System::Drawing::Size(49, 20);
-			this->labelMoodoption->TabIndex = 16;
-			this->labelMoodoption->Text = L"Good";
-			this->labelMoodoption->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelMood->Location = System::Drawing::Point(17, 154);
+			this->labelMood->Name = L"labelMood";
+			this->labelMood->Size = System::Drawing::Size(55, 20);
+			this->labelMood->TabIndex = 12;
+			this->labelMood->Text = L"Mood:";
+			this->labelMood->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelwater
+			// 
+			this->labelwater->AutoSize = true;
+			this->labelwater->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelwater->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelwater->Location = System::Drawing::Point(17, 119);
+			this->labelwater->Name = L"labelwater";
+			this->labelwater->Size = System::Drawing::Size(59, 20);
+			this->labelwater->TabIndex = 11;
+			this->labelwater->Text = L"Water:";
+			this->labelwater->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelBurned
+			// 
+			this->labelBurned->AutoSize = true;
+			this->labelBurned->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelBurned->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelBurned->Location = System::Drawing::Point(17, 83);
+			this->labelBurned->Name = L"labelBurned";
+			this->labelBurned->Size = System::Drawing::Size(68, 20);
+			this->labelBurned->TabIndex = 10;
+			this->labelBurned->Text = L"Burned:";
+			this->labelBurned->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelConsumed
+			// 
+			this->labelConsumed->AutoSize = true;
+			this->labelConsumed->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelConsumed->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelConsumed->Location = System::Drawing::Point(16, 50);
+			this->labelConsumed->Name = L"labelConsumed";
+			this->labelConsumed->Size = System::Drawing::Size(94, 20);
+			this->labelConsumed->TabIndex = 9;
+			this->labelConsumed->Text = L"Consumed:";
+			this->labelConsumed->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelSummary
+			// 
+			this->labelSummary->AutoSize = true;
+			this->labelSummary->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSummary->Location = System::Drawing::Point(51, 10);
+			this->labelSummary->Name = L"labelSummary";
+			this->labelSummary->Size = System::Drawing::Size(140, 25);
+			this->labelSummary->TabIndex = 8;
+			this->labelSummary->Text = L"Daily summary";
+			this->labelSummary->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panel1
 			// 
@@ -297,95 +299,18 @@ namespace uihealth {
 			this->panel1->Size = System::Drawing::Size(240, 200);
 			this->panel1->TabIndex = 17;
 			// 
-			// labelProgresspanel
+			// labelActivityoption
 			// 
-			this->labelProgresspanel->AutoSize = true;
-			this->labelProgresspanel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelProgresspanel->Location = System::Drawing::Point(51, 9);
-			this->labelProgresspanel->Name = L"labelProgresspanel";
-			this->labelProgresspanel->Size = System::Drawing::Size(147, 25);
-			this->labelProgresspanel->TabIndex = 8;
-			this->labelProgresspanel->Text = L"Progress/Goals";
-			this->labelProgresspanel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelSteps
-			// 
-			this->labelSteps->AutoSize = true;
-			this->labelSteps->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelSteps->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelSteps->Location = System::Drawing::Point(16, 50);
-			this->labelSteps->Name = L"labelSteps";
-			this->labelSteps->Size = System::Drawing::Size(57, 20);
-			this->labelSteps->TabIndex = 9;
-			this->labelSteps->Text = L"Steps:";
-			this->labelSteps->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelWeight
-			// 
-			this->labelWeight->AutoSize = true;
-			this->labelWeight->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelWeight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelWeight->Location = System::Drawing::Point(17, 83);
-			this->labelWeight->Name = L"labelWeight";
-			this->labelWeight->Size = System::Drawing::Size(66, 20);
-			this->labelWeight->TabIndex = 10;
-			this->labelWeight->Text = L"Weight:";
-			this->labelWeight->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelGoal
-			// 
-			this->labelGoal->AutoSize = true;
-			this->labelGoal->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelGoal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelGoal->Location = System::Drawing::Point(17, 119);
-			this->labelGoal->Name = L"labelGoal";
-			this->labelGoal->Size = System::Drawing::Size(49, 20);
-			this->labelGoal->TabIndex = 11;
-			this->labelGoal->Text = L"Goal:";
-			this->labelGoal->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelActivity
-			// 
-			this->labelActivity->AutoSize = true;
-			this->labelActivity->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelActivity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelActivity->Location = System::Drawing::Point(17, 154);
-			this->labelActivity->Name = L"labelActivity";
-			this->labelActivity->Size = System::Drawing::Size(68, 20);
-			this->labelActivity->TabIndex = 12;
-			this->labelActivity->Text = L"Activity:";
-			this->labelActivity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelStepsnumber
-			// 
-			this->labelStepsnumber->AutoSize = true;
-			this->labelStepsnumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelStepsnumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelStepsnumber->Location = System::Drawing::Point(79, 50);
-			this->labelStepsnumber->Name = L"labelStepsnumber";
-			this->labelStepsnumber->Size = System::Drawing::Size(45, 20);
-			this->labelStepsnumber->TabIndex = 13;
-			this->labelStepsnumber->Text = L"8000";
-			this->labelStepsnumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelWeightnumber
-			// 
-			this->labelWeightnumber->AutoSize = true;
-			this->labelWeightnumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelWeightnumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
+			this->labelActivityoption->AutoSize = true;
+			this->labelActivityoption->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelActivityoption->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelWeightnumber->Location = System::Drawing::Point(89, 83);
-			this->labelWeightnumber->Name = L"labelWeightnumber";
-			this->labelWeightnumber->Size = System::Drawing::Size(49, 20);
-			this->labelWeightnumber->TabIndex = 14;
-			this->labelWeightnumber->Text = L"76 kg";
-			this->labelWeightnumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelActivityoption->Location = System::Drawing::Point(91, 154);
+			this->labelActivityoption->Name = L"labelActivityoption";
+			this->labelActivityoption->Size = System::Drawing::Size(68, 20);
+			this->labelActivityoption->TabIndex = 16;
+			this->labelActivityoption->Text = L"Medium";
+			this->labelActivityoption->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelWeightgoal
 			// 
@@ -400,18 +325,95 @@ namespace uihealth {
 			this->labelWeightgoal->Text = L"85 kg";
 			this->labelWeightgoal->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// labelActivityoption
+			// labelWeightnumber
 			// 
-			this->labelActivityoption->AutoSize = true;
-			this->labelActivityoption->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->labelActivityoption->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
+			this->labelWeightnumber->AutoSize = true;
+			this->labelWeightnumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelWeightnumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelActivityoption->Location = System::Drawing::Point(91, 154);
-			this->labelActivityoption->Name = L"labelActivityoption";
-			this->labelActivityoption->Size = System::Drawing::Size(68, 20);
-			this->labelActivityoption->TabIndex = 16;
-			this->labelActivityoption->Text = L"Medium";
-			this->labelActivityoption->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelWeightnumber->Location = System::Drawing::Point(89, 83);
+			this->labelWeightnumber->Name = L"labelWeightnumber";
+			this->labelWeightnumber->Size = System::Drawing::Size(49, 20);
+			this->labelWeightnumber->TabIndex = 14;
+			this->labelWeightnumber->Text = L"76 kg";
+			this->labelWeightnumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelStepsnumber
+			// 
+			this->labelStepsnumber->AutoSize = true;
+			this->labelStepsnumber->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelStepsnumber->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelStepsnumber->Location = System::Drawing::Point(79, 50);
+			this->labelStepsnumber->Name = L"labelStepsnumber";
+			this->labelStepsnumber->Size = System::Drawing::Size(45, 20);
+			this->labelStepsnumber->TabIndex = 13;
+			this->labelStepsnumber->Text = L"8000";
+			this->labelStepsnumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelActivity
+			// 
+			this->labelActivity->AutoSize = true;
+			this->labelActivity->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelActivity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelActivity->Location = System::Drawing::Point(17, 154);
+			this->labelActivity->Name = L"labelActivity";
+			this->labelActivity->Size = System::Drawing::Size(68, 20);
+			this->labelActivity->TabIndex = 12;
+			this->labelActivity->Text = L"Activity:";
+			this->labelActivity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelGoal
+			// 
+			this->labelGoal->AutoSize = true;
+			this->labelGoal->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelGoal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelGoal->Location = System::Drawing::Point(17, 119);
+			this->labelGoal->Name = L"labelGoal";
+			this->labelGoal->Size = System::Drawing::Size(49, 20);
+			this->labelGoal->TabIndex = 11;
+			this->labelGoal->Text = L"Goal:";
+			this->labelGoal->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelWeight
+			// 
+			this->labelWeight->AutoSize = true;
+			this->labelWeight->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelWeight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelWeight->Location = System::Drawing::Point(17, 83);
+			this->labelWeight->Name = L"labelWeight";
+			this->labelWeight->Size = System::Drawing::Size(66, 20);
+			this->labelWeight->TabIndex = 10;
+			this->labelWeight->Text = L"Weight:";
+			this->labelWeight->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelSteps
+			// 
+			this->labelSteps->AutoSize = true;
+			this->labelSteps->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->labelSteps->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSteps->Location = System::Drawing::Point(16, 50);
+			this->labelSteps->Name = L"labelSteps";
+			this->labelSteps->Size = System::Drawing::Size(57, 20);
+			this->labelSteps->TabIndex = 9;
+			this->labelSteps->Text = L"Steps:";
+			this->labelSteps->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProgresspanel
+			// 
+			this->labelProgresspanel->AutoSize = true;
+			this->labelProgresspanel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelProgresspanel->Location = System::Drawing::Point(51, 9);
+			this->labelProgresspanel->Name = L"labelProgresspanel";
+			this->labelProgresspanel->Size = System::Drawing::Size(147, 25);
+			this->labelProgresspanel->TabIndex = 8;
+			this->labelProgresspanel->Text = L"Progress/Goals";
+			this->labelProgresspanel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panelQuickactions
 			// 
@@ -425,6 +427,44 @@ namespace uihealth {
 			this->panelQuickactions->Size = System::Drawing::Size(413, 199);
 			this->panelQuickactions->TabIndex = 18;
 			// 
+			// buttonAddMedicine
+			// 
+			this->buttonAddMedicine->Location = System::Drawing::Point(19, 158);
+			this->buttonAddMedicine->Name = L"buttonAddMedicine";
+			this->buttonAddMedicine->Size = System::Drawing::Size(151, 30);
+			this->buttonAddMedicine->TabIndex = 13;
+			this->buttonAddMedicine->Text = L"Add medicine";
+			this->buttonAddMedicine->UseVisualStyleBackColor = true;
+			// 
+			// buttonAddNote
+			// 
+			this->buttonAddNote->Location = System::Drawing::Point(19, 122);
+			this->buttonAddNote->Name = L"buttonAddNote";
+			this->buttonAddNote->Size = System::Drawing::Size(151, 30);
+			this->buttonAddNote->TabIndex = 12;
+			this->buttonAddNote->Text = L"Add note";
+			this->buttonAddNote->UseVisualStyleBackColor = true;
+			// 
+			// buttonAddActivity
+			// 
+			this->buttonAddActivity->Location = System::Drawing::Point(19, 86);
+			this->buttonAddActivity->Name = L"buttonAddActivity";
+			this->buttonAddActivity->Size = System::Drawing::Size(151, 30);
+			this->buttonAddActivity->TabIndex = 11;
+			this->buttonAddActivity->Text = L"Add activity";
+			this->buttonAddActivity->UseVisualStyleBackColor = true;
+			this->buttonAddActivity->Click += gcnew System::EventHandler(this, &DashboardControl::buttonExcercise_Click);
+			// 
+			// buttonAddMeal
+			// 
+			this->buttonAddMeal->Location = System::Drawing::Point(18, 50);
+			this->buttonAddMeal->Name = L"buttonAddMeal";
+			this->buttonAddMeal->Size = System::Drawing::Size(151, 30);
+			this->buttonAddMeal->TabIndex = 10;
+			this->buttonAddMeal->Text = L"Add meal";
+			this->buttonAddMeal->UseVisualStyleBackColor = true;
+			this->buttonAddMeal->Click += gcnew System::EventHandler(this, &DashboardControl::buttonMeals_Click);
+			// 
 			// labelQuickActions
 			// 
 			this->labelQuickActions->AutoSize = true;
@@ -436,42 +476,6 @@ namespace uihealth {
 			this->labelQuickActions->TabIndex = 9;
 			this->labelQuickActions->Text = L"Quick actions";
 			this->labelQuickActions->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// buttonAddMeal
-			// 
-			this->buttonAddMeal->Location = System::Drawing::Point(18, 50);
-			this->buttonAddMeal->Name = L"buttonAddMeal";
-			this->buttonAddMeal->Size = System::Drawing::Size(151, 30);
-			this->buttonAddMeal->TabIndex = 10;
-			this->buttonAddMeal->Text = L"Add meal";
-			this->buttonAddMeal->UseVisualStyleBackColor = true;
-			// 
-			// buttonAddActivity
-			// 
-			this->buttonAddActivity->Location = System::Drawing::Point(19, 86);
-			this->buttonAddActivity->Name = L"buttonAddActivity";
-			this->buttonAddActivity->Size = System::Drawing::Size(151, 30);
-			this->buttonAddActivity->TabIndex = 11;
-			this->buttonAddActivity->Text = L"Add activity";
-			this->buttonAddActivity->UseVisualStyleBackColor = true;
-			// 
-			// buttonAddNote
-			// 
-			this->buttonAddNote->Location = System::Drawing::Point(19, 122);
-			this->buttonAddNote->Name = L"buttonAddNote";
-			this->buttonAddNote->Size = System::Drawing::Size(151, 30);
-			this->buttonAddNote->TabIndex = 12;
-			this->buttonAddNote->Text = L"Add note";
-			this->buttonAddNote->UseVisualStyleBackColor = true;
-			// 
-			// buttonAddMedicine
-			// 
-			this->buttonAddMedicine->Location = System::Drawing::Point(19, 158);
-			this->buttonAddMedicine->Name = L"buttonAddMedicine";
-			this->buttonAddMedicine->Size = System::Drawing::Size(151, 30);
-			this->buttonAddMedicine->TabIndex = 13;
-			this->buttonAddMedicine->Text = L"Add medicine";
-			this->buttonAddMedicine->UseVisualStyleBackColor = true;
 			// 
 			// panelAddMood
 			// 
@@ -485,39 +489,16 @@ namespace uihealth {
 			this->panelAddMood->Size = System::Drawing::Size(421, 195);
 			this->panelAddMood->TabIndex = 19;
 			// 
-			// labelHowDoTouFeel
+			// radioButtonMood4
 			// 
-			this->labelHowDoTouFeel->AutoSize = true;
-			this->labelHowDoTouFeel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelHowDoTouFeel->Location = System::Drawing::Point(22, 17);
-			this->labelHowDoTouFeel->Name = L"labelHowDoTouFeel";
-			this->labelHowDoTouFeel->Size = System::Drawing::Size(215, 25);
-			this->labelHowDoTouFeel->TabIndex = 9;
-			this->labelHowDoTouFeel->Text = L"How do you feel today\?";
-			this->labelHowDoTouFeel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// radioButtonMood1
-			// 
-			this->radioButtonMood1->AutoSize = true;
-			this->radioButtonMood1->Location = System::Drawing::Point(30, 63);
-			this->radioButtonMood1->Name = L"radioButtonMood1";
-			this->radioButtonMood1->Size = System::Drawing::Size(85, 20);
-			this->radioButtonMood1->TabIndex = 10;
-			this->radioButtonMood1->TabStop = true;
-			this->radioButtonMood1->Text = L"🙂 Perfect";
-			this->radioButtonMood1->UseVisualStyleBackColor = true;
-			// 
-			// radioButtonMood2
-			// 
-			this->radioButtonMood2->AutoSize = true;
-			this->radioButtonMood2->Location = System::Drawing::Point(30, 89);
-			this->radioButtonMood2->Name = L"radioButtonMood2";
-			this->radioButtonMood2->Size = System::Drawing::Size(77, 20);
-			this->radioButtonMood2->TabIndex = 11;
-			this->radioButtonMood2->TabStop = true;
-			this->radioButtonMood2->Text = L"🙂 Good";
-			this->radioButtonMood2->UseVisualStyleBackColor = true;
+			this->radioButtonMood4->AutoSize = true;
+			this->radioButtonMood4->Location = System::Drawing::Point(30, 142);
+			this->radioButtonMood4->Name = L"radioButtonMood4";
+			this->radioButtonMood4->Size = System::Drawing::Size(90, 20);
+			this->radioButtonMood4->TabIndex = 13;
+			this->radioButtonMood4->TabStop = true;
+			this->radioButtonMood4->Text = L"🙂 Terrible";
+			this->radioButtonMood4->UseVisualStyleBackColor = true;
 			// 
 			// radioButtonMood3
 			// 
@@ -530,16 +511,39 @@ namespace uihealth {
 			this->radioButtonMood3->Text = L"🙂 Poor";
 			this->radioButtonMood3->UseVisualStyleBackColor = true;
 			// 
-			// radioButtonMood4
+			// radioButtonMood2
 			// 
-			this->radioButtonMood4->AutoSize = true;
-			this->radioButtonMood4->Location = System::Drawing::Point(30, 142);
-			this->radioButtonMood4->Name = L"radioButtonMood4";
-			this->radioButtonMood4->Size = System::Drawing::Size(90, 20);
-			this->radioButtonMood4->TabIndex = 13;
-			this->radioButtonMood4->TabStop = true;
-			this->radioButtonMood4->Text = L"🙂 Terrible";
-			this->radioButtonMood4->UseVisualStyleBackColor = true;
+			this->radioButtonMood2->AutoSize = true;
+			this->radioButtonMood2->Location = System::Drawing::Point(30, 89);
+			this->radioButtonMood2->Name = L"radioButtonMood2";
+			this->radioButtonMood2->Size = System::Drawing::Size(77, 20);
+			this->radioButtonMood2->TabIndex = 11;
+			this->radioButtonMood2->TabStop = true;
+			this->radioButtonMood2->Text = L"🙂 Good";
+			this->radioButtonMood2->UseVisualStyleBackColor = true;
+			// 
+			// radioButtonMood1
+			// 
+			this->radioButtonMood1->AutoSize = true;
+			this->radioButtonMood1->Location = System::Drawing::Point(30, 63);
+			this->radioButtonMood1->Name = L"radioButtonMood1";
+			this->radioButtonMood1->Size = System::Drawing::Size(85, 20);
+			this->radioButtonMood1->TabIndex = 10;
+			this->radioButtonMood1->TabStop = true;
+			this->radioButtonMood1->Text = L"🙂 Perfect";
+			this->radioButtonMood1->UseVisualStyleBackColor = true;
+			// 
+			// labelHowDoTouFeel
+			// 
+			this->labelHowDoTouFeel->AutoSize = true;
+			this->labelHowDoTouFeel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelHowDoTouFeel->Location = System::Drawing::Point(22, 17);
+			this->labelHowDoTouFeel->Name = L"labelHowDoTouFeel";
+			this->labelHowDoTouFeel->Size = System::Drawing::Size(215, 25);
+			this->labelHowDoTouFeel->TabIndex = 9;
+			this->labelHowDoTouFeel->Text = L"How do you feel today\?";
+			this->labelHowDoTouFeel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panelContent
 			// 
@@ -577,5 +581,20 @@ namespace uihealth {
 
 		}
 #pragma endregion
-	};
+	private: System::Void buttonMeals_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (MealsRequested != nullptr)
+			MealsRequested(this, System::EventArgs::Empty);
+	}
+private: System::Void buttonExcercise_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Windows::Forms::Panel^ panelContent =
+		(System::Windows::Forms::Panel^)this->Parent;
+
+	panelContent->Controls->Clear();
+
+	ExcerciseControl^ exercises = gcnew ExcerciseControl();
+	exercises->Dock = DockStyle::Fill;
+
+	panelContent->Controls->Add(exercises);
+}
+};
 }

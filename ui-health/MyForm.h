@@ -1,5 +1,8 @@
 #pragma once
 #include "DashboardControl.h"
+#include "MealsControl.h"
+#include "ExcerciseControl.h"
+#include "DairyControl.h"
 namespace uihealth {
 
 	using namespace System;
@@ -22,10 +25,20 @@ namespace uihealth {
 			//TODO: Add the constructor code here
 			//
 			dashboard = gcnew DashboardControl();
-			dashboard->Dock = DockStyle::Fill;
-			panelContent->Controls->Add(dashboard);
-		}
+			dashboard->MealsRequested += gcnew System::EventHandler(this, &MyForm::OnOpenMeals);
+			meals = gcnew MealsControl();
+			meals->BackRequested += gcnew System::EventHandler(this, &MyForm::OnBackToHome);
+			exercises = gcnew ExcerciseControl();
+			diary = gcnew DairyControl();
 
+			ShowPage(dashboard);
+		}
+	public:
+		void ShowDashboard()
+		{
+			labelSecTitle->Text = L"Home";
+			ShowPage(dashboard);
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -51,68 +64,15 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelUser;
 	private: System::Windows::Forms::Label^ labelNameUser;
 		   DashboardControl^ dashboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		   MealsControl^ meals;
+		   ExcerciseControl^ exercises;
+		   DairyControl^ diary;
+	private: System::Void OnBackToHome(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelSecTitle->Text = L"Home";
+		MessageBox::Show("Back to home");
+		ShowPage(dashboard);
+	}
 	protected:
 
 	private:
@@ -137,21 +97,22 @@ namespace uihealth {
 			this->labelSecTitle = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
 			this->panelHeader->SuspendLayout();
-			this->panelContent->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// buttonDairy
 			// 
-			this->buttonDairy->Location = System::Drawing::Point(27, 20);
+			this->buttonDairy->Location = System::Drawing::Point(130, 9);
 			this->buttonDairy->Name = L"buttonDairy";
 			this->buttonDairy->Size = System::Drawing::Size(121, 40);
 			this->buttonDairy->TabIndex = 4;
 			this->buttonDairy->Text = L"Dairy";
 			this->buttonDairy->UseVisualStyleBackColor = true;
+			this->buttonDairy->Click += gcnew System::EventHandler(this, &MyForm::buttonDairy_Click);
 			// 
 			// panelHeader
 			// 
 			this->panelHeader->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			this->panelHeader->Controls->Add(this->buttonDairy);
 			this->panelHeader->Controls->Add(this->labelNameUser);
 			this->panelHeader->Controls->Add(this->labelUser);
 			this->panelHeader->Controls->Add(this->labelDate1);
@@ -162,6 +123,7 @@ namespace uihealth {
 			this->panelHeader->Name = L"panelHeader";
 			this->panelHeader->Size = System::Drawing::Size(1010, 70);
 			this->panelHeader->TabIndex = 1;
+			this->panelHeader->Click += gcnew System::EventHandler(this, &MyForm::buttonDairy_Click);
 			// 
 			// labelNameUser
 			// 
@@ -229,7 +191,6 @@ namespace uihealth {
 			// panelContent
 			// 
 			this->panelContent->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->panelContent->Controls->Add(this->buttonDairy);
 			this->panelContent->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelContent->Location = System::Drawing::Point(0, 70);
 			this->panelContent->Name = L"panelContent";
@@ -249,14 +210,43 @@ namespace uihealth {
 			this->Text = L"HealthApp";
 			this->panelHeader->ResumeLayout(false);
 			this->panelHeader->PerformLayout();
-			this->panelContent->ResumeLayout(false);
 			this->ResumeLayout(false);
 
+		}
+
+		void ShowPage(UserControl^ page)
+		{
+			panelContent->Controls->Clear();
+			page->Dock = DockStyle::Fill;
+			panelContent->Controls->Add(page);
 		}
 
 #pragma endregion
 	private: System::Void panelContent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {}
 	private: System::Void MENU_Click(System::Object^ sender, System::EventArgs^ e) {}
+	// for Meals button
+	private: System::Void buttonMeals_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelSecTitle->Text = "Meals";
+		ShowPage(meals);
+	}
+	// for Exercise button
+	private: System::Void buttonExcercise_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelSecTitle->Text = "Exercise";
+		ShowPage(exercises);
+	}
+	// for diary button
+	private: System::Void buttonDairy_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelSecTitle->Text = "Diary";
+		ShowPage(diary);
+	}
+	private: System::Void OnOpenMeals(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelSecTitle->Text = L"Meals";
+		ShowPage(meals);
+	}
 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {}

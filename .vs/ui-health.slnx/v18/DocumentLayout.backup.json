@@ -1,34 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Course2.2\\DM\\ui-healthOOP\\",
+  "WorkspaceRootPath": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\DiaryEntry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DiaryEntry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\UserSetup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\UserSetup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.26100.0\\UM\\OBJIDL.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,40 +37,78 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DiaryEntry.h",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\DiaryEntry.h",
-              "RelativeDocumentMoniker": "ui-health\\DiaryEntry.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\DiaryEntry.h",
-              "RelativeToolTip": "ui-health\\DiaryEntry.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DashboardControl.h",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h",
+              "RelativeDocumentMoniker": "ui-health\\DashboardControl.h",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h*",
+              "RelativeToolTip": "ui-health\\DashboardControl.h*",
+              "ViewState": "AgIAAD4CAAAAAAAAAAAAABsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-30T10:48:35.534Z",
+              "WhenOpened": "2026-04-30T15:45:06.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashboardControl.h [Design]",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h",
+              "RelativeDocumentMoniker": "ui-health\\DashboardControl.h",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h [Design]*",
+              "RelativeToolTip": "ui-health\\DashboardControl.h [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-30T15:44:35.363Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "objidl.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\objidl.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\objidl.h",
+              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\objidl.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\objidl.h",
+              "ViewState": "AgIAAPk1AAAAAAAAAAAswAw2AAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-30T15:39:46.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MyForm.h [Design]",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
+              "RelativeDocumentMoniker": "ui-health\\MyForm.h",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h [Design]*",
+              "RelativeToolTip": "ui-health\\MyForm.h [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-30T15:32:40.951Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyForm.h",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
+              "RelativeDocumentMoniker": "ui-health\\MyForm.h",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h*",
+              "RelativeToolTip": "ui-health\\MyForm.h*",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAAAPgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-30T15:32:45.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserSetup.h [Design]",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\UserSetup.h",
-              "RelativeDocumentMoniker": "ui-health\\UserSetup.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\UserSetup.h [Design]",
-              "RelativeToolTip": "ui-health\\UserSetup.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T12:50:52.157Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MealsControl.h [Design]",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
               "RelativeDocumentMoniker": "ui-health\\MealsControl.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h [Design]",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h [Design]",
               "RelativeToolTip": "ui-health\\MealsControl.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-21T09:41:06.164Z",
@@ -79,52 +116,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MealsControl.h",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
               "RelativeDocumentMoniker": "ui-health\\MealsControl.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
               "RelativeToolTip": "ui-health\\MealsControl.h",
-              "ViewState": "AgIAAMMBAAAAAAAAAAAgwOMBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-21T09:46:27.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DashboardControl.h [Design]",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\DashboardControl.h",
-              "RelativeDocumentMoniker": "ui-health\\DashboardControl.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\DashboardControl.h [Design]",
-              "RelativeToolTip": "ui-health\\DashboardControl.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-21T09:26:44.586Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MyForm.h [Design]",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MyForm.h",
-              "RelativeDocumentMoniker": "ui-health\\MyForm.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MyForm.h [Design]",
-              "RelativeToolTip": "ui-health\\MyForm.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-20T18:29:49.501Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MyForm.h",
-              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MyForm.h",
-              "RelativeDocumentMoniker": "ui-health\\MyForm.h",
-              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MyForm.h",
-              "RelativeToolTip": "ui-health\\MyForm.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-21T08:27:56.322Z",
               "EditorCaption": ""
             }
           ]
