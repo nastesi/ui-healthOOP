@@ -5,3 +5,13 @@ C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.
 C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.AddNewProductMEALS.resources
 C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.AddRecipeMEALS.resources
 C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MealsControl.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\ui-health.vcxproj.AssemblyReference.cache
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.AddNewProductMEALS.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.AddRecipeMEALS.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.DairyControl.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.DashboardControl.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.ExcerciseControl.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.MealsControl.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.MyForm.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\uihealth.UserSetup.resources
+D:\Course2.2\DM\ui-healthOOP\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache

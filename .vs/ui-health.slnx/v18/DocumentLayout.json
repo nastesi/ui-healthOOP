@@ -1,50 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\",
+  "WorkspaceRootPath": "D:\\Course2.2\\DM\\ui-healthOOP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DairyControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DairyControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\DashboardControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\ExcerciseControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\ExcerciseControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\UserSetup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\UserSetup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\ExcerciseControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\ExcerciseControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\MealsControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddNewProductMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FB10DCEE-0596-DF9E-1017-2B34BEBB5685}|ui-health\\ui-health.vcxproj|solutionrelative:ui-health\\AddNewProductMEALS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,64 +18,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserSetup.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\UserSetup.h",
-              "RelativeDocumentMoniker": "ui-health\\UserSetup.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\UserSetup.h [Design]",
-              "RelativeToolTip": "ui-health\\UserSetup.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T12:50:52.157Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DairyControl.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DairyControl.h",
-              "RelativeDocumentMoniker": "ui-health\\DairyControl.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DairyControl.h [Design]",
-              "RelativeToolTip": "ui-health\\DairyControl.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T12:36:29.469Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ExcerciseControl.h",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\ExcerciseControl.h",
-              "RelativeDocumentMoniker": "ui-health\\ExcerciseControl.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\ExcerciseControl.h",
-              "RelativeToolTip": "ui-health\\ExcerciseControl.h",
-              "ViewState": "AgIAAGEAAAAAAAAAAADwv84BAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T09:34:26.359Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ExcerciseControl.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\ExcerciseControl.h",
-              "RelativeDocumentMoniker": "ui-health\\ExcerciseControl.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\ExcerciseControl.h [Design]",
-              "RelativeToolTip": "ui-health\\ExcerciseControl.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T09:32:53.627Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "MealsControl.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
+              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h",
               "RelativeDocumentMoniker": "ui-health\\MealsControl.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h [Design]",
+              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h [Design]",
               "RelativeToolTip": "ui-health\\MealsControl.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-21T09:41:06.164Z",
@@ -119,79 +34,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddNewProductMEALS.h",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddNewProductMEALS.h",
-              "RelativeDocumentMoniker": "ui-health\\AddNewProductMEALS.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\AddNewProductMEALS.h",
-              "RelativeToolTip": "ui-health\\AddNewProductMEALS.h",
-              "ViewState": "AgIAAEYAAAAAAAAAAADwv/UAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-21T11:50:50.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "MealsControl.h",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
+              "DocumentMoniker": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h",
               "RelativeDocumentMoniker": "ui-health\\MealsControl.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MealsControl.h",
+              "ToolTip": "D:\\Course2.2\\DM\\ui-healthOOP\\ui-health\\MealsControl.h",
               "RelativeToolTip": "ui-health\\MealsControl.h",
-              "ViewState": "AgIAAFkAAAAAAAAAAADwv9YBAABmAAAAAAAAAA==",
+              "ViewState": "AgIAAKEBAAAAAAAAAAAQwOEBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-21T09:46:27.914Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\main.cpp",
-              "RelativeDocumentMoniker": "ui-health\\main.cpp",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\main.cpp",
-              "RelativeToolTip": "ui-health\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-21T09:38:52.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashboardControl.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h",
-              "RelativeDocumentMoniker": "ui-health\\DashboardControl.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\DashboardControl.h [Design]",
-              "RelativeToolTip": "ui-health\\DashboardControl.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-21T09:26:44.586Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MyForm.h",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
-              "RelativeDocumentMoniker": "ui-health\\MyForm.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
-              "RelativeToolTip": "ui-health\\MyForm.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-21T08:27:56.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MyForm.h [Design]",
-              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h",
-              "RelativeDocumentMoniker": "ui-health\\MyForm.h",
-              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\ui-health\\ui-health\\MyForm.h [Design]",
-              "RelativeToolTip": "ui-health\\MyForm.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-20T18:29:49.501Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -118,6 +118,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="activity\activity.cpp" />
     <ClCompile Include="AddNewProductMEALS.cpp" />
     <ClCompile Include="AddRecipeMEALS.cpp" />
     <ClCompile Include="DairyControl.cpp" />
@@ -125,10 +126,12 @@
     <ClCompile Include="ExcerciseControl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MealsControl.cpp" />
+    <ClCompile Include="meals\nutritions.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="UserSetup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="activity\activity.h" />
     <ClInclude Include="AddNewProductMEALS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -141,12 +144,14 @@
     <ClInclude Include="DashboardControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="DiaryEntry.h" />
     <ClInclude Include="ExcerciseControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="MealsControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="meals\nutritions.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

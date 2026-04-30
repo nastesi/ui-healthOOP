@@ -1,8 +1,11 @@
   uihealth.AddNewProductMEALS.resources - Embedded, ContainedInManifestFile, 
   uihealth.AddRecipeMEALS.resources - Embedded, ContainedInManifestFile, 
+  uihealth.DairyControl.resources - Embedded, ContainedInManifestFile, 
   uihealth.DashboardControl.resources - Embedded, ContainedInManifestFile, 
+  uihealth.ExcerciseControl.resources - Embedded, ContainedInManifestFile, 
   uihealth.MealsControl.resources - Embedded, ContainedInManifestFile, 
   uihealth.MyForm.resources - Embedded, ContainedInManifestFile, 
+  uihealth.UserSetup.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly ui-health, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -24,7 +27,13 @@ Class uihealth.AddNewProductMEALS: AutoLayout, AnsiClass, Class, Public, BeforeF
 Class uihealth.AddRecipeMEALS: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class uihealth.DairyControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class uihealth.DashboardControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class uihealth.ExcerciseControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class uihealth.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -32,4 +41,7 @@ Class uihealth.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class uihealth.MealsControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class uihealth.UserSetup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
