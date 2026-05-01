@@ -1,7 +1,7 @@
-﻿  DashboardControl.cpp
-  MealsControl.cpp
+﻿  DairyControl.cpp
   MyForm.cpp
+  calendar.cpp
   main.cpp
-  Generating Code...
-  activity.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  ui-health.vcxproj -> D:\Course2.2\DM\ui-healthOOP\x64\Debug\ui-health.exe
+  Создание кода...
+  activity.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  ui-health.vcxproj -> D:\2 курс\2 семестр\kurszch\ui-healthOOP\x64\Debug\ui-health.exe

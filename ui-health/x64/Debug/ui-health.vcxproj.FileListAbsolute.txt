@@ -18,3 +18,13 @@ C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MealsCont
 C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.MyForm.resources
 C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\uihealth.UserSetup.resources
 C:\Users\Anastasia\source\repos\ui-health\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\ui-health.vcxproj.AssemblyReference.cache
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.AddNewProductMEALS.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.AddRecipeMEALS.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.DairyControl.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.DashboardControl.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.ExcerciseControl.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.MealsControl.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.MyForm.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\uihealth.UserSetup.resources
+D:\2 курс\2 семестр\kurszch\ui-healthOOP\ui-health\x64\Debug\ui-health.vcxproj.GenerateResource.cache

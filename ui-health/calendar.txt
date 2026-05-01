@@ -1,0 +1,12 @@
+[activity]
+01-05-2026 pisp
+28-04-2026 sosi
+[food]
+01-05-2026 pipi
+28-04-2026 fofo
+[calories]
+01-05-2026 popo
+28-04-2026 gaga
+[mood]
+01-05-2026 kaka
+28-04-2026 gigi

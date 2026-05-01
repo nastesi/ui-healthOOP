@@ -44,7 +44,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -121,6 +121,7 @@
     <ClCompile Include="activity\activity.cpp" />
     <ClCompile Include="AddNewProductMEALS.cpp" />
     <ClCompile Include="AddRecipeMEALS.cpp" />
+    <ClCompile Include="calendar.cpp" />
     <ClCompile Include="DairyControl.cpp" />
     <ClCompile Include="DashboardControl.cpp" />
     <ClCompile Include="ExcerciseControl.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="AddRecipeMEALS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="calendar.h" />
     <ClInclude Include="DairyControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
