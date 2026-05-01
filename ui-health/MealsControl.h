@@ -2,6 +2,7 @@
 #include <msclr/marshal_cppstd.h>
 #include "meals/nutritions.h"
 #include "AddRecipeMEALS.h"
+#include "AddNewProductMEALS.h"
 #include <string>
 #include <fstream>
 using namespace System;
@@ -18,6 +19,8 @@ namespace uihealth {
 		MealsControl(void)
 		{
 			InitializeComponent();
+			LoadDishesFromFile();
+			LoadProductsFromFile();
 			mealRowsForSave = "";
 			labelSelectedFoodlist->Text = "";
 			this->buttonBackMeals->Click += gcnew System::EventHandler(this, &MealsControl::buttonBack_Click);
@@ -34,14 +37,10 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelMealsControl;
 	private: System::Windows::Forms::Label^ labelDate2;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-
-
 	private: System::Windows::Forms::Label^ labelSearchFood;
 	private: System::Windows::Forms::ComboBox^ comboBoxFood;
 	private: System::Windows::Forms::Label^ labelSearchDishes;
 	private: System::Windows::Forms::ComboBox^ comboBoxDishes;
-
-
 	private: System::Windows::Forms::Label^ labelAddWater;
 	private: System::Windows::Forms::TextBox^ textBoxWaterAdd;
 	private: System::Windows::Forms::Button^ buttonSaveMeal;
@@ -53,13 +52,10 @@ namespace uihealth {
 	private: System::Windows::Forms::TextBox^ textBoxPortionsDishes;
 	private: System::Windows::Forms::Label^ labelPortionsDishes;
 	private: System::Windows::Forms::Button^ buttonRemoveFood;
-
-
 	private: System::Windows::Forms::Button^ buttonAddNewProduct;
 	private: System::Windows::Forms::Button^ buttonAddNewRecipe;
 	private: System::Windows::Forms::Button^ buttonAdd1;
 	private: System::Windows::Forms::Button^ buttonAdd2;
-
 	private: System::Windows::Forms::Button^ buttonAdd4;
 	private: System::Windows::Forms::Button^ buttonBackMeals;
 	private: System::String^ mealRowsForSave;
@@ -112,9 +108,9 @@ namespace uihealth {
 			this->labelMealsControl->Location = System::Drawing::Point(47, 29);
 			this->labelMealsControl->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelMealsControl->Name = L"labelMealsControl";
-			this->labelMealsControl->Size = System::Drawing::Size(105, 31);
+			this->labelMealsControl->Size = System::Drawing::Size(86, 31);
 			this->labelMealsControl->TabIndex = 1;
-			this->labelMealsControl->Text = L"MEALS";
+			this->labelMealsControl->Text = L"Meals";
 			this->labelMealsControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelDate2
@@ -132,6 +128,8 @@ namespace uihealth {
 			// 
 			// dateTimePicker1
 			// 
+			this->dateTimePicker1->CustomFormat = L"dd.MM.yyyy";
+			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(103, 73);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
@@ -319,6 +317,7 @@ namespace uihealth {
 			this->buttonAddNewProduct->TabIndex = 30;
 			this->buttonAddNewProduct->Text = L"+ add new";
 			this->buttonAddNewProduct->UseVisualStyleBackColor = true;
+			this->buttonAddNewProduct->Click += gcnew System::EventHandler(this, &MealsControl::buttonAddNewProduct_Click);
 			// 
 			// buttonAddNewRecipe
 			// 
@@ -340,6 +339,7 @@ namespace uihealth {
 			this->buttonAdd1->TabIndex = 32;
 			this->buttonAdd1->Text = L"Add";
 			this->buttonAdd1->UseVisualStyleBackColor = true;
+			this->buttonAdd1->Click += gcnew System::EventHandler(this, &MealsControl::buttonAdd1_Click);
 			// 
 			// buttonAdd2
 			// 
@@ -350,6 +350,7 @@ namespace uihealth {
 			this->buttonAdd2->TabIndex = 34;
 			this->buttonAdd2->Text = L"Add";
 			this->buttonAdd2->UseVisualStyleBackColor = true;
+			this->buttonAdd2->Click += gcnew System::EventHandler(this, &MealsControl::buttonAdd2_Click);
 			// 
 			// buttonAdd4
 			// 
@@ -409,13 +410,75 @@ namespace uihealth {
 		}
 #pragma endregion
 
-
-	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void LoadDishesFromFile() {
+	comboBoxDishes->Items->Clear();
+	if (!System::IO::File::Exists("meals/meals_list.txt")) {
+		MessageBox::Show("File not found");
+		return;
+	}
+	array<String^>^ lines = System::IO::File::ReadAllLines("meals/meals_list.txt");
+	for each(String ^ line in lines) {
+		if (String::IsNullOrWhiteSpace(line)) {
+			continue;
+		}
+		array<String^>^ parts = line->Split(';');
+		if (parts->Length > 0 && !String::IsNullOrWhiteSpace(parts[0])) {
+			comboBoxDishes->Items->Add(parts[0]);
+		}
+	}
+}
+private: System::Void LoadProductsFromFile() {
+	comboBoxFood->Items->Clear();
+	if (!System::IO::File::Exists("meals/ingredients_list.txt")) {
+		MessageBox::Show("ingredients_list.txt not found");
+		return;
+	}
+	array<String^>^ lines = System::IO::File::ReadAllLines("meals/ingredients_list.txt");
+	for each(String ^ line in lines) {
+		if (String::IsNullOrWhiteSpace(line)) {
+			continue;
+		}
+		array<String^>^ parts = line->Split(';');
+		if (parts->Length >= 4) {
+			String^ productName = parts[0]->Trim();
+			comboBoxFood->Items->Add(productName);
+		}
+	}
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void labelSearchFood_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void labelSearchOwnRecipes_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void textBoxGramsProducts_TextChanged(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void textBoxPortionsDishes_TextChanged(System::Object^ sender, System::EventArgs^ e) {}
-
+private: System::Void buttonAdd1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (String::IsNullOrWhiteSpace(comboBoxFood->Text)) {
+		MessageBox::Show("Choose product first");
+		return;
+	}
+	if (String::IsNullOrWhiteSpace(textBoxGramsProducts->Text)) {
+		MessageBox::Show("Enter grams");
+		return;
+	}
+	String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
+	String^ productName = comboBoxFood->Text;
+	String^ gramsText = textBoxGramsProducts->Text;
+	double grams = Convert::ToDouble(gramsText);
+	if (grams <= 0) {
+		MessageBox::Show("Grams must be more than 0");
+		return;
+	}
+	std::string productNameStd = msclr::interop::marshal_as<std::string>(productName);
+	Dishes product = Dishes::Ingredient(productNameStd);
+	NutritionDecorator selectedProduct(&product, grams);
+	double proteins = selectedProduct.get_proteins();
+	double fats = selectedProduct.get_fats();
+	double carbs = selectedProduct.get_carbs();
+	double calories = selectedProduct.get_calories();
+	labelSelectedFoodlist->Text +=
+		productName + " - " + grams.ToString("F0") + " g\n";
+	mealRowsForSave += date + ";" + productName + ";" + grams.ToString("F0") + ";" +proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" + carbs.ToString("F1") + ";" + calories.ToString("F1") + "\n";
+	textBoxGramsProducts->Clear();
+}
 private: System::Void buttonAdd2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (String::IsNullOrWhiteSpace(comboBoxDishes->Text)) {
 		MessageBox::Show("Choose dish first");
@@ -442,7 +505,7 @@ private: System::Void buttonAdd2_Click(System::Object^ sender, System::EventArgs
 	double calories = selectedDish.get_calories();
 	labelSelectedFoodlist->Text +=
 		dishName + " - " + grams.ToString("F0") + " g\n";
-	mealRowsForSave += date + ";" + dishName + ";" + grams.ToString("F0") + ";g;" + proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" +
+	mealRowsForSave += date + ";" + dishName + ";" + grams.ToString("F0") + ";" + proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" +
 		carbs.ToString("F1") + ";" + calories.ToString("F1") + "\n";
 	textBoxPortionsDishes->Clear();
 }
@@ -474,6 +537,12 @@ private: System::Void buttonAdd4_Click(System::Object^ sender, System::EventArgs
 	private: System::Void buttonAddNewRecipe_Click(System::Object^ sender, System::EventArgs^ e) {
 		AddRecipeMEALS^ addRecipeMEALS = gcnew AddRecipeMEALS();
 		addRecipeMEALS->ShowDialog();
+		LoadDishesFromFile();
+	}
+	private: System::Void buttonAddNewProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+		AddNewProductMEALS^ addProductForm = gcnew AddNewProductMEALS();
+		addProductForm->ShowDialog();
+		LoadProductsFromFile();
 	}
 };
 }

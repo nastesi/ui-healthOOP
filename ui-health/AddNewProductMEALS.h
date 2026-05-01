@@ -39,8 +39,8 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelNameNewFood;
 	private: System::Windows::Forms::TextBox^ textBoxAddNewProductname;
 
-	private: System::Windows::Forms::Label^ labelCaloriesproductadd;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownCaloriesproductadd;
+
+
 	private: System::Windows::Forms::Label^ labelProteinAddnewproduct;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownProtein;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownFat;
@@ -71,8 +71,6 @@ namespace uihealth {
 			this->labelAddNewproductItem = (gcnew System::Windows::Forms::Label());
 			this->labelNameNewFood = (gcnew System::Windows::Forms::Label());
 			this->textBoxAddNewProductname = (gcnew System::Windows::Forms::TextBox());
-			this->labelCaloriesproductadd = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownCaloriesproductadd = (gcnew System::Windows::Forms::NumericUpDown());
 			this->labelProteinAddnewproduct = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownProtein = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDownFat = (gcnew System::Windows::Forms::NumericUpDown());
@@ -81,7 +79,6 @@ namespace uihealth {
 			this->labelCarbsAddNewproduct = (gcnew System::Windows::Forms::Label());
 			this->buttonSaveNewProduct = (gcnew System::Windows::Forms::Button());
 			this->buttonCancelNewProduct = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCaloriesproductadd))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownProtein))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownFat))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCarbs))->BeginInit();
@@ -93,71 +90,59 @@ namespace uihealth {
 			this->labelAddNewproductItem->AutoSize = true;
 			this->labelAddNewproductItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelAddNewproductItem->Location = System::Drawing::Point(228, 33);
+			this->labelAddNewproductItem->Location = System::Drawing::Point(221, 27);
+			this->labelAddNewproductItem->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelAddNewproductItem->Name = L"labelAddNewproductItem";
-			this->labelAddNewproductItem->Size = System::Drawing::Size(333, 29);
+			this->labelAddNewproductItem->Size = System::Drawing::Size(170, 24);
 			this->labelAddNewproductItem->TabIndex = 0;
-			this->labelAddNewproductItem->Text = L"ADD NEW PRODUCT ITEM";
+			this->labelAddNewproductItem->Text = L"Add new product";
 			// 
 			// labelNameNewFood
 			// 
 			this->labelNameNewFood->AutoSize = true;
 			this->labelNameNewFood->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameNewFood->Location = System::Drawing::Point(37, 87);
+			this->labelNameNewFood->Location = System::Drawing::Point(30, 95);
+			this->labelNameNewFood->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelNameNewFood->Name = L"labelNameNewFood";
-			this->labelNameNewFood->Size = System::Drawing::Size(70, 25);
+			this->labelNameNewFood->Size = System::Drawing::Size(55, 20);
 			this->labelNameNewFood->TabIndex = 1;
 			this->labelNameNewFood->Text = L"Name:";
 			// 
 			// textBoxAddNewProductname
 			// 
-			this->textBoxAddNewProductname->Location = System::Drawing::Point(113, 90);
+			this->textBoxAddNewProductname->Location = System::Drawing::Point(89, 95);
+			this->textBoxAddNewProductname->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBoxAddNewProductname->Name = L"textBoxAddNewProductname";
-			this->textBoxAddNewProductname->Size = System::Drawing::Size(240, 22);
+			this->textBoxAddNewProductname->Size = System::Drawing::Size(181, 20);
 			this->textBoxAddNewProductname->TabIndex = 2;
-			// 
-			// labelCaloriesproductadd
-			// 
-			this->labelCaloriesproductadd->AutoSize = true;
-			this->labelCaloriesproductadd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelCaloriesproductadd->Location = System::Drawing::Point(37, 137);
-			this->labelCaloriesproductadd->Name = L"labelCaloriesproductadd";
-			this->labelCaloriesproductadd->Size = System::Drawing::Size(145, 25);
-			this->labelCaloriesproductadd->TabIndex = 32;
-			this->labelCaloriesproductadd->Text = L"Calories/100 g:";
-			// 
-			// numericUpDownCaloriesproductadd
-			// 
-			this->numericUpDownCaloriesproductadd->Location = System::Drawing::Point(191, 140);
-			this->numericUpDownCaloriesproductadd->Name = L"numericUpDownCaloriesproductadd";
-			this->numericUpDownCaloriesproductadd->Size = System::Drawing::Size(162, 22);
-			this->numericUpDownCaloriesproductadd->TabIndex = 35;
 			// 
 			// labelProteinAddnewproduct
 			// 
 			this->labelProteinAddnewproduct->AutoSize = true;
 			this->labelProteinAddnewproduct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelProteinAddnewproduct->Location = System::Drawing::Point(40, 188);
+			this->labelProteinAddnewproduct->Location = System::Drawing::Point(32, 135);
+			this->labelProteinAddnewproduct->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelProteinAddnewproduct->Name = L"labelProteinAddnewproduct";
-			this->labelProteinAddnewproduct->Size = System::Drawing::Size(100, 25);
+			this->labelProteinAddnewproduct->Size = System::Drawing::Size(80, 20);
 			this->labelProteinAddnewproduct->TabIndex = 36;
 			this->labelProteinAddnewproduct->Text = L"Protein, g:";
 			// 
 			// numericUpDownProtein
 			// 
-			this->numericUpDownProtein->Location = System::Drawing::Point(146, 191);
+			this->numericUpDownProtein->Location = System::Drawing::Point(116, 138);
+			this->numericUpDownProtein->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDownProtein->Name = L"numericUpDownProtein";
-			this->numericUpDownProtein->Size = System::Drawing::Size(162, 22);
+			this->numericUpDownProtein->Size = System::Drawing::Size(122, 20);
 			this->numericUpDownProtein->TabIndex = 37;
 			// 
 			// numericUpDownFat
 			// 
-			this->numericUpDownFat->Location = System::Drawing::Point(146, 233);
+			this->numericUpDownFat->Location = System::Drawing::Point(116, 172);
+			this->numericUpDownFat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDownFat->Name = L"numericUpDownFat";
-			this->numericUpDownFat->Size = System::Drawing::Size(162, 22);
+			this->numericUpDownFat->Size = System::Drawing::Size(122, 20);
 			this->numericUpDownFat->TabIndex = 39;
 			this->numericUpDownFat->ValueChanged += gcnew System::EventHandler(this, &AddNewProductMEALS::numericUpDown1_ValueChanged);
 			// 
@@ -166,18 +151,20 @@ namespace uihealth {
 			this->labelFatAddnewProduct->AutoSize = true;
 			this->labelFatAddnewProduct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelFatAddnewProduct->Location = System::Drawing::Point(40, 230);
+			this->labelFatAddnewProduct->Location = System::Drawing::Point(32, 169);
+			this->labelFatAddnewProduct->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelFatAddnewProduct->Name = L"labelFatAddnewProduct";
-			this->labelFatAddnewProduct->Size = System::Drawing::Size(67, 25);
+			this->labelFatAddnewProduct->Size = System::Drawing::Size(54, 20);
 			this->labelFatAddnewProduct->TabIndex = 38;
 			this->labelFatAddnewProduct->Text = L"Fat, g:";
 			this->labelFatAddnewProduct->Click += gcnew System::EventHandler(this, &AddNewProductMEALS::label1_Click);
 			// 
 			// numericUpDownCarbs
 			// 
-			this->numericUpDownCarbs->Location = System::Drawing::Point(146, 276);
+			this->numericUpDownCarbs->Location = System::Drawing::Point(116, 207);
+			this->numericUpDownCarbs->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDownCarbs->Name = L"numericUpDownCarbs";
-			this->numericUpDownCarbs->Size = System::Drawing::Size(162, 22);
+			this->numericUpDownCarbs->Size = System::Drawing::Size(122, 20);
 			this->numericUpDownCarbs->TabIndex = 41;
 			// 
 			// labelCarbsAddNewproduct
@@ -185,37 +172,40 @@ namespace uihealth {
 			this->labelCarbsAddNewproduct->AutoSize = true;
 			this->labelCarbsAddNewproduct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelCarbsAddNewproduct->Location = System::Drawing::Point(40, 273);
+			this->labelCarbsAddNewproduct->Location = System::Drawing::Point(32, 204);
+			this->labelCarbsAddNewproduct->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelCarbsAddNewproduct->Name = L"labelCarbsAddNewproduct";
-			this->labelCarbsAddNewproduct->Size = System::Drawing::Size(92, 25);
+			this->labelCarbsAddNewproduct->Size = System::Drawing::Size(72, 20);
 			this->labelCarbsAddNewproduct->TabIndex = 40;
 			this->labelCarbsAddNewproduct->Text = L"Carbs, g:";
 			// 
 			// buttonSaveNewProduct
 			// 
-			this->buttonSaveNewProduct->Location = System::Drawing::Point(205, 352);
+			this->buttonSaveNewProduct->Location = System::Drawing::Point(154, 286);
+			this->buttonSaveNewProduct->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonSaveNewProduct->Name = L"buttonSaveNewProduct";
-			this->buttonSaveNewProduct->Size = System::Drawing::Size(175, 41);
+			this->buttonSaveNewProduct->Size = System::Drawing::Size(131, 33);
 			this->buttonSaveNewProduct->TabIndex = 42;
-			this->buttonSaveNewProduct->Text = L"SAVE";
+			this->buttonSaveNewProduct->Text = L"Save";
 			this->buttonSaveNewProduct->UseVisualStyleBackColor = true;
 			this->buttonSaveNewProduct->Click += gcnew System::EventHandler(this, &AddNewProductMEALS::buttonSaveNewProduct_Click);
 			// 
 			// buttonCancelNewProduct
 			// 
-			this->buttonCancelNewProduct->Location = System::Drawing::Point(386, 352);
+			this->buttonCancelNewProduct->Location = System::Drawing::Point(290, 286);
+			this->buttonCancelNewProduct->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonCancelNewProduct->Name = L"buttonCancelNewProduct";
-			this->buttonCancelNewProduct->Size = System::Drawing::Size(175, 41);
+			this->buttonCancelNewProduct->Size = System::Drawing::Size(131, 33);
 			this->buttonCancelNewProduct->TabIndex = 43;
-			this->buttonCancelNewProduct->Text = L"CANCEL";
+			this->buttonCancelNewProduct->Text = L"Cancel";
 			this->buttonCancelNewProduct->UseVisualStyleBackColor = true;
 			this->buttonCancelNewProduct->Click += gcnew System::EventHandler(this, &AddNewProductMEALS::button1_Click);
 			// 
 			// AddNewProductMEALS
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(782, 473);
+			this->ClientSize = System::Drawing::Size(586, 384);
 			this->Controls->Add(this->buttonCancelNewProduct);
 			this->Controls->Add(this->buttonSaveNewProduct);
 			this->Controls->Add(this->numericUpDownCarbs);
@@ -224,14 +214,12 @@ namespace uihealth {
 			this->Controls->Add(this->labelFatAddnewProduct);
 			this->Controls->Add(this->numericUpDownProtein);
 			this->Controls->Add(this->labelProteinAddnewproduct);
-			this->Controls->Add(this->numericUpDownCaloriesproductadd);
-			this->Controls->Add(this->labelCaloriesproductadd);
 			this->Controls->Add(this->textBoxAddNewProductname);
 			this->Controls->Add(this->labelNameNewFood);
 			this->Controls->Add(this->labelAddNewproductItem);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"AddNewProductMEALS";
 			this->Text = L"AddNewProductMEALS";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCaloriesproductadd))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownProtein))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownFat))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCarbs))->EndInit();
@@ -242,7 +230,23 @@ namespace uihealth {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void buttonSaveNewProduct_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void buttonSaveNewProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (String::IsNullOrWhiteSpace(textBoxAddNewProductname->Text)) {
+		MessageBox::Show("Enter product name");
+		return;
+	}
+	String^ name = textBoxAddNewProductname->Text->Trim();
+	double protein = Convert::ToDouble(numericUpDownProtein->Value);
+	double fat = Convert::ToDouble(numericUpDownFat->Value);
+	double carbs = Convert::ToDouble(numericUpDownCarbs->Value);
+	String^ line = Environment::NewLine + name + ";" + protein.ToString("F1") + ";" + fat.ToString("F1") + ";" + carbs.ToString("F1") + Environment::NewLine;
+	System::IO::File::AppendAllText("meals/ingredients_list.txt", line);
+	MessageBox::Show("Product saved");
+	this->Close();
+}
+private: System::Void buttonCancelNewProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }
