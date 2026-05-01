@@ -37,13 +37,13 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelAddNewRecipeItem;
 	private: System::Windows::Forms::TextBox^ textBoxAddNewRecipename;
 	private: System::Windows::Forms::Label^ labelNameNewRecipe;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownGramsRecipe;
-
-	private: System::Windows::Forms::Label^ labelGramsRecipeadd;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownCaloriesrecipe;
 
 
-	private: System::Windows::Forms::Label^ labelCaloriesNewRecipe;
+
+
+
+
+
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownCarbsRecipe;
 
 	private: System::Windows::Forms::Label^ labelCarbsAddRecipe;
@@ -77,10 +77,6 @@ namespace uihealth {
 			this->labelAddNewRecipeItem = (gcnew System::Windows::Forms::Label());
 			this->textBoxAddNewRecipename = (gcnew System::Windows::Forms::TextBox());
 			this->labelNameNewRecipe = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownGramsRecipe = (gcnew System::Windows::Forms::NumericUpDown());
-			this->labelGramsRecipeadd = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownCaloriesrecipe = (gcnew System::Windows::Forms::NumericUpDown());
-			this->labelCaloriesNewRecipe = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownCarbsRecipe = (gcnew System::Windows::Forms::NumericUpDown());
 			this->labelCarbsAddRecipe = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownFatRecipe = (gcnew System::Windows::Forms::NumericUpDown());
@@ -89,8 +85,6 @@ namespace uihealth {
 			this->labelProteinAddRecipe = (gcnew System::Windows::Forms::Label());
 			this->buttonCancelNewRecipe = (gcnew System::Windows::Forms::Button());
 			this->buttonSaveNewRecipe = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownGramsRecipe))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCaloriesrecipe))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCarbsRecipe))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownFatRecipe))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownProteinRecipe))->BeginInit();
@@ -101,18 +95,20 @@ namespace uihealth {
 			this->labelAddNewRecipeItem->AutoSize = true;
 			this->labelAddNewRecipeItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelAddNewRecipeItem->Location = System::Drawing::Point(236, 28);
+			this->labelAddNewRecipeItem->Location = System::Drawing::Point(177, 23);
+			this->labelAddNewRecipeItem->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelAddNewRecipeItem->Name = L"labelAddNewRecipeItem";
-			this->labelAddNewRecipeItem->Size = System::Drawing::Size(301, 29);
+			this->labelAddNewRecipeItem->Size = System::Drawing::Size(241, 24);
 			this->labelAddNewRecipeItem->TabIndex = 1;
 			this->labelAddNewRecipeItem->Text = L"ADD NEW RECIPE ITEM";
 			this->labelAddNewRecipeItem->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::labelAddNewRecipeItem_Click);
 			// 
 			// textBoxAddNewRecipename
 			// 
-			this->textBoxAddNewRecipename->Location = System::Drawing::Point(126, 89);
+			this->textBoxAddNewRecipename->Location = System::Drawing::Point(122, 72);
+			this->textBoxAddNewRecipename->Margin = System::Windows::Forms::Padding(2);
 			this->textBoxAddNewRecipename->Name = L"textBoxAddNewRecipename";
-			this->textBoxAddNewRecipename->Size = System::Drawing::Size(240, 22);
+			this->textBoxAddNewRecipename->Size = System::Drawing::Size(181, 20);
 			this->textBoxAddNewRecipename->TabIndex = 4;
 			// 
 			// labelNameNewRecipe
@@ -120,54 +116,19 @@ namespace uihealth {
 			this->labelNameNewRecipe->AutoSize = true;
 			this->labelNameNewRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameNewRecipe->Location = System::Drawing::Point(50, 86);
+			this->labelNameNewRecipe->Location = System::Drawing::Point(38, 70);
+			this->labelNameNewRecipe->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelNameNewRecipe->Name = L"labelNameNewRecipe";
-			this->labelNameNewRecipe->Size = System::Drawing::Size(70, 25);
+			this->labelNameNewRecipe->Size = System::Drawing::Size(55, 20);
 			this->labelNameNewRecipe->TabIndex = 3;
 			this->labelNameNewRecipe->Text = L"Name:";
 			// 
-			// numericUpDownGramsRecipe
-			// 
-			this->numericUpDownGramsRecipe->Location = System::Drawing::Point(229, 130);
-			this->numericUpDownGramsRecipe->Name = L"numericUpDownGramsRecipe";
-			this->numericUpDownGramsRecipe->Size = System::Drawing::Size(162, 22);
-			this->numericUpDownGramsRecipe->TabIndex = 37;
-			// 
-			// labelGramsRecipeadd
-			// 
-			this->labelGramsRecipeadd->AutoSize = true;
-			this->labelGramsRecipeadd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelGramsRecipeadd->Location = System::Drawing::Point(50, 127);
-			this->labelGramsRecipeadd->Name = L"labelGramsRecipeadd";
-			this->labelGramsRecipeadd->Size = System::Drawing::Size(173, 25);
-			this->labelGramsRecipeadd->TabIndex = 36;
-			this->labelGramsRecipeadd->Text = L"Grams per portion:";
-			this->labelGramsRecipeadd->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::labelCaloriesproductadd_Click);
-			// 
-			// numericUpDownCaloriesrecipe
-			// 
-			this->numericUpDownCaloriesrecipe->Location = System::Drawing::Point(204, 175);
-			this->numericUpDownCaloriesrecipe->Name = L"numericUpDownCaloriesrecipe";
-			this->numericUpDownCaloriesrecipe->Size = System::Drawing::Size(162, 22);
-			this->numericUpDownCaloriesrecipe->TabIndex = 39;
-			// 
-			// labelCaloriesNewRecipe
-			// 
-			this->labelCaloriesNewRecipe->AutoSize = true;
-			this->labelCaloriesNewRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelCaloriesNewRecipe->Location = System::Drawing::Point(50, 172);
-			this->labelCaloriesNewRecipe->Name = L"labelCaloriesNewRecipe";
-			this->labelCaloriesNewRecipe->Size = System::Drawing::Size(155, 25);
-			this->labelCaloriesNewRecipe->TabIndex = 38;
-			this->labelCaloriesNewRecipe->Text = L"Calories/portion:";
-			// 
 			// numericUpDownCarbsRecipe
 			// 
-			this->numericUpDownCarbsRecipe->Location = System::Drawing::Point(161, 300);
+			this->numericUpDownCarbsRecipe->Location = System::Drawing::Point(181, 197);
+			this->numericUpDownCarbsRecipe->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDownCarbsRecipe->Name = L"numericUpDownCarbsRecipe";
-			this->numericUpDownCarbsRecipe->Size = System::Drawing::Size(162, 22);
+			this->numericUpDownCarbsRecipe->Size = System::Drawing::Size(122, 20);
 			this->numericUpDownCarbsRecipe->TabIndex = 47;
 			// 
 			// labelCarbsAddRecipe
@@ -175,17 +136,19 @@ namespace uihealth {
 			this->labelCarbsAddRecipe->AutoSize = true;
 			this->labelCarbsAddRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelCarbsAddRecipe->Location = System::Drawing::Point(55, 297);
+			this->labelCarbsAddRecipe->Location = System::Drawing::Point(37, 197);
+			this->labelCarbsAddRecipe->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelCarbsAddRecipe->Name = L"labelCarbsAddRecipe";
-			this->labelCarbsAddRecipe->Size = System::Drawing::Size(92, 25);
+			this->labelCarbsAddRecipe->Size = System::Drawing::Size(72, 20);
 			this->labelCarbsAddRecipe->TabIndex = 46;
 			this->labelCarbsAddRecipe->Text = L"Carbs, g:";
 			// 
 			// numericUpDownFatRecipe
 			// 
-			this->numericUpDownFatRecipe->Location = System::Drawing::Point(161, 257);
+			this->numericUpDownFatRecipe->Location = System::Drawing::Point(181, 162);
+			this->numericUpDownFatRecipe->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDownFatRecipe->Name = L"numericUpDownFatRecipe";
-			this->numericUpDownFatRecipe->Size = System::Drawing::Size(162, 22);
+			this->numericUpDownFatRecipe->Size = System::Drawing::Size(122, 20);
 			this->numericUpDownFatRecipe->TabIndex = 45;
 			// 
 			// labelFatAddRecipe
@@ -193,17 +156,19 @@ namespace uihealth {
 			this->labelFatAddRecipe->AutoSize = true;
 			this->labelFatAddRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelFatAddRecipe->Location = System::Drawing::Point(55, 254);
+			this->labelFatAddRecipe->Location = System::Drawing::Point(37, 162);
+			this->labelFatAddRecipe->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelFatAddRecipe->Name = L"labelFatAddRecipe";
-			this->labelFatAddRecipe->Size = System::Drawing::Size(67, 25);
+			this->labelFatAddRecipe->Size = System::Drawing::Size(54, 20);
 			this->labelFatAddRecipe->TabIndex = 44;
 			this->labelFatAddRecipe->Text = L"Fat, g:";
 			// 
 			// numericUpDownProteinRecipe
 			// 
-			this->numericUpDownProteinRecipe->Location = System::Drawing::Point(161, 215);
+			this->numericUpDownProteinRecipe->Location = System::Drawing::Point(181, 128);
+			this->numericUpDownProteinRecipe->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDownProteinRecipe->Name = L"numericUpDownProteinRecipe";
-			this->numericUpDownProteinRecipe->Size = System::Drawing::Size(162, 22);
+			this->numericUpDownProteinRecipe->Size = System::Drawing::Size(122, 20);
 			this->numericUpDownProteinRecipe->TabIndex = 43;
 			// 
 			// labelProteinAddRecipe
@@ -211,35 +176,40 @@ namespace uihealth {
 			this->labelProteinAddRecipe->AutoSize = true;
 			this->labelProteinAddRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelProteinAddRecipe->Location = System::Drawing::Point(55, 212);
+			this->labelProteinAddRecipe->Location = System::Drawing::Point(37, 128);
+			this->labelProteinAddRecipe->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelProteinAddRecipe->Name = L"labelProteinAddRecipe";
-			this->labelProteinAddRecipe->Size = System::Drawing::Size(100, 25);
+			this->labelProteinAddRecipe->Size = System::Drawing::Size(80, 20);
 			this->labelProteinAddRecipe->TabIndex = 42;
 			this->labelProteinAddRecipe->Text = L"Protein, g:";
 			// 
 			// buttonCancelNewRecipe
 			// 
-			this->buttonCancelNewRecipe->Location = System::Drawing::Point(388, 352);
+			this->buttonCancelNewRecipe->Location = System::Drawing::Point(287, 269);
+			this->buttonCancelNewRecipe->Margin = System::Windows::Forms::Padding(2);
 			this->buttonCancelNewRecipe->Name = L"buttonCancelNewRecipe";
-			this->buttonCancelNewRecipe->Size = System::Drawing::Size(175, 41);
+			this->buttonCancelNewRecipe->Size = System::Drawing::Size(131, 33);
 			this->buttonCancelNewRecipe->TabIndex = 49;
-			this->buttonCancelNewRecipe->Text = L"CANCEL";
+			this->buttonCancelNewRecipe->Text = L"Cancel";
 			this->buttonCancelNewRecipe->UseVisualStyleBackColor = true;
+			this->buttonCancelNewRecipe->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::buttonCancelNewRecipe_Click);
 			// 
 			// buttonSaveNewRecipe
 			// 
-			this->buttonSaveNewRecipe->Location = System::Drawing::Point(207, 352);
+			this->buttonSaveNewRecipe->Location = System::Drawing::Point(151, 269);
+			this->buttonSaveNewRecipe->Margin = System::Windows::Forms::Padding(2);
 			this->buttonSaveNewRecipe->Name = L"buttonSaveNewRecipe";
-			this->buttonSaveNewRecipe->Size = System::Drawing::Size(175, 41);
+			this->buttonSaveNewRecipe->Size = System::Drawing::Size(131, 33);
 			this->buttonSaveNewRecipe->TabIndex = 48;
-			this->buttonSaveNewRecipe->Text = L"SAVE";
+			this->buttonSaveNewRecipe->Text = L"Save";
 			this->buttonSaveNewRecipe->UseVisualStyleBackColor = true;
+			this->buttonSaveNewRecipe->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::buttonSaveNewRecipe_Click);
 			// 
 			// AddRecipeMEALS
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(782, 473);
+			this->ClientSize = System::Drawing::Size(586, 384);
 			this->Controls->Add(this->buttonCancelNewRecipe);
 			this->Controls->Add(this->buttonSaveNewRecipe);
 			this->Controls->Add(this->numericUpDownCarbsRecipe);
@@ -248,17 +218,12 @@ namespace uihealth {
 			this->Controls->Add(this->labelFatAddRecipe);
 			this->Controls->Add(this->numericUpDownProteinRecipe);
 			this->Controls->Add(this->labelProteinAddRecipe);
-			this->Controls->Add(this->numericUpDownCaloriesrecipe);
-			this->Controls->Add(this->labelCaloriesNewRecipe);
-			this->Controls->Add(this->numericUpDownGramsRecipe);
-			this->Controls->Add(this->labelGramsRecipeadd);
 			this->Controls->Add(this->textBoxAddNewRecipename);
 			this->Controls->Add(this->labelNameNewRecipe);
 			this->Controls->Add(this->labelAddNewRecipeItem);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"AddRecipeMEALS";
 			this->Text = L"AddRecipeMEALS";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownGramsRecipe))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCaloriesrecipe))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCarbsRecipe))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownFatRecipe))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownProteinRecipe))->EndInit();
@@ -269,5 +234,22 @@ namespace uihealth {
 #pragma endregion
 	private: System::Void labelAddNewRecipeItem_Click(System::Object^ sender, System::EventArgs^ e) {}
 	private: System::Void labelCaloriesproductadd_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void buttonCancelNewRecipe_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void buttonSaveNewRecipe_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (String::IsNullOrWhiteSpace(textBoxAddNewRecipename->Text)) {
+		MessageBox::Show("Enter recipe name");
+		return;
+	}
+	String^ name = textBoxAddNewRecipename->Text->Trim();
+	System::Decimal protein = numericUpDownProteinRecipe->Value;
+	System::Decimal fat = numericUpDownFatRecipe->Value;
+	System::Decimal carbs = numericUpDownCarbsRecipe->Value;
+	String^ line = Environment::NewLine + name + ";" + protein.ToString("F1") + ";" + fat.ToString("F1") + ";" + carbs.ToString("F1") + Environment::NewLine;
+	System::IO::File::AppendAllText("meals/meals_list.txt", line);
+	MessageBox::Show("Recipe saved");
+	this->Close();
+}
 };
 }
