@@ -1,6 +1,7 @@
 [activity]
 01-05-2026 pisp
 28-04-2026 sosi
+16-05-2026 Yoga 25 26.3
 [food]
 01-05-2026 pipi
 28-04-2026 fofo
