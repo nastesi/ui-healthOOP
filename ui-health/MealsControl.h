@@ -21,9 +21,8 @@ namespace uihealth {
 			InitializeComponent();
 			LoadDishesFromFile();
 			LoadProductsFromFile();
-			mealRowsForSave = "";
-			labelSelectedFoodlist->Text = "";
-			this->buttonBackMeals->Click += gcnew System::EventHandler(this, &MealsControl::buttonBack_Click);
+			meals_rows = "";
+			calories_rows = "";
 		}
 
 	protected:
@@ -58,10 +57,9 @@ namespace uihealth {
 	private: System::Windows::Forms::Button^ buttonAdd2;
 	private: System::Windows::Forms::Button^ buttonAdd4;
 	private: System::Windows::Forms::Button^ buttonBackMeals;
-	private: System::String^ mealRowsForSave;
-
-	private:
-		System::ComponentModel::Container ^components;
+	private: System::String^ meals_rows;
+	private: System::String^ calories_rows;
+	System::ComponentModel::Container ^components;
 	
 	public:
 		System::EventHandler^ BackRequested;
@@ -450,99 +448,162 @@ private: System::Void labelSearchFood_Click(System::Object^ sender, System::Even
 private: System::Void labelSearchOwnRecipes_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void textBoxGramsProducts_TextChanged(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void textBoxPortionsDishes_TextChanged(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void buttonAdd1_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (String::IsNullOrWhiteSpace(comboBoxFood->Text)) {
-		MessageBox::Show("Choose product first");
-		return;
+	private: System::Void buttonAdd1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(comboBoxFood->Text)) {
+			MessageBox::Show("Choose product first");
+			return;
+		}
+		if (String::IsNullOrWhiteSpace(textBoxGramsProducts->Text)) {
+			MessageBox::Show("Enter grams");
+			return;
+		}
+		String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
+		String^ productName = comboBoxFood->Text;
+		String^ gramsText = textBoxGramsProducts->Text;
+		double grams = Convert::ToDouble(gramsText);
+		if (grams <= 0) {
+			MessageBox::Show("Grams must be more than 0");
+			return;
+		}
+		std::string productNameStd = msclr::interop::marshal_as<std::string>(productName);
+		Dishes product = Dishes::Ingredient(productNameStd);
+		NutritionDecorator selectedProduct(&product, grams);
+		double proteins = selectedProduct.get_proteins();
+		double fats = selectedProduct.get_fats();
+		double carbs = selectedProduct.get_carbs();
+		double calories = selectedProduct.get_calories();
+		labelSelectedFoodlist->Text +=
+			productName + " - " + grams.ToString("F0") + " g\n";
+		meals_rows += date + " " + productName + " " + grams.ToString("F0") + " " + proteins.ToString("F1") + " " + fats.ToString("F1") + " " + carbs.ToString("F1") + "\n";
+		calories_rows += date + " " + calories.ToString("F1") + " kcal from " + productName + "\n";
+		textBoxGramsProducts->Clear();
 	}
-	if (String::IsNullOrWhiteSpace(textBoxGramsProducts->Text)) {
-		MessageBox::Show("Enter grams");
-		return;
+
+	private: System::Void buttonAdd2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(comboBoxDishes->Text)) {
+			MessageBox::Show("Choose dish first");
+			return;
+		}
+		if (String::IsNullOrWhiteSpace(textBoxPortionsDishes->Text)) {
+			MessageBox::Show("Enter grams");
+			return;
+		}
+		String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
+		String^ dishName = comboBoxDishes->Text;
+		String^ gramsText = textBoxPortionsDishes->Text;
+		double grams = Convert::ToDouble(gramsText);
+		if (grams <= 0) {
+			MessageBox::Show("Grams must be more than 0");
+			return;
+		}
+		std::string dishNameStd = msclr::interop::marshal_as<std::string>(dishName);
+		Dishes dish = Dishes::Dish(dishNameStd);
+		NutritionDecorator selectedDish(&dish, grams);
+		double proteins = selectedDish.get_proteins();
+		double fats = selectedDish.get_fats();
+		double carbs = selectedDish.get_carbs();
+		double calories = selectedDish.get_calories();
+		labelSelectedFoodlist->Text +=
+			dishName + " - " + grams.ToString("F0") + " g\n";
+		meals_rows +=
+			date + " " +
+			dishName + " " +
+			grams.ToString("F0") + proteins.ToString("F1") + " " + fats.ToString("F1") + " " + carbs.ToString("F1") + "\n";
+		calories_rows += date + " " + calories.ToString("F1") + dishName + "\n";
+		textBoxPortionsDishes->Clear();
 	}
-	String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
-	String^ productName = comboBoxFood->Text;
-	String^ gramsText = textBoxGramsProducts->Text;
-	double grams = Convert::ToDouble(gramsText);
-	if (grams <= 0) {
-		MessageBox::Show("Grams must be more than 0");
-		return;
+
+	private: System::Void buttonAdd4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(textBoxWaterAdd->Text)) {
+			MessageBox::Show("Enter water amount");
+			return;
+		}
+		String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
+		double waterMl = Convert::ToDouble(textBoxWaterAdd->Text);
+		if (waterMl <= 0) {
+			MessageBox::Show("Water amount must be more than 0");
+			return;
+		}
+		labelSelectedFoodlist->Text +=
+			"Water - " + waterMl.ToString("F0") + " ml\n";
+		meals_rows +=
+			date + " Water " +
+			waterMl.ToString("F0") + "ml " +
+			"P:0.0 F:0.0 C:0.0\n";
+		textBoxWaterAdd->Clear();
 	}
-	std::string productNameStd = msclr::interop::marshal_as<std::string>(productName);
-	Dishes product = Dishes::Ingredient(productNameStd);
-	NutritionDecorator selectedProduct(&product, grams);
-	double proteins = selectedProduct.get_proteins();
-	double fats = selectedProduct.get_fats();
-	double carbs = selectedProduct.get_carbs();
-	double calories = selectedProduct.get_calories();
-	labelSelectedFoodlist->Text +=
-		productName + " - " + grams.ToString("F0") + " g\n";
-	mealRowsForSave += date + ";" + productName + ";" + grams.ToString("F0") + ";" +proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" + carbs.ToString("F1") + ";" + calories.ToString("F1") + "\n";
-	textBoxGramsProducts->Clear();
-}
-private: System::Void buttonAdd2_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (String::IsNullOrWhiteSpace(comboBoxDishes->Text)) {
-		MessageBox::Show("Choose dish first");
-		return;
-	}
-	if (String::IsNullOrWhiteSpace(textBoxPortionsDishes->Text)) {
-		MessageBox::Show("Enter grams");
-		return;
-	}
-	String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
-	String^ dishName = comboBoxDishes->Text;
-	String^ gramsText = textBoxPortionsDishes->Text;
-	double grams = Convert::ToDouble(gramsText);
-	if (grams <= 0) {
-		MessageBox::Show("Grams must be more than 0");
-		return;
-	}
-	std::string dishNameStd = msclr::interop::marshal_as<std::string>(dishName);
-	Dishes dish = Dishes::Dish(dishNameStd);
-	NutritionDecorator selectedDish(&dish, grams);
-	double proteins = selectedDish.get_proteins();
-	double fats = selectedDish.get_fats();
-	double carbs = selectedDish.get_carbs();
-	double calories = selectedDish.get_calories();
-	labelSelectedFoodlist->Text +=
-		dishName + " - " + grams.ToString("F0") + " g\n";
-	mealRowsForSave += date + ";" + dishName + ";" + grams.ToString("F0") + ";" + proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" +
-		carbs.ToString("F1") + ";" + calories.ToString("F1") + "\n";
-	textBoxPortionsDishes->Clear();
-}
-private: System::Void buttonAdd4_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (String::IsNullOrWhiteSpace(textBoxWaterAdd->Text)) {
-		MessageBox::Show("Enter water amount");
-		return;
-	}
-	String^ date = dateTimePicker1->Value.ToString("dd-MM-yyyy");
-	String^ water = textBoxWaterAdd->Text;
-	double waterLiters = Convert::ToDouble(textBoxWaterAdd->Text);
-	double waterMl = waterLiters * 1000.0;
-	labelSelectedFoodlist->Text +=
-		"Water - " + waterMl.ToString("F0") + " ml\n";
-	mealRowsForSave +=
-		date + ";water;" + waterMl.ToString("F0") + ";0;0;0;0\n";
-	textBoxWaterAdd->Clear();
-}
+
 	private: System::Void buttonSaveMeal_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (String::IsNullOrWhiteSpace(mealRowsForSave)) {
+		if (String::IsNullOrWhiteSpace(meals_rows) &&
+			String::IsNullOrWhiteSpace(calories_rows)) {
 			MessageBox::Show("Nothing to save");
 			return;
 		}
-		System::IO::File::AppendAllText("meals/meals_diary.txt", mealRowsForSave);
+		array<String^>^ foodLines = meals_rows->Split(
+			gcnew array<wchar_t>{ '\n' },
+			System::StringSplitOptions::RemoveEmptyEntries
+		);
+		for each(String ^ line in foodLines) {
+			add_to_calendar("[food]", line);
+		}
+		array<String^>^ calorieLines = calories_rows->Split(
+			gcnew array<wchar_t>{ '\n' },
+			System::StringSplitOptions::RemoveEmptyEntries
+		);
+		for each(String ^ line in calorieLines) {
+			add_to_calendar("[calories]", line);
+		}
 		MessageBox::Show("Meal saved");
-		mealRowsForSave = "";
+		meals_rows = "";
+		calories_rows = "";
 		labelSelectedFoodlist->Text = "";
 	}
+
 	private: System::Void buttonAddNewRecipe_Click(System::Object^ sender, System::EventArgs^ e) {
 		AddRecipeMEALS^ addRecipeMEALS = gcnew AddRecipeMEALS();
 		addRecipeMEALS->ShowDialog();
 		LoadDishesFromFile();
 	}
+
 	private: System::Void buttonAddNewProduct_Click(System::Object^ sender, System::EventArgs^ e) {
 		AddNewProductMEALS^ addProductForm = gcnew AddNewProductMEALS();
 		addProductForm->ShowDialog();
 		LoadProductsFromFile();
+	}
+
+	private: System::Void add_to_calendar(String^ sectionName, String^ newLine) {
+		String^ fileName = "calendar.txt";
+		if (!System::IO::File::Exists(fileName)) {
+			System::IO::File::WriteAllText(
+				fileName,
+				"[activity]\n[food]\n[calories]\n[mood]\n"
+			);
+		}
+		array<String^>^ lines = System::IO::File::ReadAllLines(fileName);
+		System::Collections::Generic::List<String^>^ result =
+			gcnew System::Collections::Generic::List<String^>();
+		bool added = false;
+		bool insideTargetSection = false;
+		for each(String ^ line in lines) {
+			if (line == sectionName) {
+				result->Add(line);
+				insideTargetSection = true;
+				continue;
+			}
+			if (insideTargetSection && line->StartsWith("[") && line->EndsWith("]")) {
+				result->Add(newLine);
+				added = true;
+				insideTargetSection = false;
+			}
+			result->Add(line);
+		} if (insideTargetSection && !added) {
+			result->Add(newLine);
+			added = true;
+		} if (!added) {
+			result->Add(sectionName);
+			result->Add(newLine);
+		}
+		System::IO::File::WriteAllLines(fileName, result);
 	}
 };
 }

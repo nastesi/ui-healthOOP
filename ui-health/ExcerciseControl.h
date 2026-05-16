@@ -1,5 +1,6 @@
 #pragma once
-
+#include "activity/activity.h"
+#include <msclr/marshal_cppstd.h>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -7,27 +8,19 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-
 namespace uihealth {
-
-	/// <summary>
-	/// Summary for ExcerciseControl
-	/// </summary>
 	public ref class ExcerciseControl : public System::Windows::Forms::UserControl
 	{
 	public:
 		ExcerciseControl(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			activityRowsForSave = "";
+			labelSelectedActivitylist->Text = "";
+			load_activities();
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~ExcerciseControl()
 		{
 			if (components)
@@ -38,14 +31,10 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelActivityControl;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerActivity;
 	private: System::Windows::Forms::Label^ labelDateActivity;
-
-
 	private: System::Windows::Forms::ComboBox^ comboBoxCardioType;
 	private: System::Windows::Forms::Label^ labelSearchCardio;
 	private: System::Windows::Forms::Panel^ panelSelectedActivity;
-
 	private: System::Windows::Forms::Button^ buttonRemoveActivity;
-
 	private: System::Windows::Forms::Label^ labelSelectedActivitylist;
 	private: System::Windows::Forms::Label^ labelSelectedActivity;
 	private: System::Windows::Forms::Label^ labelDurationCradio;
@@ -59,42 +48,20 @@ namespace uihealth {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ buttonAddStrength;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownWeightStr;
-
-
 	private: System::Windows::Forms::Label^ labelWeightStrength;
-
-
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownRepStrength;
-
 	private: System::Windows::Forms::Label^ labelRepStrength;
-
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownSeries;
-
 	private: System::Windows::Forms::Label^ labelSeriesStrength;
-
 	private: System::Windows::Forms::ComboBox^ comboBoxStrengthtype;
 	private: System::Windows::Forms::Label^ labelSelectStrength;
 	private: System::Windows::Forms::Button^ buttonSaveActivity;
-
-
-
-	protected:
-
-	protected:
-
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
+	private: System::String^ activityRowsForSave;
+	private: 
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		void InitializeComponent(void)
-		{
+		void InitializeComponent(void){
 			this->labelActivityControl = (gcnew System::Windows::Forms::Label());
 			this->dateTimePickerActivity = (gcnew System::Windows::Forms::DateTimePicker());
 			this->labelDateActivity = (gcnew System::Windows::Forms::Label());
@@ -148,6 +115,8 @@ namespace uihealth {
 			// 
 			// dateTimePickerActivity
 			// 
+			this->dateTimePickerActivity->CustomFormat = L"dd.MM.yyyy";
+			this->dateTimePickerActivity->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePickerActivity->Location = System::Drawing::Point(139, 99);
 			this->dateTimePickerActivity->Name = L"dateTimePickerActivity";
 			this->dateTimePickerActivity->Size = System::Drawing::Size(200, 22);
@@ -205,9 +174,7 @@ namespace uihealth {
 			this->buttonRemoveActivity->TabIndex = 30;
 			this->buttonRemoveActivity->Text = L"Remove";
 			this->buttonRemoveActivity->UseVisualStyleBackColor = true;
-			// 
 			// labelSelectedActivitylist
-			// 
 			this->labelSelectedActivitylist->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->labelSelectedActivitylist->AutoSize = true;
 			this->labelSelectedActivitylist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
@@ -218,9 +185,7 @@ namespace uihealth {
 			this->labelSelectedActivitylist->TabIndex = 15;
 			this->labelSelectedActivitylist->Text = L"Running - 30 mins, 5 km, 20 km/h";
 			this->labelSelectedActivitylist->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// labelSelectedActivity
-			// 
 			this->labelSelectedActivity->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->labelSelectedActivity->AutoSize = true;
 			this->labelSelectedActivity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
@@ -231,9 +196,7 @@ namespace uihealth {
 			this->labelSelectedActivity->TabIndex = 14;
 			this->labelSelectedActivity->Text = L"Selected";
 			this->labelSelectedActivity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// labelDurationCradio
-			// 
 			this->labelDurationCradio->AutoSize = true;
 			this->labelDurationCradio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -243,9 +206,7 @@ namespace uihealth {
 			this->labelDurationCradio->TabIndex = 25;
 			this->labelDurationCradio->Text = L"Duration, mins:";
 			this->labelDurationCradio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// panelCardio
-			// 
 			this->panelCardio->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->panelCardio->Controls->Add(this->buttonAddCardio);
 			this->panelCardio->Controls->Add(this->numericUpDownSpeedCardio);
@@ -258,9 +219,8 @@ namespace uihealth {
 			this->panelCardio->Name = L"panelCardio";
 			this->panelCardio->Size = System::Drawing::Size(617, 118);
 			this->panelCardio->TabIndex = 26;
-			// 
+			this->buttonAddCardio->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonAddCardio_Click);
 			// numericUpDownDurCardio
-			// 
 			this->numericUpDownDurCardio->Location = System::Drawing::Point(143, 10);
 			this->numericUpDownDurCardio->Name = L"numericUpDownDurCardio";
 			this->numericUpDownDurCardio->Size = System::Drawing::Size(120, 22);
@@ -336,7 +296,7 @@ namespace uihealth {
 			this->buttonAddStrength->TabIndex = 33;
 			this->buttonAddStrength->Text = L"Add";
 			this->buttonAddStrength->UseVisualStyleBackColor = true;
-			this->buttonAddStrength->Click += gcnew System::EventHandler(this, &ExcerciseControl::button1_Click);
+			this->buttonAddStrength->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonAddStrength_Click);
 			// 
 			// numericUpDownWeightStr
 			// 
@@ -423,6 +383,7 @@ namespace uihealth {
 			this->buttonSaveActivity->TabIndex = 30;
 			this->buttonSaveActivity->Text = L"SAVE";
 			this->buttonSaveActivity->UseVisualStyleBackColor = true;
+			this->buttonSaveActivity->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonSaveActivity_Click);
 			// 
 			// ExcerciseControl
 			// 
@@ -460,6 +421,148 @@ namespace uihealth {
 		}
 #pragma endregion
 	private: System::Void ExcerciseControl_Load(System::Object^ sender, System::EventArgs^ e) {}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void buttonAddStrength_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(comboBoxStrengthtype->Text)) {
+			MessageBox::Show("Choose strength activity first");
+			return;
+		}
+		double series = Convert::ToDouble(numericUpDownSeries->Value);
+		double reps = Convert::ToDouble(numericUpDownRepStrength->Value);
+		double trainingWeight = Convert::ToDouble(numericUpDownWeightStr->Value);
+		if (series <= 0 || reps <= 0) {
+			MessageBox::Show("Series and repetitions must be more than 0");
+			return;
+		}
+		String^ date = dateTimePickerActivity->Value.ToString("dd-MM-yyyy");
+		String^ activityName = comboBoxStrengthtype->Text;
+		std::string activityNameStd = msclr::interop::marshal_as<std::string>(activityName);
+		double userWeight = 60.0;
+		double duration = series * reps;
+		ActivityInfo info = ActivityInfo::find_activity(activityNameStd);
+		activity selectedActivity(info, duration, userWeight);
+		double burnedCalories = selectedActivity.calculate();
+		labelSelectedActivitylist->Text +=
+			activityName + " - " +
+			series.ToString("F0") + " sets x " +
+			reps.ToString("F0") + " reps, " +
+			trainingWeight.ToString("F1") + " kg, " +
+			burnedCalories.ToString("F1") + " kcal\n";
+		activityRowsForSave +=
+			date + ";" +
+			activityName + ";" +
+			duration.ToString("F0") + ";" +
+			"0;0;" +
+			series.ToString("F0") + ";" +
+			reps.ToString("F0") + ";" +
+			trainingWeight.ToString("F1") + ";" +
+			burnedCalories.ToString("F1") + "\n";
+		numericUpDownSeries->Value = 0;
+		numericUpDownRepStrength->Value = 0;
+		numericUpDownWeightStr->Value = 0;
+	}
+	private: System::Void buttonAddCardio_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(comboBoxCardioType->Text)) {
+			MessageBox::Show("Choose cardio activity first");
+			return;
+		}
+		double duration = Convert::ToDouble(numericUpDownDurCardio->Value);
+		double distance = Convert::ToDouble(numericUpDownDistCardio->Value);
+		double speed = Convert::ToDouble(numericUpDownSpeedCardio->Value);
+		if (duration <= 0) {
+			MessageBox::Show("Duration must be more than 0");
+			return;
+		}
+		String^ date = dateTimePickerActivity->Value.ToString("dd-MM-yyyy");
+		String^ activityName = comboBoxCardioType->Text;
+		std::string activityNameStd = msclr::interop::marshal_as<std::string>(activityName);
+		double userWeight = 60.0;
+		ActivityInfo info = ActivityInfo::find_activity(activityNameStd);
+		activity selectedActivity(info, duration, userWeight);
+		double burnedCalories = selectedActivity.calculate();
+		labelSelectedActivitylist->Text +=
+			activityName + " - " +
+			duration.ToString("F0") + " min, " +
+			distance.ToString("F1") + " km, " +
+			speed.ToString("F1") + " km/h, " +
+			burnedCalories.ToString("F1") + " kcal\n";
+		activityRowsForSave +=
+			date + ";" +
+			activityName + ";" +
+			duration.ToString("F0") + ";" +
+			distance.ToString("F1") + ";" +
+			speed.ToString("F1") + ";" +
+			"0;0;" +
+			userWeight.ToString("F1") + ";" +
+			burnedCalories.ToString("F1") + "\n";
+		numericUpDownDurCardio->Value = 0;
+		numericUpDownDistCardio->Value = 0;
+		numericUpDownSpeedCardio->Value = 0;
+	}
+
+	private: System::Void load_activities() {
+		comboBoxCardioType->Items->Clear();
+		comboBoxStrengthtype->Items->Clear();
+		if (!System::IO::File::Exists("activity/activity_MET.txt")) {
+			MessageBox::Show("File activity_MET.txt not found");
+			return;
+		}
+		array<String^>^ lines = System::IO::File::ReadAllLines("activity/activity_MET.txt");
+		for each(String ^ line in lines) {
+			if (String::IsNullOrWhiteSpace(line)) {
+				continue;
+			}
+			array<String^>^ parts = line->Split(' ');
+			if (parts->Length >= 2) {
+				String^ activityName = parts[0]->Trim();
+				comboBoxCardioType->Items->Add(activityName);
+				comboBoxStrengthtype->Items->Add(activityName);
+			}
+		}
+	}
+	private: System::Void buttonSaveActivity_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(activityRowsForSave)) {
+			MessageBox::Show("Nothing to save");
+			return;
+		}
+		System::IO::File::AppendAllText("activity/activity_diary.txt", activityRowsForSave);
+		MessageBox::Show("Activity saved");
+		activityRowsForSave = "";
+		labelSelectedActivitylist->Text = "";
+	}
+
+	private: System::Void AddLineToCalendarSection(String^ sectionName, String^ newLine) {
+		String^ fileName = "calendar.txt";
+		if (!System::IO::File::Exists(fileName)) {
+			System::IO::File::WriteAllText(
+				fileName,
+				"[activity]\n[food]\n[calories]\n[mood]\n"
+			);
+		}
+		array<String^>^ lines = System::IO::File::ReadAllLines(fileName);
+		System::Collections::Generic::List<String^>^ result =
+			gcnew System::Collections::Generic::List<String^>();
+		bool added = false;
+		bool insideTargetSection = false;
+		for each(String ^ line in lines) {
+			if (line == sectionName) {
+				result->Add(line);
+				insideTargetSection = true;
+				continue;
+			}
+			if (insideTargetSection && line->StartsWith("[") && line->EndsWith("]")) {
+				result->Add(newLine);
+				added = true;
+				insideTargetSection = false;
+			}
+			result->Add(line);
+		} if (insideTargetSection && !added) {
+			result->Add(newLine);
+			added = true;
+		} if (!added) {
+			result->Add(sectionName);
+			result->Add(newLine);
+		}
+		System::IO::File::WriteAllLines(fileName, result);
+	}
 };
 }
