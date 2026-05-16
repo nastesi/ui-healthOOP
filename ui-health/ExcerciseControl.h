@@ -15,6 +15,8 @@ namespace uihealth {
 		ExcerciseControl(void)
 		{
 			InitializeComponent();
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->Dock = System::Windows::Forms::DockStyle::Fill;
 			activity_rows_save = "";
 			textBoxSelectedActivitylist->Text = "";
 			load_activities();
@@ -57,7 +59,8 @@ namespace uihealth {
 	private: System::Windows::Forms::Button^ buttonSaveActivity;
 	private: System::String^ activity_rows_save;
 	private: System::String^ activity_rows_calendar;
-	private: 
+	private: System::Windows::Forms::Button^ buttonBackExercise;
+	private:
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -89,6 +92,7 @@ namespace uihealth {
 			this->labelSeriesStrength = (gcnew System::Windows::Forms::Label());
 			this->labelSelectStrength = (gcnew System::Windows::Forms::Label());
 			this->buttonSaveActivity = (gcnew System::Windows::Forms::Button());
+			this->buttonBackExercise = (gcnew System::Windows::Forms::Button());
 			this->panelSelectedActivity->SuspendLayout();
 			this->panelCardio->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownSpeedCardio))->BeginInit();
@@ -105,22 +109,20 @@ namespace uihealth {
 			this->labelActivityControl->AutoSize = true;
 			this->labelActivityControl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelActivityControl->Location = System::Drawing::Point(91, 54);
-			this->labelActivityControl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelActivityControl->Location = System::Drawing::Point(66, 36);
 			this->labelActivityControl->Name = L"labelActivityControl";
-			this->labelActivityControl->Size = System::Drawing::Size(534, 54);
+			this->labelActivityControl->Size = System::Drawing::Size(359, 38);
 			this->labelActivityControl->TabIndex = 2;
-			this->labelActivityControl->Text = L"Excersizes and activities";
+			this->labelActivityControl->Text = L"Exercises and activities";
 			this->labelActivityControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// dateTimePickerActivity
 			// 
 			this->dateTimePickerActivity->CustomFormat = L"dd.MM.yyyy";
 			this->dateTimePickerActivity->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePickerActivity->Location = System::Drawing::Point(191, 148);
-			this->dateTimePickerActivity->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePickerActivity->Location = System::Drawing::Point(139, 99);
 			this->dateTimePickerActivity->Name = L"dateTimePickerActivity";
-			this->dateTimePickerActivity->Size = System::Drawing::Size(139, 29);
+			this->dateTimePickerActivity->Size = System::Drawing::Size(102, 22);
 			this->dateTimePickerActivity->TabIndex = 12;
 			// 
 			// labelDateActivity
@@ -128,10 +130,9 @@ namespace uihealth {
 			this->labelDateActivity->AutoSize = true;
 			this->labelDateActivity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelDateActivity->Location = System::Drawing::Point(102, 144);
-			this->labelDateActivity->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelDateActivity->Location = System::Drawing::Point(74, 96);
 			this->labelDateActivity->Name = L"labelDateActivity";
-			this->labelDateActivity->Size = System::Drawing::Size(82, 32);
+			this->labelDateActivity->Size = System::Drawing::Size(59, 25);
 			this->labelDateActivity->TabIndex = 11;
 			this->labelDateActivity->Text = L"Date:";
 			this->labelDateActivity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -139,10 +140,9 @@ namespace uihealth {
 			// comboBoxCardioType
 			// 
 			this->comboBoxCardioType->FormattingEnabled = true;
-			this->comboBoxCardioType->Location = System::Drawing::Point(452, 213);
-			this->comboBoxCardioType->Margin = System::Windows::Forms::Padding(4);
+			this->comboBoxCardioType->Location = System::Drawing::Point(329, 142);
 			this->comboBoxCardioType->Name = L"comboBoxCardioType";
-			this->comboBoxCardioType->Size = System::Drawing::Size(518, 32);
+			this->comboBoxCardioType->Size = System::Drawing::Size(141, 24);
 			this->comboBoxCardioType->TabIndex = 17;
 			// 
 			// labelSearchCardio
@@ -150,10 +150,9 @@ namespace uihealth {
 			this->labelSearchCardio->AutoSize = true;
 			this->labelSearchCardio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelSearchCardio->Location = System::Drawing::Point(95, 213);
-			this->labelSearchCardio->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelSearchCardio->Location = System::Drawing::Point(69, 142);
 			this->labelSearchCardio->Name = L"labelSearchCardio";
-			this->labelSearchCardio->Size = System::Drawing::Size(349, 32);
+			this->labelSearchCardio->Size = System::Drawing::Size(242, 25);
 			this->labelSearchCardio->TabIndex = 16;
 			this->labelSearchCardio->Text = L"Select Cardio activity type:";
 			this->labelSearchCardio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -164,19 +163,17 @@ namespace uihealth {
 			this->panelSelectedActivity->Controls->Add(this->buttonRemoveActivity);
 			this->panelSelectedActivity->Controls->Add(this->textBoxSelectedActivitylist);
 			this->panelSelectedActivity->Controls->Add(this->labelSelectedActivity);
-			this->panelSelectedActivity->Location = System::Drawing::Point(1091, 210);
-			this->panelSelectedActivity->Margin = System::Windows::Forms::Padding(4);
+			this->panelSelectedActivity->Location = System::Drawing::Point(515, 64);
 			this->panelSelectedActivity->Name = L"panelSelectedActivity";
-			this->panelSelectedActivity->Size = System::Drawing::Size(476, 756);
+			this->panelSelectedActivity->Size = System::Drawing::Size(346, 504);
 			this->panelSelectedActivity->TabIndex = 24;
 			// 
 			// buttonRemoveActivity
 			// 
 			this->buttonRemoveActivity->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->buttonRemoveActivity->Location = System::Drawing::Point(364, 702);
-			this->buttonRemoveActivity->Margin = System::Windows::Forms::Padding(4);
+			this->buttonRemoveActivity->Location = System::Drawing::Point(265, 468);
 			this->buttonRemoveActivity->Name = L"buttonRemoveActivity";
-			this->buttonRemoveActivity->Size = System::Drawing::Size(103, 38);
+			this->buttonRemoveActivity->Size = System::Drawing::Size(75, 25);
 			this->buttonRemoveActivity->TabIndex = 30;
 			this->buttonRemoveActivity->Text = L"Remove";
 			this->buttonRemoveActivity->UseVisualStyleBackColor = true;
@@ -188,12 +185,13 @@ namespace uihealth {
 			this->textBoxSelectedActivitylist->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBoxSelectedActivitylist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBoxSelectedActivitylist->Location = System::Drawing::Point(27, 61);
+			this->textBoxSelectedActivitylist->Location = System::Drawing::Point(20, 41);
+			this->textBoxSelectedActivitylist->Margin = System::Windows::Forms::Padding(2);
 			this->textBoxSelectedActivitylist->Multiline = true;
 			this->textBoxSelectedActivitylist->Name = L"textBoxSelectedActivitylist";
 			this->textBoxSelectedActivitylist->ReadOnly = true;
 			this->textBoxSelectedActivitylist->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBoxSelectedActivitylist->Size = System::Drawing::Size(440, 625);
+			this->textBoxSelectedActivitylist->Size = System::Drawing::Size(320, 417);
 			this->textBoxSelectedActivitylist->TabIndex = 15;
 			// 
 			// labelSelectedActivity
@@ -201,10 +199,9 @@ namespace uihealth {
 			this->labelSelectedActivity->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->labelSelectedActivity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSelectedActivity->Location = System::Drawing::Point(174, 19);
-			this->labelSelectedActivity->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelSelectedActivity->Location = System::Drawing::Point(127, 13);
 			this->labelSelectedActivity->Name = L"labelSelectedActivity";
-			this->labelSelectedActivity->Size = System::Drawing::Size(134, 39);
+			this->labelSelectedActivity->Size = System::Drawing::Size(97, 26);
 			this->labelSelectedActivity->TabIndex = 14;
 			this->labelSelectedActivity->Text = L"Selected";
 			// 
@@ -213,10 +210,9 @@ namespace uihealth {
 			this->labelDurationCradio->AutoSize = true;
 			this->labelDurationCradio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelDurationCradio->Location = System::Drawing::Point(19, 15);
-			this->labelDurationCradio->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelDurationCradio->Location = System::Drawing::Point(14, 10);
 			this->labelDurationCradio->Name = L"labelDurationCradio";
-			this->labelDurationCradio->Size = System::Drawing::Size(172, 29);
+			this->labelDurationCradio->Size = System::Drawing::Size(123, 20);
 			this->labelDurationCradio->TabIndex = 25;
 			this->labelDurationCradio->Text = L"Duration, mins:";
 			this->labelDurationCradio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -231,18 +227,16 @@ namespace uihealth {
 			this->panelCardio->Controls->Add(this->labelDistanceCardio);
 			this->panelCardio->Controls->Add(this->numericUpDownDurCardio);
 			this->panelCardio->Controls->Add(this->labelDurationCradio);
-			this->panelCardio->Location = System::Drawing::Point(107, 267);
-			this->panelCardio->Margin = System::Windows::Forms::Padding(4);
+			this->panelCardio->Location = System::Drawing::Point(78, 178);
 			this->panelCardio->Name = L"panelCardio";
-			this->panelCardio->Size = System::Drawing::Size(848, 177);
+			this->panelCardio->Size = System::Drawing::Size(375, 118);
 			this->panelCardio->TabIndex = 26;
 			// 
 			// buttonAddCardio
 			// 
-			this->buttonAddCardio->Location = System::Drawing::Point(726, 123);
-			this->buttonAddCardio->Margin = System::Windows::Forms::Padding(4);
+			this->buttonAddCardio->Location = System::Drawing::Point(271, 38);
 			this->buttonAddCardio->Name = L"buttonAddCardio";
-			this->buttonAddCardio->Size = System::Drawing::Size(96, 36);
+			this->buttonAddCardio->Size = System::Drawing::Size(70, 24);
 			this->buttonAddCardio->TabIndex = 33;
 			this->buttonAddCardio->Text = L"Add";
 			this->buttonAddCardio->UseVisualStyleBackColor = true;
@@ -250,10 +244,9 @@ namespace uihealth {
 			// 
 			// numericUpDownSpeedCardio
 			// 
-			this->numericUpDownSpeedCardio->Location = System::Drawing::Point(208, 99);
-			this->numericUpDownSpeedCardio->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDownSpeedCardio->Location = System::Drawing::Point(151, 66);
 			this->numericUpDownSpeedCardio->Name = L"numericUpDownSpeedCardio";
-			this->numericUpDownSpeedCardio->Size = System::Drawing::Size(86, 29);
+			this->numericUpDownSpeedCardio->Size = System::Drawing::Size(63, 22);
 			this->numericUpDownSpeedCardio->TabIndex = 30;
 			// 
 			// labelSpeedCardio
@@ -261,20 +254,18 @@ namespace uihealth {
 			this->labelSpeedCardio->AutoSize = true;
 			this->labelSpeedCardio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSpeedCardio->Location = System::Drawing::Point(19, 99);
-			this->labelSpeedCardio->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelSpeedCardio->Location = System::Drawing::Point(14, 66);
 			this->labelSpeedCardio->Name = L"labelSpeedCardio";
-			this->labelSpeedCardio->Size = System::Drawing::Size(155, 29);
+			this->labelSpeedCardio->Size = System::Drawing::Size(106, 20);
 			this->labelSpeedCardio->TabIndex = 29;
 			this->labelSpeedCardio->Text = L"Speed, km/h:";
 			this->labelSpeedCardio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// numericUpDownDistCardio
 			// 
-			this->numericUpDownDistCardio->Location = System::Drawing::Point(208, 57);
-			this->numericUpDownDistCardio->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDownDistCardio->Location = System::Drawing::Point(151, 38);
 			this->numericUpDownDistCardio->Name = L"numericUpDownDistCardio";
-			this->numericUpDownDistCardio->Size = System::Drawing::Size(86, 29);
+			this->numericUpDownDistCardio->Size = System::Drawing::Size(63, 22);
 			this->numericUpDownDistCardio->TabIndex = 28;
 			// 
 			// labelDistanceCardio
@@ -282,20 +273,18 @@ namespace uihealth {
 			this->labelDistanceCardio->AutoSize = true;
 			this->labelDistanceCardio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelDistanceCardio->Location = System::Drawing::Point(19, 57);
-			this->labelDistanceCardio->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelDistanceCardio->Location = System::Drawing::Point(14, 38);
 			this->labelDistanceCardio->Name = L"labelDistanceCardio";
-			this->labelDistanceCardio->Size = System::Drawing::Size(156, 29);
+			this->labelDistanceCardio->Size = System::Drawing::Size(112, 20);
 			this->labelDistanceCardio->TabIndex = 27;
 			this->labelDistanceCardio->Text = L"Distance, km:";
 			this->labelDistanceCardio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// numericUpDownDurCardio
 			// 
-			this->numericUpDownDurCardio->Location = System::Drawing::Point(208, 15);
-			this->numericUpDownDurCardio->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDownDurCardio->Location = System::Drawing::Point(151, 10);
 			this->numericUpDownDurCardio->Name = L"numericUpDownDurCardio";
-			this->numericUpDownDurCardio->Size = System::Drawing::Size(86, 29);
+			this->numericUpDownDurCardio->Size = System::Drawing::Size(63, 22);
 			this->numericUpDownDurCardio->TabIndex = 26;
 			// 
 			// panel1
@@ -308,18 +297,16 @@ namespace uihealth {
 			this->panel1->Controls->Add(this->labelRepStrength);
 			this->panel1->Controls->Add(this->numericUpDownSeries);
 			this->panel1->Controls->Add(this->labelSeriesStrength);
-			this->panel1->Location = System::Drawing::Point(107, 531);
-			this->panel1->Margin = System::Windows::Forms::Padding(4);
+			this->panel1->Location = System::Drawing::Point(78, 354);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(848, 177);
+			this->panel1->Size = System::Drawing::Size(392, 118);
 			this->panel1->TabIndex = 29;
 			// 
 			// buttonAddStrength
 			// 
-			this->buttonAddStrength->Location = System::Drawing::Point(727, 123);
-			this->buttonAddStrength->Margin = System::Windows::Forms::Padding(4);
+			this->buttonAddStrength->Location = System::Drawing::Point(305, 50);
 			this->buttonAddStrength->Name = L"buttonAddStrength";
-			this->buttonAddStrength->Size = System::Drawing::Size(96, 36);
+			this->buttonAddStrength->Size = System::Drawing::Size(70, 24);
 			this->buttonAddStrength->TabIndex = 33;
 			this->buttonAddStrength->Text = L"Add";
 			this->buttonAddStrength->UseVisualStyleBackColor = true;
@@ -327,10 +314,9 @@ namespace uihealth {
 			// 
 			// numericUpDownWeightStr
 			// 
-			this->numericUpDownWeightStr->Location = System::Drawing::Point(121, 99);
-			this->numericUpDownWeightStr->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDownWeightStr->Location = System::Drawing::Point(88, 66);
 			this->numericUpDownWeightStr->Name = L"numericUpDownWeightStr";
-			this->numericUpDownWeightStr->Size = System::Drawing::Size(73, 29);
+			this->numericUpDownWeightStr->Size = System::Drawing::Size(53, 22);
 			this->numericUpDownWeightStr->TabIndex = 30;
 			// 
 			// labelWeightStrength
@@ -338,20 +324,18 @@ namespace uihealth {
 			this->labelWeightStrength->AutoSize = true;
 			this->labelWeightStrength->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelWeightStrength->Location = System::Drawing::Point(19, 99);
-			this->labelWeightStrength->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelWeightStrength->Location = System::Drawing::Point(14, 66);
 			this->labelWeightStrength->Name = L"labelWeightStrength";
-			this->labelWeightStrength->Size = System::Drawing::Size(94, 29);
+			this->labelWeightStrength->Size = System::Drawing::Size(66, 20);
 			this->labelWeightStrength->TabIndex = 29;
 			this->labelWeightStrength->Text = L"Weight:";
 			this->labelWeightStrength->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// numericUpDownRepStrength
 			// 
-			this->numericUpDownRepStrength->Location = System::Drawing::Point(278, 57);
-			this->numericUpDownRepStrength->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDownRepStrength->Location = System::Drawing::Point(202, 38);
 			this->numericUpDownRepStrength->Name = L"numericUpDownRepStrength";
-			this->numericUpDownRepStrength->Size = System::Drawing::Size(70, 29);
+			this->numericUpDownRepStrength->Size = System::Drawing::Size(51, 22);
 			this->numericUpDownRepStrength->TabIndex = 28;
 			// 
 			// labelRepStrength
@@ -359,20 +343,18 @@ namespace uihealth {
 			this->labelRepStrength->AutoSize = true;
 			this->labelRepStrength->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelRepStrength->Location = System::Drawing::Point(19, 57);
-			this->labelRepStrength->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelRepStrength->Location = System::Drawing::Point(14, 38);
 			this->labelRepStrength->Name = L"labelRepStrength";
-			this->labelRepStrength->Size = System::Drawing::Size(251, 29);
+			this->labelRepStrength->Size = System::Drawing::Size(175, 20);
 			this->labelRepStrength->TabIndex = 27;
 			this->labelRepStrength->Text = L"Number of repetitions:";
 			this->labelRepStrength->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// numericUpDownSeries
 			// 
-			this->numericUpDownSeries->Location = System::Drawing::Point(231, 15);
-			this->numericUpDownSeries->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDownSeries->Location = System::Drawing::Point(168, 10);
 			this->numericUpDownSeries->Name = L"numericUpDownSeries";
-			this->numericUpDownSeries->Size = System::Drawing::Size(63, 29);
+			this->numericUpDownSeries->Size = System::Drawing::Size(46, 22);
 			this->numericUpDownSeries->TabIndex = 26;
 			// 
 			// labelSeriesStrength
@@ -380,10 +362,9 @@ namespace uihealth {
 			this->labelSeriesStrength->AutoSize = true;
 			this->labelSeriesStrength->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSeriesStrength->Location = System::Drawing::Point(19, 15);
-			this->labelSeriesStrength->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelSeriesStrength->Location = System::Drawing::Point(14, 10);
 			this->labelSeriesStrength->Name = L"labelSeriesStrength";
-			this->labelSeriesStrength->Size = System::Drawing::Size(204, 29);
+			this->labelSeriesStrength->Size = System::Drawing::Size(143, 20);
 			this->labelSeriesStrength->TabIndex = 25;
 			this->labelSeriesStrength->Text = L"Number of series:";
 			this->labelSeriesStrength->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -393,29 +374,38 @@ namespace uihealth {
 			this->labelSelectStrength->AutoSize = true;
 			this->labelSelectStrength->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSelectStrength->Location = System::Drawing::Point(95, 477);
-			this->labelSelectStrength->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelSelectStrength->Location = System::Drawing::Point(69, 318);
 			this->labelSelectStrength->Name = L"labelSelectStrength";
-			this->labelSelectStrength->Size = System::Drawing::Size(225, 32);
+			this->labelSelectStrength->Size = System::Drawing::Size(156, 25);
 			this->labelSelectStrength->TabIndex = 27;
 			this->labelSelectStrength->Text = L"Strength activity:";
 			this->labelSelectStrength->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// buttonSaveActivity
 			// 
-			this->buttonSaveActivity->Location = System::Drawing::Point(1326, 988);
-			this->buttonSaveActivity->Margin = System::Windows::Forms::Padding(4);
+			this->buttonSaveActivity->Location = System::Drawing::Point(686, 590);
 			this->buttonSaveActivity->Name = L"buttonSaveActivity";
-			this->buttonSaveActivity->Size = System::Drawing::Size(241, 62);
+			this->buttonSaveActivity->Size = System::Drawing::Size(175, 41);
 			this->buttonSaveActivity->TabIndex = 30;
 			this->buttonSaveActivity->Text = L"Save";
 			this->buttonSaveActivity->UseVisualStyleBackColor = true;
 			this->buttonSaveActivity->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonSaveActivity_Click);
 			// 
+			// buttonBackExercise
+			// 
+			this->buttonBackExercise->Location = System::Drawing::Point(78, 532);
+			this->buttonBackExercise->Name = L"buttonBackExercise";
+			this->buttonBackExercise->Size = System::Drawing::Size(67, 41);
+			this->buttonBackExercise->TabIndex = 38;
+			this->buttonBackExercise->Text = L"Home";
+			this->buttonBackExercise->UseVisualStyleBackColor = true;
+			this->buttonBackExercise->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonBackExercise_Click);
+			// 
 			// ExcerciseControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->buttonBackExercise);
 			this->Controls->Add(this->buttonSaveActivity);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->labelSelectStrength);
@@ -426,9 +416,8 @@ namespace uihealth {
 			this->Controls->Add(this->dateTimePickerActivity);
 			this->Controls->Add(this->labelDateActivity);
 			this->Controls->Add(this->labelActivityControl);
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ExcerciseControl";
-			this->Size = System::Drawing::Size(1600, 1070);
+			this->Size = System::Drawing::Size(1000, 683);
 			this->Load += gcnew System::EventHandler(this, &ExcerciseControl::ExcerciseControl_Load);
 			this->panelSelectedActivity->ResumeLayout(false);
 			this->panelSelectedActivity->PerformLayout();
@@ -446,6 +435,7 @@ namespace uihealth {
 			this->PerformLayout();
 
 		}
+
 #pragma endregion
 	private: System::Void ExcerciseControl_Load(System::Object^ sender, System::EventArgs^ e) {};
 	private: System::Void buttonAddStrength_Click(System::Object^ sender, System::EventArgs^ e);
@@ -455,5 +445,16 @@ namespace uihealth {
 	private: System::Void load_activities();
 	private: System::String^ remove_line(String^ text);
 	private: System::Void add_to_calendar(System::String^ sectionName, System::String^ newLine);
+	
+public:
+	System::EventHandler^ BackRequested;
+
+private: System::Void buttonBackExercise_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (BackRequested != nullptr)
+	{
+		BackRequested(this, System::EventArgs::Empty);
+	}
+}
 };
 }

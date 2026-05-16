@@ -1,6 +1,7 @@
 #pragma once
 #include "MealsControl.h"
 #include "ExcerciseControl.h"
+#include "UserData1.h"
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -20,10 +21,13 @@ namespace uihealth {
 		DashboardControl(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			userData = gcnew UserData1();
+			RefreshDashboard();
 		}
+	private: System::Windows::Forms::Button^ buttonMoodSave;
+	private:
+		UserData1^ userData;
+	public:
 	public:
 		System::EventHandler^ MealsRequested;
 	protected:
@@ -67,10 +71,14 @@ namespace uihealth {
 	private: System::Windows::Forms::Button^ buttonAddMeal;
 	private: System::Windows::Forms::Label^ labelQuickActions;
 	private: System::Windows::Forms::Panel^ panelAddMood;
-	private: System::Windows::Forms::RadioButton^ radioButtonMood4;
-	private: System::Windows::Forms::RadioButton^ radioButtonMood3;
-	private: System::Windows::Forms::RadioButton^ radioButtonMood2;
-	private: System::Windows::Forms::RadioButton^ radioButtonMood1;
+	private: System::Windows::Forms::RadioButton^ radioTerrible;
+
+	private: System::Windows::Forms::RadioButton^ radioPoor;
+
+	private: System::Windows::Forms::RadioButton^ radioGood;
+
+	private: System::Windows::Forms::RadioButton^ radioPerfect;
+
 	private: System::Windows::Forms::Label^ labelHowDoTouFeel;
 	private: System::Windows::Forms::Panel^ panelContent;
 
@@ -79,7 +87,21 @@ namespace uihealth {
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+	public:
+		void RefreshDashboard()
+		{
+			labelGreeting->Text = "Welcome " + userData->Name + "! Here is your daily health summary";
 
+			labelConsumednumber->Text = userData->ConsumedCalories.ToString() + " kcal";
+			labelBurnednumber->Text = userData->BurnedCalories.ToString() + " kcal";
+			labelWaternumber->Text = userData->Water.ToString() + " l";
+			labelMoodoption->Text = userData->Mood;
+
+			labelStepsnumber->Text = userData->Steps.ToString();
+			labelWeightnumber->Text = userData->Weight.ToString() + " kg";
+			labelWeightgoal->Text = userData->GoalWeight.ToString() + " kg";
+			labelActivityoption->Text = userData->ActivityLevel;
+		}
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -116,10 +138,11 @@ namespace uihealth {
 			this->buttonAddMeal = (gcnew System::Windows::Forms::Button());
 			this->labelQuickActions = (gcnew System::Windows::Forms::Label());
 			this->panelAddMood = (gcnew System::Windows::Forms::Panel());
-			this->radioButtonMood4 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButtonMood3 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButtonMood2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButtonMood1 = (gcnew System::Windows::Forms::RadioButton());
+			this->buttonMoodSave = (gcnew System::Windows::Forms::Button());
+			this->radioTerrible = (gcnew System::Windows::Forms::RadioButton());
+			this->radioPoor = (gcnew System::Windows::Forms::RadioButton());
+			this->radioGood = (gcnew System::Windows::Forms::RadioButton());
+			this->radioPerfect = (gcnew System::Windows::Forms::RadioButton());
 			this->labelHowDoTouFeel = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
 			this->panelGreeting->SuspendLayout();
@@ -479,59 +502,70 @@ namespace uihealth {
 			// 
 			// panelAddMood
 			// 
-			this->panelAddMood->Controls->Add(this->radioButtonMood4);
-			this->panelAddMood->Controls->Add(this->radioButtonMood3);
-			this->panelAddMood->Controls->Add(this->radioButtonMood2);
-			this->panelAddMood->Controls->Add(this->radioButtonMood1);
+			this->panelAddMood->Controls->Add(this->buttonMoodSave);
+			this->panelAddMood->Controls->Add(this->radioTerrible);
+			this->panelAddMood->Controls->Add(this->radioPoor);
+			this->panelAddMood->Controls->Add(this->radioGood);
+			this->panelAddMood->Controls->Add(this->radioPerfect);
 			this->panelAddMood->Controls->Add(this->labelHowDoTouFeel);
 			this->panelAddMood->Location = System::Drawing::Point(322, 121);
 			this->panelAddMood->Name = L"panelAddMood";
 			this->panelAddMood->Size = System::Drawing::Size(421, 195);
 			this->panelAddMood->TabIndex = 19;
 			// 
-			// radioButtonMood4
+			// buttonMoodSave
 			// 
-			this->radioButtonMood4->AutoSize = true;
-			this->radioButtonMood4->Location = System::Drawing::Point(30, 142);
-			this->radioButtonMood4->Name = L"radioButtonMood4";
-			this->radioButtonMood4->Size = System::Drawing::Size(90, 20);
-			this->radioButtonMood4->TabIndex = 13;
-			this->radioButtonMood4->TabStop = true;
-			this->radioButtonMood4->Text = L"🙂 Terrible";
-			this->radioButtonMood4->UseVisualStyleBackColor = true;
+			this->buttonMoodSave->Location = System::Drawing::Point(254, 137);
+			this->buttonMoodSave->Name = L"buttonMoodSave";
+			this->buttonMoodSave->Size = System::Drawing::Size(151, 30);
+			this->buttonMoodSave->TabIndex = 14;
+			this->buttonMoodSave->Text = L"Save mood";
+			this->buttonMoodSave->UseVisualStyleBackColor = true;
+			this->buttonMoodSave->Click += gcnew System::EventHandler(this, &DashboardControl::buttonMoodSave_Click);
 			// 
-			// radioButtonMood3
+			// radioTerrible
 			// 
-			this->radioButtonMood3->AutoSize = true;
-			this->radioButtonMood3->Location = System::Drawing::Point(30, 116);
-			this->radioButtonMood3->Name = L"radioButtonMood3";
-			this->radioButtonMood3->Size = System::Drawing::Size(72, 20);
-			this->radioButtonMood3->TabIndex = 12;
-			this->radioButtonMood3->TabStop = true;
-			this->radioButtonMood3->Text = L"🙂 Poor";
-			this->radioButtonMood3->UseVisualStyleBackColor = true;
+			this->radioTerrible->AutoSize = true;
+			this->radioTerrible->Location = System::Drawing::Point(30, 142);
+			this->radioTerrible->Name = L"radioTerrible";
+			this->radioTerrible->Size = System::Drawing::Size(75, 20);
+			this->radioTerrible->TabIndex = 13;
+			this->radioTerrible->TabStop = true;
+			this->radioTerrible->Text = L"Terrible";
+			this->radioTerrible->UseVisualStyleBackColor = true;
 			// 
-			// radioButtonMood2
+			// radioPoor
 			// 
-			this->radioButtonMood2->AutoSize = true;
-			this->radioButtonMood2->Location = System::Drawing::Point(30, 89);
-			this->radioButtonMood2->Name = L"radioButtonMood2";
-			this->radioButtonMood2->Size = System::Drawing::Size(77, 20);
-			this->radioButtonMood2->TabIndex = 11;
-			this->radioButtonMood2->TabStop = true;
-			this->radioButtonMood2->Text = L"🙂 Good";
-			this->radioButtonMood2->UseVisualStyleBackColor = true;
+			this->radioPoor->AutoSize = true;
+			this->radioPoor->Location = System::Drawing::Point(30, 116);
+			this->radioPoor->Name = L"radioPoor";
+			this->radioPoor->Size = System::Drawing::Size(57, 20);
+			this->radioPoor->TabIndex = 12;
+			this->radioPoor->TabStop = true;
+			this->radioPoor->Text = L"Poor";
+			this->radioPoor->UseVisualStyleBackColor = true;
 			// 
-			// radioButtonMood1
+			// radioGood
 			// 
-			this->radioButtonMood1->AutoSize = true;
-			this->radioButtonMood1->Location = System::Drawing::Point(30, 63);
-			this->radioButtonMood1->Name = L"radioButtonMood1";
-			this->radioButtonMood1->Size = System::Drawing::Size(85, 20);
-			this->radioButtonMood1->TabIndex = 10;
-			this->radioButtonMood1->TabStop = true;
-			this->radioButtonMood1->Text = L"🙂 Perfect";
-			this->radioButtonMood1->UseVisualStyleBackColor = true;
+			this->radioGood->AutoSize = true;
+			this->radioGood->Location = System::Drawing::Point(30, 89);
+			this->radioGood->Name = L"radioGood";
+			this->radioGood->Size = System::Drawing::Size(62, 20);
+			this->radioGood->TabIndex = 11;
+			this->radioGood->TabStop = true;
+			this->radioGood->Text = L"Good";
+			this->radioGood->UseVisualStyleBackColor = true;
+			// 
+			// radioPerfect
+			// 
+			this->radioPerfect->AutoSize = true;
+			this->radioPerfect->Location = System::Drawing::Point(30, 63);
+			this->radioPerfect->Name = L"radioPerfect";
+			this->radioPerfect->Size = System::Drawing::Size(70, 20);
+			this->radioPerfect->TabIndex = 10;
+			this->radioPerfect->TabStop = true;
+			this->radioPerfect->Text = L"Perfect";
+			this->radioPerfect->UseVisualStyleBackColor = true;
 			// 
 			// labelHowDoTouFeel
 			// 
@@ -558,6 +592,7 @@ namespace uihealth {
 			this->panelContent->Name = L"panelContent";
 			this->panelContent->Size = System::Drawing::Size(1280, 800);
 			this->panelContent->TabIndex = 5;
+			this->panelContent->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &DashboardControl::panelContent_Paint);
 			// 
 			// DashboardControl
 			// 
@@ -585,16 +620,32 @@ namespace uihealth {
 		if (MealsRequested != nullptr)
 			MealsRequested(this, System::EventArgs::Empty);
 	}
-private: System::Void buttonExcercise_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::Windows::Forms::Panel^ panelContent =
-		(System::Windows::Forms::Panel^)this->Parent;
+	public:
+		System::EventHandler^ ExerciseRequested;
+	private: System::Void buttonExcercise_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	panelContent->Controls->Clear();
+		if (ExerciseRequested != nullptr)
+			ExerciseRequested(this, System::EventArgs::Empty);
+	}
+private: System::Void panelContent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {}
+private: System::Void buttonMoodSave_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (radioPoor->Checked || radioTerrible->Checked)
+	{
+		System::Windows::Forms::DialogResult result;
 
-	ExcerciseControl^ exercises = gcnew ExcerciseControl();
-	exercises->Dock = DockStyle::Fill;
+		result = MessageBox::Show(
+			"Do you want to hear a joke?",
+			"Mood support",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Question
+		);
 
-	panelContent->Controls->Add(exercises);
+		if (result == System::Windows::Forms::DialogResult::Yes)
+		{
+			MessageBox::Show("Joke will be here");
+		}
+	}
 }
 };
 }

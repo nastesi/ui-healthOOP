@@ -179,7 +179,7 @@ namespace uihealth {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(480, 357);
+			this->label1->Location = System::Drawing::Point(350, 180);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(208, 29);
 			this->label1->TabIndex = 14;
@@ -189,14 +189,14 @@ namespace uihealth {
 			// comboBoxGoal
 			// 
 			this->comboBoxGoal->FormattingEnabled = true;
-			this->comboBoxGoal->Location = System::Drawing::Point(485, 404);
+			this->comboBoxGoal->Location = System::Drawing::Point(495, 227);
 			this->comboBoxGoal->Name = L"comboBoxGoal";
 			this->comboBoxGoal->Size = System::Drawing::Size(203, 24);
 			this->comboBoxGoal->TabIndex = 15;
 			// 
 			// buttonSaveUser
 			// 
-			this->buttonSaveUser->Location = System::Drawing::Point(498, 638);
+			this->buttonSaveUser->Location = System::Drawing::Point(199, 395);
 			this->buttonSaveUser->Name = L"buttonSaveUser";
 			this->buttonSaveUser->Size = System::Drawing::Size(175, 41);
 			this->buttonSaveUser->TabIndex = 31;
@@ -207,7 +207,7 @@ namespace uihealth {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1262, 753);
+			this->ClientSize = System::Drawing::Size(982, 636);
 			this->Controls->Add(this->buttonSaveUser);
 			this->Controls->Add(this->comboBoxGoal);
 			this->Controls->Add(this->label1);
@@ -223,10 +223,12 @@ namespace uihealth {
 			this->Controls->Add(this->labelNameUser);
 			this->Name = L"UserSetup";
 			this->Text = L"UserSetup";
+			this->Load += gcnew System::EventHandler(this, &UserSetup::UserSetup_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void UserSetup_Load(System::Object^ sender, System::EventArgs^ e) {}
+};
 }

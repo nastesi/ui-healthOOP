@@ -3,6 +3,7 @@
 #include "MealsControl.h"
 #include "ExcerciseControl.h"
 #include "DairyControl.h"
+#include "UserData1.h"
 namespace uihealth {
 
 	using namespace System;
@@ -24,12 +25,27 @@ namespace uihealth {
 			//
 			//TODO: Add the constructor code here
 			//
+			UserData1^ userData;
+			userData = gcnew UserData1();
+			labelNameUser->Text = userData->Name;
+
 			dashboard = gcnew DashboardControl();
 			dashboard->MealsRequested += gcnew System::EventHandler(this, &MyForm::OnOpenMeals);
+			dashboard->ExerciseRequested += gcnew System::EventHandler(this, &MyForm::OnOpenExercise);
+
 			meals = gcnew MealsControl();
 			meals->BackRequested += gcnew System::EventHandler(this, &MyForm::OnBackToHome);
+
 			exercises = gcnew ExcerciseControl();
+			exercises->BackRequested += gcnew System::EventHandler(this, &MyForm::OnBackToHome);
+
 			diary = gcnew DairyControl();
+			diary->BackRequested += gcnew System::EventHandler(this, &MyForm::OnBackToHome);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
+			this->StartPosition = FormStartPosition::CenterScreen;
+			this->ClientSize = System::Drawing::Size(800, 600);
 
 			ShowPage(dashboard);
 		}
@@ -59,8 +75,8 @@ namespace uihealth {
 
 	private: System::Windows::Forms::Button^ buttonDairy;
 	private: System::Windows::Forms::Label^ labelSecTitle;
-	private: System::Windows::Forms::Label^ labelDate;
-	private: System::Windows::Forms::Label^ labelDate1;
+
+
 	private: System::Windows::Forms::Label^ labelUser;
 	private: System::Windows::Forms::Label^ labelNameUser;
 		   DashboardControl^ dashboard;
@@ -92,8 +108,6 @@ namespace uihealth {
 			this->panelHeader = (gcnew System::Windows::Forms::Panel());
 			this->labelNameUser = (gcnew System::Windows::Forms::Label());
 			this->labelUser = (gcnew System::Windows::Forms::Label());
-			this->labelDate1 = (gcnew System::Windows::Forms::Label());
-			this->labelDate = (gcnew System::Windows::Forms::Label());
 			this->labelSecTitle = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
 			this->panelHeader->SuspendLayout();
@@ -112,11 +126,10 @@ namespace uihealth {
 			// panelHeader
 			// 
 			this->panelHeader->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			this->panelHeader->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panelHeader->Controls->Add(this->buttonDairy);
 			this->panelHeader->Controls->Add(this->labelNameUser);
 			this->panelHeader->Controls->Add(this->labelUser);
-			this->panelHeader->Controls->Add(this->labelDate1);
-			this->panelHeader->Controls->Add(this->labelDate);
 			this->panelHeader->Controls->Add(this->labelSecTitle);
 			this->panelHeader->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelHeader->Location = System::Drawing::Point(0, 0);
@@ -149,31 +162,6 @@ namespace uihealth {
 			this->labelUser->Text = L"User:";
 			this->labelUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->labelUser->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_2);
-			// 
-			// labelDate1
-			// 
-			this->labelDate1->AutoSize = true;
-			this->labelDate1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelDate1->Location = System::Drawing::Point(493, 24);
-			this->labelDate1->Name = L"labelDate1";
-			this->labelDate1->Size = System::Drawing::Size(89, 20);
-			this->labelDate1->TabIndex = 7;
-			this->labelDate1->Text = L"11.05.2006";
-			this->labelDate1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelDate
-			// 
-			this->labelDate->AutoSize = true;
-			this->labelDate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelDate->Location = System::Drawing::Point(441, 20);
-			this->labelDate->Name = L"labelDate";
-			this->labelDate->Size = System::Drawing::Size(59, 25);
-			this->labelDate->TabIndex = 6;
-			this->labelDate->Text = L"Date:";
-			this->labelDate->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->labelDate->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
 			// 
 			// labelSecTitle
 			// 
@@ -208,6 +196,7 @@ namespace uihealth {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"HealthApp";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panelHeader->ResumeLayout(false);
 			this->panelHeader->PerformLayout();
 			this->ResumeLayout(false);
@@ -231,11 +220,11 @@ namespace uihealth {
 		ShowPage(meals);
 	}
 	// for Exercise button
-	private: System::Void buttonExcercise_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		labelSecTitle->Text = "Exercise";
-		ShowPage(exercises);
-	}
+	 private: System::Void OnOpenExercise(System::Object^ sender, System::EventArgs^ e)
+		   {
+			   labelSecTitle->Text = L"Exercise";
+			   ShowPage(exercises);
+		   }
 	// for diary button
 	private: System::Void buttonDairy_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -258,5 +247,6 @@ private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void labelWeightnumber_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void labelActivityoption_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void label1_Click_5(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {}
 };
 }
