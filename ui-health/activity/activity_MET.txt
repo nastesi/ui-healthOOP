@@ -2,7 +2,6 @@ Running 2.5
 Swimming 2.8
 Cycling 2.0
 Walking 1.9
-StrengthTraining 2.2
 Yoga 1.5
 Dancing 2.0
 Hiking 2.4
@@ -22,3 +21,4 @@ Crossfit 3.1
 HouseCleaning 1.4
 Gardening 1.6
 Climbing 3.3
+Strength_Training 2.2

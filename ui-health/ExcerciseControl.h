@@ -16,7 +16,7 @@ namespace uihealth {
 		{
 			InitializeComponent();
 			activity_rows_save = "";
-			labelSelectedActivitylist->Text = "";
+			textBoxSelectedActivitylist->Text = "";
 			load_activities();
 		}
 
@@ -35,7 +35,7 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelSearchCardio;
 	private: System::Windows::Forms::Panel^ panelSelectedActivity;
 	private: System::Windows::Forms::Button^ buttonRemoveActivity;
-	private: System::Windows::Forms::Label^ labelSelectedActivitylist;
+	private: System::Windows::Forms::TextBox^ textBoxSelectedActivitylist;
 	private: System::Windows::Forms::Label^ labelSelectedActivity;
 	private: System::Windows::Forms::Label^ labelDurationCradio;
 	private: System::Windows::Forms::Panel^ panelCardio;
@@ -53,7 +53,6 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelRepStrength;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownSeries;
 	private: System::Windows::Forms::Label^ labelSeriesStrength;
-	private: System::Windows::Forms::ComboBox^ comboBoxStrengthtype;
 	private: System::Windows::Forms::Label^ labelSelectStrength;
 	private: System::Windows::Forms::Button^ buttonSaveActivity;
 	private: System::String^ activity_rows_save;
@@ -70,7 +69,7 @@ namespace uihealth {
 			this->labelSearchCardio = (gcnew System::Windows::Forms::Label());
 			this->panelSelectedActivity = (gcnew System::Windows::Forms::Panel());
 			this->buttonRemoveActivity = (gcnew System::Windows::Forms::Button());
-			this->labelSelectedActivitylist = (gcnew System::Windows::Forms::Label());
+			this->textBoxSelectedActivitylist = (gcnew System::Windows::Forms::TextBox());
 			this->labelSelectedActivity = (gcnew System::Windows::Forms::Label());
 			this->labelDurationCradio = (gcnew System::Windows::Forms::Label());
 			this->panelCardio = (gcnew System::Windows::Forms::Panel());
@@ -88,7 +87,6 @@ namespace uihealth {
 			this->labelRepStrength = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownSeries = (gcnew System::Windows::Forms::NumericUpDown());
 			this->labelSeriesStrength = (gcnew System::Windows::Forms::Label());
-			this->comboBoxStrengthtype = (gcnew System::Windows::Forms::ComboBox());
 			this->labelSelectStrength = (gcnew System::Windows::Forms::Label());
 			this->buttonSaveActivity = (gcnew System::Windows::Forms::Button());
 			this->panelSelectedActivity->SuspendLayout();
@@ -110,9 +108,9 @@ namespace uihealth {
 			this->labelActivityControl->Location = System::Drawing::Point(91, 54);
 			this->labelActivityControl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelActivityControl->Name = L"labelActivityControl";
-			this->labelActivityControl->Size = System::Drawing::Size(627, 54);
+			this->labelActivityControl->Size = System::Drawing::Size(534, 54);
 			this->labelActivityControl->TabIndex = 2;
-			this->labelActivityControl->Text = L"EXCERCISE AND ACTIVITY";
+			this->labelActivityControl->Text = L"Excersizes and activities";
 			this->labelActivityControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// dateTimePickerActivity
@@ -164,9 +162,9 @@ namespace uihealth {
 			// 
 			this->panelSelectedActivity->BackColor = System::Drawing::SystemColors::HighlightText;
 			this->panelSelectedActivity->Controls->Add(this->buttonRemoveActivity);
-			this->panelSelectedActivity->Controls->Add(this->labelSelectedActivitylist);
+			this->panelSelectedActivity->Controls->Add(this->textBoxSelectedActivitylist);
 			this->panelSelectedActivity->Controls->Add(this->labelSelectedActivity);
-			this->panelSelectedActivity->Location = System::Drawing::Point(1174, 148);
+			this->panelSelectedActivity->Location = System::Drawing::Point(1091, 210);
 			this->panelSelectedActivity->Margin = System::Windows::Forms::Padding(4);
 			this->panelSelectedActivity->Name = L"panelSelectedActivity";
 			this->panelSelectedActivity->Size = System::Drawing::Size(476, 756);
@@ -175,41 +173,40 @@ namespace uihealth {
 			// buttonRemoveActivity
 			// 
 			this->buttonRemoveActivity->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->buttonRemoveActivity->Location = System::Drawing::Point(353, 693);
+			this->buttonRemoveActivity->Location = System::Drawing::Point(364, 702);
 			this->buttonRemoveActivity->Margin = System::Windows::Forms::Padding(4);
 			this->buttonRemoveActivity->Name = L"buttonRemoveActivity";
-			this->buttonRemoveActivity->Size = System::Drawing::Size(103, 34);
+			this->buttonRemoveActivity->Size = System::Drawing::Size(103, 38);
 			this->buttonRemoveActivity->TabIndex = 30;
 			this->buttonRemoveActivity->Text = L"Remove";
 			this->buttonRemoveActivity->UseVisualStyleBackColor = true;
 			this->buttonRemoveActivity->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonRemoveActivity_Click);
 			// 
-			// labelSelectedActivitylist
+			// textBoxSelectedActivitylist
 			// 
-			this->labelSelectedActivitylist->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->labelSelectedActivitylist->AutoSize = true;
-			this->labelSelectedActivitylist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+			this->textBoxSelectedActivitylist->BackColor = System::Drawing::Color::White;
+			this->textBoxSelectedActivitylist->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBoxSelectedActivitylist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSelectedActivitylist->Location = System::Drawing::Point(36, 86);
-			this->labelSelectedActivitylist->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->labelSelectedActivitylist->Name = L"labelSelectedActivitylist";
-			this->labelSelectedActivitylist->Size = System::Drawing::Size(0, 32);
-			this->labelSelectedActivitylist->TabIndex = 15;
-			this->labelSelectedActivitylist->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->textBoxSelectedActivitylist->Location = System::Drawing::Point(27, 61);
+			this->textBoxSelectedActivitylist->Multiline = true;
+			this->textBoxSelectedActivitylist->Name = L"textBoxSelectedActivitylist";
+			this->textBoxSelectedActivitylist->ReadOnly = true;
+			this->textBoxSelectedActivitylist->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->textBoxSelectedActivitylist->Size = System::Drawing::Size(440, 625);
+			this->textBoxSelectedActivitylist->TabIndex = 15;
 			// 
 			// labelSelectedActivity
 			// 
 			this->labelSelectedActivity->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->labelSelectedActivity->AutoSize = true;
 			this->labelSelectedActivity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSelectedActivity->Location = System::Drawing::Point(160, 18);
+			this->labelSelectedActivity->Location = System::Drawing::Point(174, 19);
 			this->labelSelectedActivity->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelSelectedActivity->Name = L"labelSelectedActivity";
-			this->labelSelectedActivity->Size = System::Drawing::Size(126, 32);
+			this->labelSelectedActivity->Size = System::Drawing::Size(134, 39);
 			this->labelSelectedActivity->TabIndex = 14;
 			this->labelSelectedActivity->Text = L"Selected";
-			this->labelSelectedActivity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelDurationCradio
 			// 
@@ -253,7 +250,7 @@ namespace uihealth {
 			// 
 			// numericUpDownSpeedCardio
 			// 
-			this->numericUpDownSpeedCardio->Location = System::Drawing::Point(197, 99);
+			this->numericUpDownSpeedCardio->Location = System::Drawing::Point(208, 99);
 			this->numericUpDownSpeedCardio->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDownSpeedCardio->Name = L"numericUpDownSpeedCardio";
 			this->numericUpDownSpeedCardio->Size = System::Drawing::Size(86, 29);
@@ -274,7 +271,7 @@ namespace uihealth {
 			// 
 			// numericUpDownDistCardio
 			// 
-			this->numericUpDownDistCardio->Location = System::Drawing::Point(197, 57);
+			this->numericUpDownDistCardio->Location = System::Drawing::Point(208, 57);
 			this->numericUpDownDistCardio->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDownDistCardio->Name = L"numericUpDownDistCardio";
 			this->numericUpDownDistCardio->Size = System::Drawing::Size(86, 29);
@@ -295,7 +292,7 @@ namespace uihealth {
 			// 
 			// numericUpDownDurCardio
 			// 
-			this->numericUpDownDurCardio->Location = System::Drawing::Point(197, 15);
+			this->numericUpDownDurCardio->Location = System::Drawing::Point(208, 15);
 			this->numericUpDownDurCardio->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDownDurCardio->Name = L"numericUpDownDurCardio";
 			this->numericUpDownDurCardio->Size = System::Drawing::Size(86, 29);
@@ -330,7 +327,7 @@ namespace uihealth {
 			// 
 			// numericUpDownWeightStr
 			// 
-			this->numericUpDownWeightStr->Location = System::Drawing::Point(118, 99);
+			this->numericUpDownWeightStr->Location = System::Drawing::Point(121, 99);
 			this->numericUpDownWeightStr->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDownWeightStr->Name = L"numericUpDownWeightStr";
 			this->numericUpDownWeightStr->Size = System::Drawing::Size(73, 29);
@@ -351,7 +348,7 @@ namespace uihealth {
 			// 
 			// numericUpDownRepStrength
 			// 
-			this->numericUpDownRepStrength->Location = System::Drawing::Point(267, 57);
+			this->numericUpDownRepStrength->Location = System::Drawing::Point(278, 57);
 			this->numericUpDownRepStrength->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDownRepStrength->Name = L"numericUpDownRepStrength";
 			this->numericUpDownRepStrength->Size = System::Drawing::Size(70, 29);
@@ -372,7 +369,7 @@ namespace uihealth {
 			// 
 			// numericUpDownSeries
 			// 
-			this->numericUpDownSeries->Location = System::Drawing::Point(220, 15);
+			this->numericUpDownSeries->Location = System::Drawing::Point(231, 15);
 			this->numericUpDownSeries->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDownSeries->Name = L"numericUpDownSeries";
 			this->numericUpDownSeries->Size = System::Drawing::Size(63, 29);
@@ -391,15 +388,6 @@ namespace uihealth {
 			this->labelSeriesStrength->Text = L"Number of series:";
 			this->labelSeriesStrength->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// comboBoxStrengthtype
-			// 
-			this->comboBoxStrengthtype->FormattingEnabled = true;
-			this->comboBoxStrengthtype->Location = System::Drawing::Point(474, 477);
-			this->comboBoxStrengthtype->Margin = System::Windows::Forms::Padding(4);
-			this->comboBoxStrengthtype->Name = L"comboBoxStrengthtype";
-			this->comboBoxStrengthtype->Size = System::Drawing::Size(496, 32);
-			this->comboBoxStrengthtype->TabIndex = 28;
-			// 
 			// labelSelectStrength
 			// 
 			this->labelSelectStrength->AutoSize = true;
@@ -408,19 +396,19 @@ namespace uihealth {
 			this->labelSelectStrength->Location = System::Drawing::Point(95, 477);
 			this->labelSelectStrength->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelSelectStrength->Name = L"labelSelectStrength";
-			this->labelSelectStrength->Size = System::Drawing::Size(373, 32);
+			this->labelSelectStrength->Size = System::Drawing::Size(225, 32);
 			this->labelSelectStrength->TabIndex = 27;
-			this->labelSelectStrength->Text = L"Select Strength activity type:";
+			this->labelSelectStrength->Text = L"Strength activity:";
 			this->labelSelectStrength->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// buttonSaveActivity
 			// 
-			this->buttonSaveActivity->Location = System::Drawing::Point(1409, 1042);
+			this->buttonSaveActivity->Location = System::Drawing::Point(1326, 988);
 			this->buttonSaveActivity->Margin = System::Windows::Forms::Padding(4);
 			this->buttonSaveActivity->Name = L"buttonSaveActivity";
 			this->buttonSaveActivity->Size = System::Drawing::Size(241, 62);
 			this->buttonSaveActivity->TabIndex = 30;
-			this->buttonSaveActivity->Text = L"SAVE";
+			this->buttonSaveActivity->Text = L"Save";
 			this->buttonSaveActivity->UseVisualStyleBackColor = true;
 			this->buttonSaveActivity->Click += gcnew System::EventHandler(this, &ExcerciseControl::buttonSaveActivity_Click);
 			// 
@@ -430,7 +418,6 @@ namespace uihealth {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->buttonSaveActivity);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->comboBoxStrengthtype);
 			this->Controls->Add(this->labelSelectStrength);
 			this->Controls->Add(this->panelCardio);
 			this->Controls->Add(this->panelSelectedActivity);
@@ -441,7 +428,7 @@ namespace uihealth {
 			this->Controls->Add(this->labelActivityControl);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ExcerciseControl";
-			this->Size = System::Drawing::Size(1760, 1200);
+			this->Size = System::Drawing::Size(1600, 1070);
 			this->Load += gcnew System::EventHandler(this, &ExcerciseControl::ExcerciseControl_Load);
 			this->panelSelectedActivity->ResumeLayout(false);
 			this->panelSelectedActivity->PerformLayout();
@@ -460,183 +447,13 @@ namespace uihealth {
 
 		}
 #pragma endregion
-	private: System::Void ExcerciseControl_Load(System::Object^ sender, System::EventArgs^ e) {}
-	private: System::Void buttonAddStrength_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (String::IsNullOrWhiteSpace(comboBoxStrengthtype->Text)) {
-			MessageBox::Show("Choose strength activity first");
-			return;
-		}
-		double series = Convert::ToDouble(numericUpDownSeries->Value);
-		double reps = Convert::ToDouble(numericUpDownRepStrength->Value);
-		double trainingWeight = Convert::ToDouble(numericUpDownWeightStr->Value);
-		if (series <= 0 || reps <= 0) {
-			MessageBox::Show("Series and repetitions must be more than 0");
-			return;
-		}
-		String^ date = dateTimePickerActivity->Value.ToString("dd-MM-yyyy");
-		String^ activityName = comboBoxStrengthtype->Text;
-		std::string activityNameStd = msclr::interop::marshal_as<std::string>(activityName);
-		double userWeight = 60.0;
-		double duration = series * reps;
-		ActivityInfo info = ActivityInfo::find_activity(activityNameStd);
-		activity selectedActivity(info, duration, userWeight);
-		double burnedCalories = selectedActivity.calculate();
-		labelSelectedActivitylist->Text +=
-			activityName + " - " +
-			series.ToString("F0") + " sets x " +
-			reps.ToString("F0") + " reps, " +
-			trainingWeight.ToString("F1") + " kg, " +
-			burnedCalories.ToString("F1") + " kcal\n";
-		activity_rows_calendar += date + " " + activityName + " " + duration.ToString("F0") + " " + burnedCalories.ToString("F1") + "\n";
-		activity_rows_save +=
-			date + ";" +
-			activityName + ";" +
-			duration.ToString("F0") + ";" +
-			"0;0;" +
-			series.ToString("F0") + ";" +
-			reps.ToString("F0") + ";" +
-			trainingWeight.ToString("F1") + ";" +
-			burnedCalories.ToString("F1") + "\n";
-		numericUpDownSeries->Value = 0;
-		numericUpDownRepStrength->Value = 0;
-		numericUpDownWeightStr->Value = 0;
-	}
-
-	private: System::Void buttonAddCardio_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (String::IsNullOrWhiteSpace(comboBoxCardioType->Text)) {
-			MessageBox::Show("Choose cardio activity first");
-			return;
-		}
-		double duration = Convert::ToDouble(numericUpDownDurCardio->Value);
-		double distance = Convert::ToDouble(numericUpDownDistCardio->Value);
-		double speed = Convert::ToDouble(numericUpDownSpeedCardio->Value);
-		if (duration <= 0) {
-			MessageBox::Show("Duration must be more than 0");
-			return;
-		}
-		String^ date = dateTimePickerActivity->Value.ToString("dd-MM-yyyy");
-		String^ activityName = comboBoxCardioType->Text;
-		std::string activityNameStd = msclr::interop::marshal_as<std::string>(activityName);
-		double userWeight = 60.0;
-		ActivityInfo info = ActivityInfo::find_activity(activityNameStd);
-		activity selectedActivity(info, duration, userWeight);
-		double burnedCalories = selectedActivity.calculate();
-		activity_rows_calendar += date + " " + activityName + " " + duration.ToString("F0") + " " + burnedCalories.ToString("F1")+ "\n";
-		labelSelectedActivitylist->Text +=
-			activityName + " - " +
-			duration.ToString("F0") + " min, " +
-			distance.ToString("F1") + " km, \n" +
-			speed.ToString("F1") + " km/h, " +
-			burnedCalories.ToString("F1") + " kcal\n";
-		activity_rows_save +=
-			date + ";" + activityName + ";" + duration.ToString("F0") + ";" + distance.ToString("F1") + ";" + speed.ToString("F1") + ";" + "0;0;" +
-			userWeight.ToString("F1") + ";" +
-			burnedCalories.ToString("F1") + "\n";
-		numericUpDownDurCardio->Value = 0;
-		numericUpDownDistCardio->Value = 0;
-		numericUpDownSpeedCardio->Value = 0;
-	}
-
-	private: System::Void load_activities() {
-		comboBoxCardioType->Items->Clear();
-		comboBoxStrengthtype->Items->Clear();
-		if (!System::IO::File::Exists("activity/activity_MET.txt")) {
-			MessageBox::Show("activity_MET.txt not found");
-			return;
-		}
-		array<String^>^ lines = System::IO::File::ReadAllLines("activity/activity_MET.txt");
-		for each(String ^ line in lines) {
-			if (String::IsNullOrWhiteSpace(line)) {
-				continue;
-			}
-			array<String^>^ parts = line->Split(' ');
-			if (parts->Length >= 2) {
-				String^ activityName = parts[0]->Trim();
-				comboBoxCardioType->Items->Add(activityName);
-				comboBoxStrengthtype->Items->Add(activityName);
-			}
-		}
-	}
-
-	private: System::Void buttonSaveActivity_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (String::IsNullOrWhiteSpace(activity_rows_calendar)) {
-			MessageBox::Show("Nothing to save");
-			return;
-		}
-		array<String^>^ activityLines = activity_rows_calendar->Split(
-			gcnew array<wchar_t>{ '\n' },
-			System::StringSplitOptions::RemoveEmptyEntries
-		);
-		for each (String ^ line in activityLines) {
-			add_to_calendar("[activity]", line);
-		}
-		MessageBox::Show("Activity saved");
-		activity_rows_calendar = "";
-		activity_rows_save = "";
-		labelSelectedActivitylist->Text = "";
-	}
-
-	private: System::Void add_to_calendar(String^ sectionName, String^ newLine) {
-		String^ fileName = "calendar.txt";
-		if (!System::IO::File::Exists(fileName)) {
-			System::IO::File::WriteAllText(
-				fileName,
-				"[activity]\n[food]\n[calories]\n[mood]\n"
-			);
-		}
-		array<String^>^ lines = System::IO::File::ReadAllLines(fileName);
-		System::Collections::Generic::List<String^>^ result =
-			gcnew System::Collections::Generic::List<String^>();
-		bool added = false;
-		bool insideTargetSection = false;
-		for each(String ^ line in lines) {
-			if (line == sectionName) {
-				result->Add(line);
-				insideTargetSection = true;
-				continue;
-			}
-			if (insideTargetSection && line->StartsWith("[") && line->EndsWith("]")) {
-				result->Add(newLine);
-				added = true;
-				insideTargetSection = false;
-			}
-			result->Add(line);
-		} if (insideTargetSection && !added) {
-			result->Add(newLine);
-			added = true;
-		} if (!added) {
-			result->Add(sectionName);
-			result->Add(newLine);
-		}
-		System::IO::File::WriteAllLines(fileName, result);
-	}
-
-	private: System::String^ RemoveLastLine(String^ text) {
-		if (String::IsNullOrWhiteSpace(text)) {
-			return "";
-		}
-		array<String^>^ lines = text->Split(
-			gcnew array<wchar_t>{ '\n' },
-			System::StringSplitOptions::RemoveEmptyEntries
-		);
-		if (lines->Length <= 1) {
-			return "";
-		}
-		System::String^ result = "";
-		for (int i = 0; i < lines->Length - 2; i++) {
-			result += lines[i] + "\n";
-		}
-		return result;
-	}
-
-	private: System::Void buttonRemoveActivity_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (String::IsNullOrWhiteSpace(labelSelectedActivitylist->Text)) {
-			MessageBox::Show("Nothing to remove");
-			return;
-		}
-		labelSelectedActivitylist->Text = RemoveLastLine(labelSelectedActivitylist->Text);
-		activity_rows_calendar = RemoveLastLine(activity_rows_calendar);
-		activity_rows_save = RemoveLastLine(activity_rows_save);
-	}
+	private: System::Void ExcerciseControl_Load(System::Object^ sender, System::EventArgs^ e) {};
+	private: System::Void buttonAddStrength_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonAddCardio_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonSaveActivity_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonRemoveActivity_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void load_activities();
+	private: System::String^ remove_line(String^ text);
+	private: System::Void add_to_calendar(System::String^ sectionName, System::String^ newLine);
 };
 }
