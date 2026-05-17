@@ -1,16 +1,3 @@
-﻿  activity.cpp
-  AddNewProductMEALS.cpp
-  AddRecipeMEALS.cpp
-  calendar.cpp
-  DairyControl.cpp
-  DashboardControl.cpp
-  ExcerciseControl.cpp
-  main.cpp
-  MealsControl.cpp
-  nutritions.cpp
-  MyForm.cpp
-  UserSetup.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  Generating Code...
-  activity.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  ui-health.vcxproj -> C:\Users\Anastasia\source\repos\ui-health\x64\Debug\ui-health.exe
+﻿  calendar.cpp
+  activity.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  ui-health.vcxproj -> D:\2 курс\2 семестр\kurszch\ui-healthOOP\x64\Debug\ui-health.exe

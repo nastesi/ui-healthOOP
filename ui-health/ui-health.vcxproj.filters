@@ -51,6 +51,12 @@
     <ClCompile Include="calendar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChartCalories.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mood.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -92,5 +98,14 @@
     <ClInclude Include="UserData1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ChartCalories.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mood.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="anekdoty.txt" />
   </ItemGroup>
 </Project>

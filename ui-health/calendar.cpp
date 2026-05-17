@@ -247,33 +247,82 @@ bool CalendarHealth::listByDate(const std::string& date,
     std::vector<std::string>& out) const
 {
     out.clear();
+
+    // out[0] - activity
+    // out[1] - food / meals
+    // out[2] - calories
+    // out[3] - mood
+    out.resize(4);
+
     std::ifstream in(path_);
-    if (!in) return false;
-    std::string line, curSec;
+    if (!in)
+    {
+        return false;
+    }
+
+    std::string line;
+    std::string curSec;
+
     while (std::getline(in, line))
     {
         std::string s = trim(line);
-        if (s.empty()) continue;
-        if (s.front() == '[' && s.back() == ']') {
+
+        if (s.empty())
+        {
+            continue;
+        }
+
+        if (s.front() == '[' && s.back() == ']')
+        {
             curSec = s;
             continue;
         }
-        if (s.size() < 10) continue;
 
-        if (startsWith(s, date))
+        if (s.size() < 10)
         {
-            if (curSec == "[activity]")
-                out.push_back(s.substr(11));
-            else if (curSec == "[food]")
-                out.push_back(s.substr(11));
-            else if (curSec == "[calories]")
-                out.push_back(s.substr(11));
-            else if (curSec == "[mood]")
-                out.push_back(s.substr(11));
-            else
-                out.push_back(s);
+            continue;
+        }
+
+        if (!startsWith(s, date))
+        {
+            continue;
+        }
+
+        std::string value = s.size() > 11 ? s.substr(11) : std::string();
+
+        if (curSec == "[activity]")
+        {
+            if (!out[0].empty())
+            {
+                out[0] += "; ";
+            }
+
+            out[0] += value;
+        }
+        else if (curSec == "[food]")
+        {
+            if (!out[1].empty())
+            {
+                out[1] += "; ";
+            }
+
+            out[1] += value;
+        }
+        else if (curSec == "[calories]")
+        {
+            if (!out[2].empty())
+            {
+                out[2] += "; ";
+            }
+
+            out[2] += value;
+        }
+        else if (curSec == "[mood]")
+        {
+            out[3] = value;
         }
     }
+
     return true;
 }
 

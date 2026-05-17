@@ -2,12 +2,22 @@
 01-05-2026 pisp
 28-04-2026 sosi
 16-05-2026 Yoga 25 26.3
+17-05-2026 Dancing 60 63,0
+17-05-2026 Football 50 52,5
 [food]
 01-05-2026 pipi
 28-04-2026 fofo
+17-05-2026 Borsh 2000,0 0,0 0,0
+17-05-2026 Chicken_Rice 1000,0 0,0 0,0
 [calories]
 01-05-2026 popo
 28-04-2026 gaga
+17-05-2026 0,0Borsh
+17-05-2026 0,0Chicken_Rice
 [mood]
 01-05-2026 kaka
 28-04-2026 gigi
+17-05-2026 4 Good
+17-05-2026 2 Poor
+17-05-2026 1 Terrible
+17-05-2026 4 Good

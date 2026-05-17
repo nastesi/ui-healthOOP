@@ -2,6 +2,9 @@
 #include "MealsControl.h"
 #include "ExcerciseControl.h"
 #include "UserData1.h"
+#include "calendar.h"
+#include "mood.h"
+#include <string>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -630,6 +633,48 @@ namespace uihealth {
 private: System::Void panelContent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {}
 private: System::Void buttonMoodSave_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	int moodValue = 0;
+	std::string moodText = "";
+
+	if (radioPerfect->Checked)
+	{
+		moodValue = 5;
+		moodText = "Perfect";
+		userData->Mood = "Perfect";
+	}
+	else if (radioGood->Checked)
+	{
+		moodValue = 4;
+		moodText = "Good";
+		userData->Mood = "Good";
+	}
+	else if (radioPoor->Checked)
+	{
+		moodValue = 2;
+		moodText = "Poor";
+		userData->Mood = "Poor";
+	}
+	else if (radioTerrible->Checked)
+	{
+		moodValue = 1;
+		moodText = "Terrible";
+		userData->Mood = "Terrible";
+	}
+	else
+	{
+		return;
+	}
+
+	CalendarHealth calendar("calendar.txt");
+
+	calendar.addMood(
+		CalendarHealth::today_ddmmyyyy(),
+		moodValue,
+		moodText
+	);
+
+	RefreshDashboard();
+
 	if (radioPoor->Checked || radioTerrible->Checked)
 	{
 		System::Windows::Forms::DialogResult result;
@@ -643,7 +688,20 @@ private: System::Void buttonMoodSave_Click(System::Object^ sender, System::Event
 
 		if (result == System::Windows::Forms::DialogResult::Yes)
 		{
-			MessageBox::Show("Joke will be here");
+			char joke[1024];
+
+			Mood mood(nullptr, "anekdoty.txt");
+			mood.setMood(1);
+
+			if (mood.randomJoke(joke, sizeof(joke)))
+			{
+				MessageBox::Show(
+					gcnew System::String(joke),
+					"Mood support",
+					MessageBoxButtons::OK,
+					MessageBoxIcon::Information
+				);
+			}
 		}
 	}
 }
