@@ -111,7 +111,7 @@ namespace uihealth {
 				static_cast<System::Byte>(0)));
 			this->labelActivityControl->Location = System::Drawing::Point(66, 36);
 			this->labelActivityControl->Name = L"labelActivityControl";
-			this->labelActivityControl->Size = System::Drawing::Size(397, 40);
+			this->labelActivityControl->Size = System::Drawing::Size(387, 39);
 			this->labelActivityControl->TabIndex = 2;
 			this->labelActivityControl->Text = L"Exercises and activities";
 			this->labelActivityControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -144,7 +144,7 @@ namespace uihealth {
 			this->comboBoxCardioType->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBoxCardioType->FormattingEnabled = true;
-			this->comboBoxCardioType->Location = System::Drawing::Point(363, 135);
+			this->comboBoxCardioType->Location = System::Drawing::Point(363, 141);
 			this->comboBoxCardioType->Name = L"comboBoxCardioType";
 			this->comboBoxCardioType->Size = System::Drawing::Size(141, 25);
 			this->comboBoxCardioType->TabIndex = 17;
@@ -154,7 +154,7 @@ namespace uihealth {
 			this->labelSearchCardio->AutoSize = true;
 			this->labelSearchCardio->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelSearchCardio->Location = System::Drawing::Point(69, 137);
+			this->labelSearchCardio->Location = System::Drawing::Point(69, 143);
 			this->labelSearchCardio->Name = L"labelSearchCardio";
 			this->labelSearchCardio->Size = System::Drawing::Size(276, 23);
 			this->labelSearchCardio->TabIndex = 16;
@@ -178,9 +178,9 @@ namespace uihealth {
 			this->buttonRemoveActivity->BackColor = System::Drawing::Color::Lavender;
 			this->buttonRemoveActivity->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonRemoveActivity->Location = System::Drawing::Point(275, 468);
+			this->buttonRemoveActivity->Location = System::Drawing::Point(260, 468);
 			this->buttonRemoveActivity->Name = L"buttonRemoveActivity";
-			this->buttonRemoveActivity->Size = System::Drawing::Size(75, 25);
+			this->buttonRemoveActivity->Size = System::Drawing::Size(84, 25);
 			this->buttonRemoveActivity->TabIndex = 30;
 			this->buttonRemoveActivity->Text = L"Remove";
 			this->buttonRemoveActivity->UseVisualStyleBackColor = false;
@@ -325,7 +325,7 @@ namespace uihealth {
 			// 
 			// numericUpDownWeightStr
 			// 
-			this->numericUpDownWeightStr->Location = System::Drawing::Point(90, 70);
+			this->numericUpDownWeightStr->Location = System::Drawing::Point(107, 70);
 			this->numericUpDownWeightStr->Name = L"numericUpDownWeightStr";
 			this->numericUpDownWeightStr->Size = System::Drawing::Size(53, 23);
 			this->numericUpDownWeightStr->TabIndex = 30;
@@ -344,7 +344,7 @@ namespace uihealth {
 			// 
 			// numericUpDownRepStrength
 			// 
-			this->numericUpDownRepStrength->Location = System::Drawing::Point(211, 42);
+			this->numericUpDownRepStrength->Location = System::Drawing::Point(226, 42);
 			this->numericUpDownRepStrength->Name = L"numericUpDownRepStrength";
 			this->numericUpDownRepStrength->Size = System::Drawing::Size(51, 23);
 			this->numericUpDownRepStrength->TabIndex = 28;
@@ -363,7 +363,7 @@ namespace uihealth {
 			// 
 			// numericUpDownSeries
 			// 
-			this->numericUpDownSeries->Location = System::Drawing::Point(168, 12);
+			this->numericUpDownSeries->Location = System::Drawing::Point(182, 12);
 			this->numericUpDownSeries->Name = L"numericUpDownSeries";
 			this->numericUpDownSeries->Size = System::Drawing::Size(46, 23);
 			this->numericUpDownSeries->TabIndex = 26;
@@ -408,9 +408,9 @@ namespace uihealth {
 			// 
 			this->buttonBackExercise->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonBackExercise->Location = System::Drawing::Point(887, 22);
+			this->buttonBackExercise->Location = System::Drawing::Point(875, 22);
 			this->buttonBackExercise->Name = L"buttonBackExercise";
-			this->buttonBackExercise->Size = System::Drawing::Size(67, 41);
+			this->buttonBackExercise->Size = System::Drawing::Size(79, 41);
 			this->buttonBackExercise->TabIndex = 38;
 			this->buttonBackExercise->Text = L"Home";
 			this->buttonBackExercise->UseVisualStyleBackColor = true;

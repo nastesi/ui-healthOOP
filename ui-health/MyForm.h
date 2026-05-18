@@ -118,9 +118,9 @@ namespace uihealth {
 			// 
 			this->buttonDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonDairy->Location = System::Drawing::Point(869, 15);
+			this->buttonDairy->Location = System::Drawing::Point(884, 19);
 			this->buttonDairy->Name = L"buttonDairy";
-			this->buttonDairy->Size = System::Drawing::Size(121, 40);
+			this->buttonDairy->Size = System::Drawing::Size(100, 36);
 			this->buttonDairy->TabIndex = 4;
 			this->buttonDairy->Text = L"Dairy";
 			this->buttonDairy->UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@ namespace uihealth {
 			this->labelNameUser->AutoSize = true;
 			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameUser->Location = System::Drawing::Point(750, 21);
+			this->labelNameUser->Location = System::Drawing::Point(750, 20);
 			this->labelNameUser->Name = L"labelNameUser";
 			this->labelNameUser->Size = System::Drawing::Size(74, 34);
 			this->labelNameUser->TabIndex = 9;
@@ -174,7 +174,7 @@ namespace uihealth {
 				static_cast<System::Byte>(0)));
 			this->labelSecTitle->Location = System::Drawing::Point(20, 14);
 			this->labelSecTitle->Name = L"labelSecTitle";
-			this->labelSecTitle->Size = System::Drawing::Size(116, 40);
+			this->labelSecTitle->Size = System::Drawing::Size(112, 39);
 			this->labelSecTitle->TabIndex = 5;
 			this->labelSecTitle->Text = L"Home";
 			this->labelSecTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;

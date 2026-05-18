@@ -68,8 +68,8 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelSteps;
 	private: System::Windows::Forms::Label^ labelProgresspanel;
 	private: System::Windows::Forms::Panel^ panelQuickactions;
-	private: System::Windows::Forms::Button^ buttonAddMedicine;
-	private: System::Windows::Forms::Button^ buttonAddNote;
+
+
 	private: System::Windows::Forms::Button^ buttonAddActivity;
 	private: System::Windows::Forms::Button^ buttonAddMeal;
 	private: System::Windows::Forms::Label^ labelQuickActions;
@@ -135,8 +135,6 @@ namespace uihealth {
 			this->labelSteps = (gcnew System::Windows::Forms::Label());
 			this->labelProgresspanel = (gcnew System::Windows::Forms::Label());
 			this->panelQuickactions = (gcnew System::Windows::Forms::Panel());
-			this->buttonAddMedicine = (gcnew System::Windows::Forms::Button());
-			this->buttonAddNote = (gcnew System::Windows::Forms::Button());
 			this->buttonAddActivity = (gcnew System::Windows::Forms::Button());
 			this->buttonAddMeal = (gcnew System::Windows::Forms::Button());
 			this->labelQuickActions = (gcnew System::Windows::Forms::Label());
@@ -162,7 +160,7 @@ namespace uihealth {
 			this->panelGreeting->Controls->Add(this->labelGreeting);
 			this->panelGreeting->Location = System::Drawing::Point(44, 29);
 			this->panelGreeting->Name = L"panelGreeting";
-			this->panelGreeting->Size = System::Drawing::Size(747, 60);
+			this->panelGreeting->Size = System::Drawing::Size(700, 60);
 			this->panelGreeting->TabIndex = 0;
 			// 
 			// labelGreeting
@@ -170,7 +168,7 @@ namespace uihealth {
 			this->labelGreeting->AutoSize = true;
 			this->labelGreeting->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelGreeting->Location = System::Drawing::Point(16, 13);
+			this->labelGreeting->Location = System::Drawing::Point(7, 13);
 			this->labelGreeting->Name = L"labelGreeting";
 			this->labelGreeting->Size = System::Drawing::Size(686, 34);
 			this->labelGreeting->TabIndex = 7;
@@ -450,35 +448,15 @@ namespace uihealth {
 			// panelQuickactions
 			// 
 			this->panelQuickactions->BackColor = System::Drawing::Color::AliceBlue;
-			this->panelQuickactions->Controls->Add(this->buttonAddMedicine);
-			this->panelQuickactions->Controls->Add(this->buttonAddNote);
 			this->panelQuickactions->Controls->Add(this->buttonAddActivity);
 			this->panelQuickactions->Controls->Add(this->buttonAddMeal);
 			this->panelQuickactions->Controls->Add(this->labelQuickActions);
 			this->panelQuickactions->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->panelQuickactions->Location = System::Drawing::Point(331, 356);
+			this->panelQuickactions->Location = System::Drawing::Point(331, 352);
 			this->panelQuickactions->Name = L"panelQuickactions";
 			this->panelQuickactions->Size = System::Drawing::Size(413, 199);
 			this->panelQuickactions->TabIndex = 18;
-			// 
-			// buttonAddMedicine
-			// 
-			this->buttonAddMedicine->Location = System::Drawing::Point(19, 158);
-			this->buttonAddMedicine->Name = L"buttonAddMedicine";
-			this->buttonAddMedicine->Size = System::Drawing::Size(151, 30);
-			this->buttonAddMedicine->TabIndex = 13;
-			this->buttonAddMedicine->Text = L"Add medicine";
-			this->buttonAddMedicine->UseVisualStyleBackColor = true;
-			// 
-			// buttonAddNote
-			// 
-			this->buttonAddNote->Location = System::Drawing::Point(19, 122);
-			this->buttonAddNote->Name = L"buttonAddNote";
-			this->buttonAddNote->Size = System::Drawing::Size(151, 30);
-			this->buttonAddNote->TabIndex = 12;
-			this->buttonAddNote->Text = L"Add note";
-			this->buttonAddNote->UseVisualStyleBackColor = true;
 			// 
 			// buttonAddActivity
 			// 

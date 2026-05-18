@@ -63,12 +63,12 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ textActivityDairy;
 	private: System::Windows::Forms::Button^ buttonBackDiary;
 	private: System::Windows::Forms::Label^ labelAnalytics;
-	private: System::Windows::Forms::ComboBox^ comboBoxPeriod;
 
-	private: System::Windows::Forms::Label^ labelperiod;
-	private: System::Windows::Forms::Label^ labelSelectChart;
-	private: System::Windows::Forms::ComboBox^ comboBoxSelectgraph;
-	private: System::Windows::Forms::Button^ buttonShowChart;
+
+
+
+
+
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 
 
@@ -105,11 +105,6 @@ namespace uihealth {
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->buttonBackDiary = (gcnew System::Windows::Forms::Button());
 			this->labelAnalytics = (gcnew System::Windows::Forms::Label());
-			this->comboBoxPeriod = (gcnew System::Windows::Forms::ComboBox());
-			this->labelperiod = (gcnew System::Windows::Forms::Label());
-			this->labelSelectChart = (gcnew System::Windows::Forms::Label());
-			this->comboBoxSelectgraph = (gcnew System::Windows::Forms::ComboBox());
-			this->buttonShowChart = (gcnew System::Windows::Forms::Button());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
@@ -118,28 +113,28 @@ namespace uihealth {
 			// labelDiaryControl
 			// 
 			this->labelDiaryControl->AutoSize = true;
-			this->labelDiaryControl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelDiaryControl->Location = System::Drawing::Point(16, 17);
-			this->labelDiaryControl->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelDiaryControl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelDiaryControl->Location = System::Drawing::Point(38, 23);
 			this->labelDiaryControl->Name = L"labelDiaryControl";
-			this->labelDiaryControl->Size = System::Drawing::Size(98, 31);
+			this->labelDiaryControl->Size = System::Drawing::Size(117, 40);
 			this->labelDiaryControl->TabIndex = 3;
 			this->labelDiaryControl->Text = L"DAIRY";
 			this->labelDiaryControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::LightSteelBlue;
 			this->panel1->Controls->Add(this->textActivityDairy);
 			this->panel1->Controls->Add(this->textMealsDairy);
 			this->panel1->Controls->Add(this->textMoodDairy);
 			this->panel1->Controls->Add(this->labelActivityDairy);
 			this->panel1->Controls->Add(this->labelMealsDairy);
 			this->panel1->Controls->Add(this->labelMoodDairy);
-			this->panel1->Location = System::Drawing::Point(32, 417);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Location = System::Drawing::Point(43, 513);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(428, 95);
+			this->panel1->Size = System::Drawing::Size(908, 134);
 			this->panel1->TabIndex = 5;
 			// 
 			// textActivityDairy
@@ -147,10 +142,9 @@ namespace uihealth {
 			this->textActivityDairy->AutoSize = true;
 			this->textActivityDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textActivityDairy->Location = System::Drawing::Point(104, 72);
-			this->textActivityDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->textActivityDairy->Location = System::Drawing::Point(139, 89);
 			this->textActivityDairy->Name = L"textActivityDairy";
-			this->textActivityDairy->Size = System::Drawing::Size(0, 20);
+			this->textActivityDairy->Size = System::Drawing::Size(0, 25);
 			this->textActivityDairy->TabIndex = 21;
 			this->textActivityDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -159,10 +153,9 @@ namespace uihealth {
 			this->textMealsDairy->AutoSize = true;
 			this->textMealsDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textMealsDairy->Location = System::Drawing::Point(104, 43);
-			this->textMealsDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->textMealsDairy->Location = System::Drawing::Point(139, 53);
 			this->textMealsDairy->Name = L"textMealsDairy";
-			this->textMealsDairy->Size = System::Drawing::Size(0, 20);
+			this->textMealsDairy->Size = System::Drawing::Size(0, 25);
 			this->textMealsDairy->TabIndex = 19;
 			this->textMealsDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -171,22 +164,20 @@ namespace uihealth {
 			this->textMoodDairy->AutoSize = true;
 			this->textMoodDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textMoodDairy->Location = System::Drawing::Point(104, 13);
-			this->textMoodDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->textMoodDairy->Location = System::Drawing::Point(139, 16);
 			this->textMoodDairy->Name = L"textMoodDairy";
-			this->textMoodDairy->Size = System::Drawing::Size(0, 20);
+			this->textMoodDairy->Size = System::Drawing::Size(0, 25);
 			this->textMoodDairy->TabIndex = 22;
 			this->textMoodDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelActivityDairy
 			// 
 			this->labelActivityDairy->AutoSize = true;
-			this->labelActivityDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelActivityDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelActivityDairy->Location = System::Drawing::Point(11, 63);
-			this->labelActivityDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelActivityDairy->Location = System::Drawing::Point(14, 91);
 			this->labelActivityDairy->Name = L"labelActivityDairy";
-			this->labelActivityDairy->Size = System::Drawing::Size(62, 20);
+			this->labelActivityDairy->Size = System::Drawing::Size(87, 23);
 			this->labelActivityDairy->TabIndex = 20;
 			this->labelActivityDairy->Text = L"Activity:";
 			this->labelActivityDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -195,12 +186,11 @@ namespace uihealth {
 			// labelMealsDairy
 			// 
 			this->labelMealsDairy->AutoSize = true;
-			this->labelMealsDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelMealsDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelMealsDairy->Location = System::Drawing::Point(11, 39);
-			this->labelMealsDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelMealsDairy->Location = System::Drawing::Point(15, 52);
 			this->labelMealsDairy->Name = L"labelMealsDairy";
-			this->labelMealsDairy->Size = System::Drawing::Size(51, 20);
+			this->labelMealsDairy->Size = System::Drawing::Size(67, 23);
 			this->labelMealsDairy->TabIndex = 19;
 			this->labelMealsDairy->Text = L"Meals";
 			this->labelMealsDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -208,12 +198,11 @@ namespace uihealth {
 			// labelMoodDairy
 			// 
 			this->labelMoodDairy->AutoSize = true;
-			this->labelMoodDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelMoodDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelMoodDairy->Location = System::Drawing::Point(11, 13);
-			this->labelMoodDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelMoodDairy->Location = System::Drawing::Point(15, 16);
 			this->labelMoodDairy->Name = L"labelMoodDairy";
-			this->labelMoodDairy->Size = System::Drawing::Size(53, 20);
+			this->labelMoodDairy->Size = System::Drawing::Size(72, 23);
 			this->labelMoodDairy->TabIndex = 18;
 			this->labelMoodDairy->Text = L"Mood:";
 			this->labelMoodDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -221,31 +210,31 @@ namespace uihealth {
 			// labelEntriesDairy
 			// 
 			this->labelEntriesDairy->AutoSize = true;
-			this->labelEntriesDairy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelEntriesDairy->Location = System::Drawing::Point(28, 395);
-			this->labelEntriesDairy->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelEntriesDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelEntriesDairy->Location = System::Drawing::Point(41, 484);
 			this->labelEntriesDairy->Name = L"labelEntriesDairy";
-			this->labelEntriesDairy->Size = System::Drawing::Size(182, 20);
+			this->labelEntriesDairy->Size = System::Drawing::Size(244, 23);
 			this->labelEntriesDairy->TabIndex = 17;
 			this->labelEntriesDairy->Text = L"Entries for selected date";
 			this->labelEntriesDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(2, 1);
-			this->monthCalendar1->Location = System::Drawing::Point(22, 64);
-			this->monthCalendar1->Margin = System::Windows::Forms::Padding(7, 7, 7, 7);
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(2, 2);
+			this->monthCalendar1->Location = System::Drawing::Point(43, 79);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 18;
 			this->monthCalendar1->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &DairyControl::monthCalendar1_DateChanged);
 			// 
 			// buttonBackDiary
 			// 
-			this->buttonBackDiary->Location = System::Drawing::Point(410, 17);
-			this->buttonBackDiary->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->buttonBackDiary->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonBackDiary->Location = System::Drawing::Point(868, 22);
+			this->buttonBackDiary->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonBackDiary->Name = L"buttonBackDiary";
-			this->buttonBackDiary->Size = System::Drawing::Size(50, 33);
+			this->buttonBackDiary->Size = System::Drawing::Size(83, 41);
 			this->buttonBackDiary->TabIndex = 39;
 			this->buttonBackDiary->Text = L"Home";
 			this->buttonBackDiary->UseVisualStyleBackColor = true;
@@ -254,70 +243,14 @@ namespace uihealth {
 			// labelAnalytics
 			// 
 			this->labelAnalytics->AutoSize = true;
-			this->labelAnalytics->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelAnalytics->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelAnalytics->Location = System::Drawing::Point(484, 21);
-			this->labelAnalytics->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelAnalytics->Location = System::Drawing::Point(446, 79);
 			this->labelAnalytics->Name = L"labelAnalytics";
-			this->labelAnalytics->Size = System::Drawing::Size(72, 20);
+			this->labelAnalytics->Size = System::Drawing::Size(139, 34);
 			this->labelAnalytics->TabIndex = 40;
 			this->labelAnalytics->Text = L"Analytics";
 			this->labelAnalytics->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// comboBoxPeriod
-			// 
-			this->comboBoxPeriod->FormattingEnabled = true;
-			this->comboBoxPeriod->Location = System::Drawing::Point(487, 68);
-			this->comboBoxPeriod->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->comboBoxPeriod->Name = L"comboBoxPeriod";
-			this->comboBoxPeriod->Size = System::Drawing::Size(84, 21);
-			this->comboBoxPeriod->TabIndex = 41;
-			this->comboBoxPeriod->SelectedIndexChanged += gcnew System::EventHandler(this, &DairyControl::comboBoxFood_SelectedIndexChanged);
-			// 
-			// labelperiod
-			// 
-			this->labelperiod->AutoSize = true;
-			this->labelperiod->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelperiod->Location = System::Drawing::Point(484, 50);
-			this->labelperiod->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->labelperiod->Name = L"labelperiod";
-			this->labelperiod->Size = System::Drawing::Size(96, 17);
-			this->labelperiod->TabIndex = 42;
-			this->labelperiod->Text = L"Select Period:";
-			this->labelperiod->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelSelectChart
-			// 
-			this->labelSelectChart->AutoSize = true;
-			this->labelSelectChart->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSelectChart->Location = System::Drawing::Point(579, 50);
-			this->labelSelectChart->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->labelSelectChart->Name = L"labelSelectChart";
-			this->labelSelectChart->Size = System::Drawing::Size(89, 17);
-			this->labelSelectChart->TabIndex = 43;
-			this->labelSelectChart->Text = L"Select Chart:";
-			this->labelSelectChart->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// comboBoxSelectgraph
-			// 
-			this->comboBoxSelectgraph->FormattingEnabled = true;
-			this->comboBoxSelectgraph->Location = System::Drawing::Point(577, 68);
-			this->comboBoxSelectgraph->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->comboBoxSelectgraph->Name = L"comboBoxSelectgraph";
-			this->comboBoxSelectgraph->Size = System::Drawing::Size(84, 21);
-			this->comboBoxSelectgraph->TabIndex = 44;
-			// 
-			// buttonShowChart
-			// 
-			this->buttonShowChart->Location = System::Drawing::Point(671, 52);
-			this->buttonShowChart->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->buttonShowChart->Name = L"buttonShowChart";
-			this->buttonShowChart->Size = System::Drawing::Size(53, 36);
-			this->buttonShowChart->TabIndex = 45;
-			this->buttonShowChart->Text = L"Show Chart";
-			this->buttonShowChart->UseVisualStyleBackColor = true;
 			// 
 			// chart1
 			// 
@@ -325,36 +258,32 @@ namespace uihealth {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(410, 114);
-			this->chart1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->chart1->Location = System::Drawing::Point(449, 127);
+			this->chart1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(303, 274);
+			this->chart1->Size = System::Drawing::Size(502, 350);
 			this->chart1->TabIndex = 46;
 			this->chart1->Text = L"chart1";
 			// 
 			// DairyControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::AliceBlue;
 			this->Controls->Add(this->chart1);
-			this->Controls->Add(this->buttonShowChart);
-			this->Controls->Add(this->comboBoxSelectgraph);
-			this->Controls->Add(this->labelSelectChart);
-			this->Controls->Add(this->labelperiod);
-			this->Controls->Add(this->comboBoxPeriod);
 			this->Controls->Add(this->labelAnalytics);
 			this->Controls->Add(this->buttonBackDiary);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->labelEntriesDairy);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->labelDiaryControl);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"DairyControl";
-			this->Size = System::Drawing::Size(750, 555);
+			this->Size = System::Drawing::Size(1000, 683);
 			this->Load += gcnew System::EventHandler(this, &DairyControl::DairyControl_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();

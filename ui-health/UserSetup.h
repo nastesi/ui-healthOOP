@@ -95,7 +95,7 @@ namespace uihealth {
 			// 
 			// textBoxUserName
 			// 
-			this->textBoxUserName->Location = System::Drawing::Point(134, 163);
+			this->textBoxUserName->Location = System::Drawing::Point(148, 163);
 			this->textBoxUserName->Name = L"textBoxUserName";
 			this->textBoxUserName->Size = System::Drawing::Size(309, 22);
 			this->textBoxUserName->TabIndex = 5;
@@ -115,7 +115,7 @@ namespace uihealth {
 			// 
 			// textBoxAgeUser
 			// 
-			this->textBoxAgeUser->Location = System::Drawing::Point(112, 210);
+			this->textBoxAgeUser->Location = System::Drawing::Point(129, 210);
 			this->textBoxAgeUser->Name = L"textBoxAgeUser";
 			this->textBoxAgeUser->Size = System::Drawing::Size(67, 22);
 			this->textBoxAgeUser->TabIndex = 7;
@@ -135,7 +135,7 @@ namespace uihealth {
 			// 
 			// textBoxWeightUser
 			// 
-			this->textBoxWeightUser->Location = System::Drawing::Point(190, 255);
+			this->textBoxWeightUser->Location = System::Drawing::Point(206, 255);
 			this->textBoxWeightUser->Name = L"textBoxWeightUser";
 			this->textBoxWeightUser->Size = System::Drawing::Size(67, 22);
 			this->textBoxWeightUser->TabIndex = 9;
@@ -155,7 +155,7 @@ namespace uihealth {
 			// 
 			// textBoxHeightUser
 			// 
-			this->textBoxHeightUser->Location = System::Drawing::Point(192, 301);
+			this->textBoxHeightUser->Location = System::Drawing::Point(205, 301);
 			this->textBoxHeightUser->Name = L"textBoxHeightUser";
 			this->textBoxHeightUser->Size = System::Drawing::Size(67, 22);
 			this->textBoxHeightUser->TabIndex = 11;
@@ -176,7 +176,7 @@ namespace uihealth {
 			// comboBoxActivityUser
 			// 
 			this->comboBoxActivityUser->FormattingEnabled = true;
-			this->comboBoxActivityUser->Location = System::Drawing::Point(265, 354);
+			this->comboBoxActivityUser->Location = System::Drawing::Point(277, 354);
 			this->comboBoxActivityUser->Name = L"comboBoxActivityUser";
 			this->comboBoxActivityUser->Size = System::Drawing::Size(183, 24);
 			this->comboBoxActivityUser->TabIndex = 13;
@@ -198,9 +198,9 @@ namespace uihealth {
 			// comboBoxGoal
 			// 
 			this->comboBoxGoal->FormattingEnabled = true;
-			this->comboBoxGoal->Location = System::Drawing::Point(275, 407);
+			this->comboBoxGoal->Location = System::Drawing::Point(282, 407);
 			this->comboBoxGoal->Name = L"comboBoxGoal";
-			this->comboBoxGoal->Size = System::Drawing::Size(173, 24);
+			this->comboBoxGoal->Size = System::Drawing::Size(185, 24);
 			this->comboBoxGoal->TabIndex = 15;
 			// 
 			// buttonSaveUser
@@ -221,7 +221,7 @@ namespace uihealth {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(326, 33);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(315, 40);
+			this->label2->Size = System::Drawing::Size(305, 39);
 			this->label2->TabIndex = 32;
 			this->label2->Text = L"Set up your profile";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
