@@ -1,30 +1,28 @@
 [activity]
-01-05-2026 pisp
-28-04-2026 sosi
+14-05-2026 Dancing 60 63,0
+03-05-2026 Dancing 60 63,0
+02-05-2026 Dancing 60 63,0
+02-05-2026 Dancing 60 63,0
+02-05-2026 Dancing 60 63,0
 16-05-2026 Yoga 25 26.3
 17-05-2026 Dancing 60 63,0
 17-05-2026 Football 50 52,5
+10-05-2026 Dancing 60 63,0
+18-05-2026 Stretching 90 94,5
 [food]
-01-05-2026 pipi
-28-04-2026 fofo
+02-05-2026 Chicken_Rice 5000,0 0,0 0,0
 17-05-2026 Borsh 2000,0 0,0 0,0
-17-05-2026 Chicken_Rice 1000,0 0,0 0,0
+17-05-2026 Chicken_Rice 100,0 0,0 0,0
+18-05-2026 Omelete_with_veggies 1000,0 0,0 0,0
+18-05-2026 Borsh 500,0 0,0 0,0
 [calories]
-01-05-2026 popo
-28-04-2026 gaga
 17-05-2026 0,0Borsh
 17-05-2026 0,0Chicken_Rice
+18-05-2026 0,0Omelete_with_veggies
+18-05-2026 0,0Borsh
 [mood]
-01-05-2026 kaka
-28-04-2026 gigi
 17-05-2026 4 Good
 17-05-2026 2 Poor
 17-05-2026 1 Terrible
-17-05-2026 4 Good
-17-05-2026 2 Poor
-17-05-2026 2 Poor
-17-05-2026 4 Good
-17-05-2026 5 Perfect
-17-05-2026 2 Poor
-17-05-2026 2 Poor
 18-05-2026 1 Terrible
+

@@ -1,11 +1,11 @@
 #include "ChartCalories.h"
-
+#include <map>
 #include <sstream>
 #include <iomanip>
 #include <fstream>
 #include <algorithm>
 #include <cctype>
-
+#include "activity/activity.h"
 CaloriesChartLogic::CaloriesChartLogic(const std::string& calendarPath)
     : calendarPath_(calendarPath)
 {
@@ -168,73 +168,99 @@ void CaloriesChartLogic::calculateCaloriesForDate(
 
         std::string payload = s.size() > 11 ? s.substr(11) : std::string();
 
-        if (currentSection == "[food]")
-        {
-            std::istringstream ss(payload);
+        if (currentSection == "[food]") {
+            auto kcalPos = payload.find("kcal=");
 
-            std::string foodName;
-            ss >> foodName;
+            if (kcalPos != std::string::npos) {
+                kcalPos += 5;
 
-            double grams = parseGramsFromFoodPayload(payload);
-            double kcalPer100g = getCaloriesPer100g(foodName);
+                std::size_t end = kcalPos;
+                while (end < payload.size() &&
+                    (std::isdigit((unsigned char)payload[end]) ||
+                        payload[end] == '.' ||
+                        payload[end] == ',')) {
+                    ++end;
+                }
 
-            eatenCalories += grams * kcalPer100g / 100.0;
+                std::string kcalText = payload.substr(kcalPos, end - kcalPos);
+                std::replace(kcalText.begin(), kcalText.end(), ',', '.');
+
+                try {
+                    eatenCalories += std::stod(kcalText);
+                }
+                catch (...) {
+                }
+            }
+            else {
+                std::istringstream ss(payload);
+                std::string foodName;
+                ss >> foodName;
+
+                double grams = parseGramsFromFoodPayload(payload);
+                double kcalPer100g = getCaloriesPer100g(foodName);
+
+                eatenCalories += grams * kcalPer100g / 100.0;
+            }
         }
-        else if (currentSection == "[activity]")
-        {
+        else if (currentSection == "[activity]") {
             std::istringstream ss(payload);
 
             std::string activityName;
             std::string durationText;
-            std::string burnedText;
+            std::string weightText;
 
-            ss >> activityName >> durationText >> burnedText;
+            ss >> activityName >> durationText >> weightText;
 
-            double burned = parseDoubleValue(burnedText);
+            double duration = parseDoubleValue(durationText);
+            double weight = parseDoubleValue(weightText);
 
-            if (burned > 0.0)
-            {
+            if (duration > 0.0 && weight > 0.0) {
+                ActivityInfo info = ActivityInfo::find_activity(activityName);
+
+                double burned = duration * info.MET * weight * 0.0175;
+
                 burnedCalories += burned;
             }
         }
     }
 }
 
-double CaloriesChartLogic::getCaloriesPer100g(const std::string& name)
-{
-    if (name == "Banana")
-    {
-        return 89.0;
+double CaloriesChartLogic::getCaloriesPer100g(const std::string& name) {
+    static std::map<std::string, double> calories = {
+        {"Banana", 89.0},
+        {"Borsh", 57.0},
+        {"Borscht", 57.0},
+        {"Apple", 52.0},
+        {"Rice", 130.0},
+        {"Chicken", 165.0},
+        {"Egg", 155.0},
+        {"Bread", 265.0},
+
+        {"Chicken_Rice", 148.0},
+        {"Omelette_with_veggies", 119.0}
+    };
+
+    auto it = calories.find(name);
+    if (it != calories.end()) {
+        return it->second;
     }
 
-    if (name == "Borsh" || name == "Borscht")
-    {
-        return 57.0;
+    double sum = 0.0;
+    int count = 0;
+
+    std::string part;
+    std::istringstream ss(name);
+
+    while (std::getline(ss, part, '_')) {
+        auto partIt = calories.find(part);
+        if (partIt != calories.end()) {
+            sum += partIt->second;
+            count++;
+        }
     }
 
-    if (name == "Apple")
-    {
-        return 52.0;
-    }
-
-    if (name == "Rice")
-    {
-        return 130.0;
-    }
-
-    if (name == "Chicken")
-    {
-        return 165.0;
-    }
-
-    if (name == "Egg")
-    {
-        return 155.0;
-    }
-
-    if (name == "Bread")
-    {
-        return 265.0;
+    if (count > 0) {
+        return sum / count;
     }
 
     return 0.0;
