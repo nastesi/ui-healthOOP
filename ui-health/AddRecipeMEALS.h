@@ -76,6 +76,7 @@ namespace uihealth {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddRecipeMEALS::typeid));
 			this->labelAddNewRecipeItem = (gcnew System::Windows::Forms::Label());
 			this->textBoxAddNewRecipename = (gcnew System::Windows::Forms::TextBox());
 			this->labelNameNewRecipe = (gcnew System::Windows::Forms::Label());
@@ -95,18 +96,18 @@ namespace uihealth {
 			// labelAddNewRecipeItem
 			// 
 			this->labelAddNewRecipeItem->AutoSize = true;
-			this->labelAddNewRecipeItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelAddNewRecipeItem->Location = System::Drawing::Point(236, 28);
+			this->labelAddNewRecipeItem->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelAddNewRecipeItem->Location = System::Drawing::Point(194, 24);
 			this->labelAddNewRecipeItem->Name = L"labelAddNewRecipeItem";
-			this->labelAddNewRecipeItem->Size = System::Drawing::Size(301, 29);
+			this->labelAddNewRecipeItem->Size = System::Drawing::Size(379, 40);
 			this->labelAddNewRecipeItem->TabIndex = 1;
 			this->labelAddNewRecipeItem->Text = L"ADD NEW RECIPE ITEM";
 			this->labelAddNewRecipeItem->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::labelAddNewRecipeItem_Click);
 			// 
 			// textBoxAddNewRecipename
 			// 
-			this->textBoxAddNewRecipename->Location = System::Drawing::Point(163, 89);
+			this->textBoxAddNewRecipename->Location = System::Drawing::Point(136, 87);
 			this->textBoxAddNewRecipename->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxAddNewRecipename->Name = L"textBoxAddNewRecipename";
 			this->textBoxAddNewRecipename->Size = System::Drawing::Size(240, 22);
@@ -115,17 +116,17 @@ namespace uihealth {
 			// labelNameNewRecipe
 			// 
 			this->labelNameNewRecipe->AutoSize = true;
-			this->labelNameNewRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelNameNewRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->labelNameNewRecipe->Location = System::Drawing::Point(51, 86);
 			this->labelNameNewRecipe->Name = L"labelNameNewRecipe";
-			this->labelNameNewRecipe->Size = System::Drawing::Size(70, 25);
+			this->labelNameNewRecipe->Size = System::Drawing::Size(76, 23);
 			this->labelNameNewRecipe->TabIndex = 3;
 			this->labelNameNewRecipe->Text = L"Name:";
 			// 
 			// numericUpDownCarbsRecipe
 			// 
-			this->numericUpDownCarbsRecipe->Location = System::Drawing::Point(241, 242);
+			this->numericUpDownCarbsRecipe->Location = System::Drawing::Point(158, 212);
 			this->numericUpDownCarbsRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->numericUpDownCarbsRecipe->Name = L"numericUpDownCarbsRecipe";
 			this->numericUpDownCarbsRecipe->Size = System::Drawing::Size(163, 22);
@@ -134,17 +135,17 @@ namespace uihealth {
 			// labelCarbsAddRecipe
 			// 
 			this->labelCarbsAddRecipe->AutoSize = true;
-			this->labelCarbsAddRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelCarbsAddRecipe->Location = System::Drawing::Point(49, 242);
+			this->labelCarbsAddRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelCarbsAddRecipe->Location = System::Drawing::Point(51, 211);
 			this->labelCarbsAddRecipe->Name = L"labelCarbsAddRecipe";
-			this->labelCarbsAddRecipe->Size = System::Drawing::Size(92, 25);
+			this->labelCarbsAddRecipe->Size = System::Drawing::Size(97, 23);
 			this->labelCarbsAddRecipe->TabIndex = 46;
 			this->labelCarbsAddRecipe->Text = L"Carbs, g:";
 			// 
 			// numericUpDownFatRecipe
 			// 
-			this->numericUpDownFatRecipe->Location = System::Drawing::Point(241, 199);
+			this->numericUpDownFatRecipe->Location = System::Drawing::Point(127, 169);
 			this->numericUpDownFatRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->numericUpDownFatRecipe->Name = L"numericUpDownFatRecipe";
 			this->numericUpDownFatRecipe->Size = System::Drawing::Size(163, 22);
@@ -153,17 +154,17 @@ namespace uihealth {
 			// labelFatAddRecipe
 			// 
 			this->labelFatAddRecipe->AutoSize = true;
-			this->labelFatAddRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelFatAddRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelFatAddRecipe->Location = System::Drawing::Point(49, 199);
+			this->labelFatAddRecipe->Location = System::Drawing::Point(51, 168);
 			this->labelFatAddRecipe->Name = L"labelFatAddRecipe";
-			this->labelFatAddRecipe->Size = System::Drawing::Size(67, 25);
+			this->labelFatAddRecipe->Size = System::Drawing::Size(70, 23);
 			this->labelFatAddRecipe->TabIndex = 44;
 			this->labelFatAddRecipe->Text = L"Fat, g:";
 			// 
 			// numericUpDownProteinRecipe
 			// 
-			this->numericUpDownProteinRecipe->Location = System::Drawing::Point(241, 158);
+			this->numericUpDownProteinRecipe->Location = System::Drawing::Point(165, 128);
 			this->numericUpDownProteinRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->numericUpDownProteinRecipe->Name = L"numericUpDownProteinRecipe";
 			this->numericUpDownProteinRecipe->Size = System::Drawing::Size(163, 22);
@@ -172,17 +173,19 @@ namespace uihealth {
 			// labelProteinAddRecipe
 			// 
 			this->labelProteinAddRecipe->AutoSize = true;
-			this->labelProteinAddRecipe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelProteinAddRecipe->Location = System::Drawing::Point(49, 158);
+			this->labelProteinAddRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelProteinAddRecipe->Location = System::Drawing::Point(51, 127);
 			this->labelProteinAddRecipe->Name = L"labelProteinAddRecipe";
-			this->labelProteinAddRecipe->Size = System::Drawing::Size(100, 25);
+			this->labelProteinAddRecipe->Size = System::Drawing::Size(105, 23);
 			this->labelProteinAddRecipe->TabIndex = 42;
 			this->labelProteinAddRecipe->Text = L"Protein, g:";
 			// 
 			// buttonCancelNewRecipe
 			// 
-			this->buttonCancelNewRecipe->Location = System::Drawing::Point(383, 331);
+			this->buttonCancelNewRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonCancelNewRecipe->Location = System::Drawing::Point(385, 331);
 			this->buttonCancelNewRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonCancelNewRecipe->Name = L"buttonCancelNewRecipe";
 			this->buttonCancelNewRecipe->Size = System::Drawing::Size(175, 41);
@@ -193,7 +196,9 @@ namespace uihealth {
 			// 
 			// buttonSaveNewRecipe
 			// 
-			this->buttonSaveNewRecipe->Location = System::Drawing::Point(201, 331);
+			this->buttonSaveNewRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonSaveNewRecipe->Location = System::Drawing::Point(191, 331);
 			this->buttonSaveNewRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonSaveNewRecipe->Name = L"buttonSaveNewRecipe";
 			this->buttonSaveNewRecipe->Size = System::Drawing::Size(175, 41);
@@ -218,6 +223,7 @@ namespace uihealth {
 			this->Controls->Add(this->textBoxAddNewRecipename);
 			this->Controls->Add(this->labelNameNewRecipe);
 			this->Controls->Add(this->labelAddNewRecipeItem);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"AddRecipeMEALS";
 			this->Text = L"AddRecipeMEALS";

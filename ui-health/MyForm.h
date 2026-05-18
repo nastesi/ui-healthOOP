@@ -104,6 +104,7 @@ namespace uihealth {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->buttonDairy = (gcnew System::Windows::Forms::Button());
 			this->panelHeader = (gcnew System::Windows::Forms::Panel());
 			this->labelNameUser = (gcnew System::Windows::Forms::Label());
@@ -115,7 +116,9 @@ namespace uihealth {
 			// 
 			// buttonDairy
 			// 
-			this->buttonDairy->Location = System::Drawing::Point(130, 9);
+			this->buttonDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonDairy->Location = System::Drawing::Point(869, 15);
 			this->buttonDairy->Name = L"buttonDairy";
 			this->buttonDairy->Size = System::Drawing::Size(121, 40);
 			this->buttonDairy->TabIndex = 4;
@@ -141,23 +144,24 @@ namespace uihealth {
 			// labelNameUser
 			// 
 			this->labelNameUser->AutoSize = true;
-			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameUser->Location = System::Drawing::Point(653, 19);
+			this->labelNameUser->Location = System::Drawing::Point(750, 21);
 			this->labelNameUser->Name = L"labelNameUser";
-			this->labelNameUser->Size = System::Drawing::Size(53, 25);
+			this->labelNameUser->Size = System::Drawing::Size(74, 34);
 			this->labelNameUser->TabIndex = 9;
 			this->labelNameUser->Text = L"Max";
 			this->labelNameUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelNameUser->Click += gcnew System::EventHandler(this, &MyForm::labelNameUser_Click);
 			// 
 			// labelUser
 			// 
 			this->labelUser->AutoSize = true;
-			this->labelUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelUser->Location = System::Drawing::Point(597, 20);
+			this->labelUser->Location = System::Drawing::Point(680, 19);
 			this->labelUser->Name = L"labelUser";
-			this->labelUser->Size = System::Drawing::Size(59, 25);
+			this->labelUser->Size = System::Drawing::Size(76, 34);
 			this->labelUser->TabIndex = 8;
 			this->labelUser->Text = L"User:";
 			this->labelUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -166,11 +170,11 @@ namespace uihealth {
 			// labelSecTitle
 			// 
 			this->labelSecTitle->AutoSize = true;
-			this->labelSecTitle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelSecTitle->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelSecTitle->Location = System::Drawing::Point(20, 9);
+			this->labelSecTitle->Location = System::Drawing::Point(20, 14);
 			this->labelSecTitle->Name = L"labelSecTitle";
-			this->labelSecTitle->Size = System::Drawing::Size(104, 38);
+			this->labelSecTitle->Size = System::Drawing::Size(116, 40);
 			this->labelSecTitle->TabIndex = 5;
 			this->labelSecTitle->Text = L"Home";
 			this->labelSecTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -193,6 +197,7 @@ namespace uihealth {
 			this->ClientSize = System::Drawing::Size(1010, 753);
 			this->Controls->Add(this->panelContent);
 			this->Controls->Add(this->panelHeader);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"HealthApp";
@@ -248,5 +253,6 @@ private: System::Void labelWeightnumber_Click(System::Object^ sender, System::Ev
 private: System::Void labelActivityoption_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void label1_Click_5(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelNameUser_Click(System::Object^ sender, System::EventArgs^ e) {}
 };
 }

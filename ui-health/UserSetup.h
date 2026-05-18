@@ -48,6 +48,7 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ComboBox^ comboBoxGoal;
 	private: System::Windows::Forms::Button^ buttonSaveUser;
+	private: System::Windows::Forms::Label^ label2;
 
 	private:
 		/// <summary>
@@ -62,6 +63,7 @@ namespace uihealth {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(UserSetup::typeid));
 			this->labelNameUser = (gcnew System::Windows::Forms::Label());
 			this->textBoxUserName = (gcnew System::Windows::Forms::TextBox());
 			this->labelAgeUser = (gcnew System::Windows::Forms::Label());
@@ -75,23 +77,25 @@ namespace uihealth {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->comboBoxGoal = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonSaveUser = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelNameUser
 			// 
 			this->labelNameUser->AutoSize = true;
-			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameUser->Location = System::Drawing::Point(31, 93);
+			this->labelNameUser->Location = System::Drawing::Point(44, 160);
 			this->labelNameUser->Name = L"labelNameUser";
-			this->labelNameUser->Size = System::Drawing::Size(84, 29);
+			this->labelNameUser->Size = System::Drawing::Size(88, 27);
 			this->labelNameUser->TabIndex = 4;
 			this->labelNameUser->Text = L"Name:";
 			this->labelNameUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelNameUser->Click += gcnew System::EventHandler(this, &UserSetup::labelNameUser_Click);
 			// 
 			// textBoxUserName
 			// 
-			this->textBoxUserName->Location = System::Drawing::Point(121, 96);
+			this->textBoxUserName->Location = System::Drawing::Point(134, 163);
 			this->textBoxUserName->Name = L"textBoxUserName";
 			this->textBoxUserName->Size = System::Drawing::Size(309, 22);
 			this->textBoxUserName->TabIndex = 5;
@@ -99,18 +103,19 @@ namespace uihealth {
 			// labelAgeUser
 			// 
 			this->labelAgeUser->AutoSize = true;
-			this->labelAgeUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelAgeUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelAgeUser->Location = System::Drawing::Point(31, 138);
+			this->labelAgeUser->Location = System::Drawing::Point(44, 205);
 			this->labelAgeUser->Name = L"labelAgeUser";
-			this->labelAgeUser->Size = System::Drawing::Size(62, 29);
+			this->labelAgeUser->Size = System::Drawing::Size(65, 27);
 			this->labelAgeUser->TabIndex = 6;
 			this->labelAgeUser->Text = L"Age:";
 			this->labelAgeUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelAgeUser->Click += gcnew System::EventHandler(this, &UserSetup::labelAgeUser_Click);
 			// 
 			// textBoxAgeUser
 			// 
-			this->textBoxAgeUser->Location = System::Drawing::Point(99, 140);
+			this->textBoxAgeUser->Location = System::Drawing::Point(112, 210);
 			this->textBoxAgeUser->Name = L"textBoxAgeUser";
 			this->textBoxAgeUser->Size = System::Drawing::Size(67, 22);
 			this->textBoxAgeUser->TabIndex = 7;
@@ -118,18 +123,19 @@ namespace uihealth {
 			// labelWeightUser
 			// 
 			this->labelWeightUser->AutoSize = true;
-			this->labelWeightUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelWeightUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelWeightUser->Location = System::Drawing::Point(31, 184);
+			this->labelWeightUser->Location = System::Drawing::Point(44, 251);
 			this->labelWeightUser->Name = L"labelWeightUser";
-			this->labelWeightUser->Size = System::Drawing::Size(132, 29);
+			this->labelWeightUser->Size = System::Drawing::Size(138, 27);
 			this->labelWeightUser->TabIndex = 8;
 			this->labelWeightUser->Text = L"Weight, kg:";
 			this->labelWeightUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelWeightUser->Click += gcnew System::EventHandler(this, &UserSetup::labelWeightUser_Click);
 			// 
 			// textBoxWeightUser
 			// 
-			this->textBoxWeightUser->Location = System::Drawing::Point(169, 187);
+			this->textBoxWeightUser->Location = System::Drawing::Point(190, 255);
 			this->textBoxWeightUser->Name = L"textBoxWeightUser";
 			this->textBoxWeightUser->Size = System::Drawing::Size(67, 22);
 			this->textBoxWeightUser->TabIndex = 9;
@@ -137,18 +143,19 @@ namespace uihealth {
 			// labelHeightUser
 			// 
 			this->labelHeightUser->AutoSize = true;
-			this->labelHeightUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelHeightUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelHeightUser->Location = System::Drawing::Point(34, 227);
+			this->labelHeightUser->Location = System::Drawing::Point(47, 297);
 			this->labelHeightUser->Name = L"labelHeightUser";
-			this->labelHeightUser->Size = System::Drawing::Size(133, 29);
+			this->labelHeightUser->Size = System::Drawing::Size(141, 27);
 			this->labelHeightUser->TabIndex = 10;
 			this->labelHeightUser->Text = L"Height, cm:";
 			this->labelHeightUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelHeightUser->Click += gcnew System::EventHandler(this, &UserSetup::labelHeightUser_Click);
 			// 
 			// textBoxHeightUser
 			// 
-			this->textBoxHeightUser->Location = System::Drawing::Point(169, 230);
+			this->textBoxHeightUser->Location = System::Drawing::Point(192, 301);
 			this->textBoxHeightUser->Name = L"textBoxHeightUser";
 			this->textBoxHeightUser->Size = System::Drawing::Size(67, 22);
 			this->textBoxHeightUser->TabIndex = 11;
@@ -156,19 +163,20 @@ namespace uihealth {
 			// labelActivityUser
 			// 
 			this->labelActivityUser->AutoSize = true;
-			this->labelActivityUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelActivityUser->Location = System::Drawing::Point(34, 295);
+			this->labelActivityUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelActivityUser->Location = System::Drawing::Point(48, 351);
 			this->labelActivityUser->Name = L"labelActivityUser";
-			this->labelActivityUser->Size = System::Drawing::Size(185, 29);
+			this->labelActivityUser->Size = System::Drawing::Size(211, 27);
 			this->labelActivityUser->TabIndex = 12;
 			this->labelActivityUser->Text = L"Average activity:";
 			this->labelActivityUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelActivityUser->Click += gcnew System::EventHandler(this, &UserSetup::labelActivityUser_Click);
 			// 
 			// comboBoxActivityUser
 			// 
 			this->comboBoxActivityUser->FormattingEnabled = true;
-			this->comboBoxActivityUser->Location = System::Drawing::Point(225, 298);
+			this->comboBoxActivityUser->Location = System::Drawing::Point(265, 354);
 			this->comboBoxActivityUser->Name = L"comboBoxActivityUser";
 			this->comboBoxActivityUser->Size = System::Drawing::Size(183, 24);
 			this->comboBoxActivityUser->TabIndex = 13;
@@ -177,37 +185,54 @@ namespace uihealth {
 			// 
 			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(350, 180);
+			this->label1->Location = System::Drawing::Point(48, 404);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(208, 29);
+			this->label1->Size = System::Drawing::Size(221, 27);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"What is your goal\?";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label1->Click += gcnew System::EventHandler(this, &UserSetup::label1_Click);
 			// 
 			// comboBoxGoal
 			// 
 			this->comboBoxGoal->FormattingEnabled = true;
-			this->comboBoxGoal->Location = System::Drawing::Point(495, 227);
+			this->comboBoxGoal->Location = System::Drawing::Point(275, 407);
 			this->comboBoxGoal->Name = L"comboBoxGoal";
-			this->comboBoxGoal->Size = System::Drawing::Size(203, 24);
+			this->comboBoxGoal->Size = System::Drawing::Size(173, 24);
 			this->comboBoxGoal->TabIndex = 15;
 			// 
 			// buttonSaveUser
 			// 
-			this->buttonSaveUser->Location = System::Drawing::Point(199, 395);
+			this->buttonSaveUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonSaveUser->Location = System::Drawing::Point(399, 497);
 			this->buttonSaveUser->Name = L"buttonSaveUser";
-			this->buttonSaveUser->Size = System::Drawing::Size(175, 41);
+			this->buttonSaveUser->Size = System::Drawing::Size(183, 48);
 			this->buttonSaveUser->TabIndex = 31;
 			this->buttonSaveUser->Text = L"SAVE AND START";
 			this->buttonSaveUser->UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(326, 33);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(315, 40);
+			this->label2->TabIndex = 32;
+			this->label2->Text = L"Set up your profile";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// UserSetup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::AliceBlue;
 			this->ClientSize = System::Drawing::Size(982, 636);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->buttonSaveUser);
 			this->Controls->Add(this->comboBoxGoal);
 			this->Controls->Add(this->label1);
@@ -221,6 +246,7 @@ namespace uihealth {
 			this->Controls->Add(this->labelAgeUser);
 			this->Controls->Add(this->textBoxUserName);
 			this->Controls->Add(this->labelNameUser);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"UserSetup";
 			this->Text = L"UserSetup";
 			this->Load += gcnew System::EventHandler(this, &UserSetup::UserSetup_Load);
@@ -230,5 +256,11 @@ namespace uihealth {
 		}
 #pragma endregion
 	private: System::Void UserSetup_Load(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelAgeUser_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelWeightUser_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelHeightUser_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelNameUser_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelActivityUser_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {}
 };
 }

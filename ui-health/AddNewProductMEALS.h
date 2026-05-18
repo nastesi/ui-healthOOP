@@ -69,6 +69,7 @@ namespace uihealth {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddNewProductMEALS::typeid));
 			this->labelAddNewproductItem = (gcnew System::Windows::Forms::Label());
 			this->labelNameNewFood = (gcnew System::Windows::Forms::Label());
 			this->textBoxAddNewProductname = (gcnew System::Windows::Forms::TextBox());
@@ -213,6 +214,7 @@ namespace uihealth {
 			this->Controls->Add(this->textBoxAddNewProductname);
 			this->Controls->Add(this->labelNameNewFood);
 			this->Controls->Add(this->labelAddNewproductItem);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"AddNewProductMEALS";
 			this->Text = L"AddNewProductMEALS";
