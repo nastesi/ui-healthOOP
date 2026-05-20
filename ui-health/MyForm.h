@@ -95,7 +95,7 @@ namespace uihealth {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -144,9 +144,10 @@ namespace uihealth {
 			// labelNameUser
 			// 
 			this->labelNameUser->AutoSize = true;
+			this->labelNameUser->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameUser->Location = System::Drawing::Point(750, 20);
+			this->labelNameUser->Location = System::Drawing::Point(760, 20);
 			this->labelNameUser->Name = L"labelNameUser";
 			this->labelNameUser->Size = System::Drawing::Size(74, 34);
 			this->labelNameUser->TabIndex = 9;
@@ -218,19 +219,19 @@ namespace uihealth {
 #pragma endregion
 	private: System::Void panelContent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {}
 	private: System::Void MENU_Click(System::Object^ sender, System::EventArgs^ e) {}
-	// for Meals button
+		   // for Meals button
 	private: System::Void buttonMeals_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		labelSecTitle->Text = "Meals";
 		ShowPage(meals);
 	}
-	// for Exercise button
-	 private: System::Void OnOpenExercise(System::Object^ sender, System::EventArgs^ e)
-		   {
-			   labelSecTitle->Text = L"Exercise";
-			   ShowPage(exercises);
-		   }
-	// for diary button
+		   // for Exercise button
+	private: System::Void OnOpenExercise(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelSecTitle->Text = L"Exercise";
+		ShowPage(exercises);
+	}
+		   // for diary button
 	private: System::Void buttonDairy_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		labelSecTitle->Text = "Diary";
@@ -242,17 +243,20 @@ namespace uihealth {
 		ShowPage(meals);
 	}
 
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void label1_Click_2(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void label1_Click_3(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void label1_Click_4(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void labelProgresspanel_Click(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void labelWeightnumber_Click(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void labelActivityoption_Click(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void label1_Click_5(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void labelNameUser_Click(System::Object^ sender, System::EventArgs^ e) {}
-};
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void label1_Click_2(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void label1_Click_3(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void label1_Click_4(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void labelProgresspanel_Click(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void labelWeightnumber_Click(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void labelActivityoption_Click(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void label1_Click_5(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {}
+	private: System::Void labelNameUser_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		//Maks!! to insert logic of opening user profile as alert window (change profile info yes/no?) -> then apply UserSetup window and save new information
+	}
+	};
 }

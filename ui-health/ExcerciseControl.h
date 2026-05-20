@@ -30,7 +30,7 @@ namespace uihealth {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ labelActivityControl;
+
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerActivity;
 	private: System::Windows::Forms::Label^ labelDateActivity;
 	private: System::Windows::Forms::ComboBox^ comboBoxCardioType;
@@ -65,7 +65,6 @@ namespace uihealth {
 
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void){
-			this->labelActivityControl = (gcnew System::Windows::Forms::Label());
 			this->dateTimePickerActivity = (gcnew System::Windows::Forms::DateTimePicker());
 			this->labelDateActivity = (gcnew System::Windows::Forms::Label());
 			this->comboBoxCardioType = (gcnew System::Windows::Forms::ComboBox());
@@ -103,18 +102,6 @@ namespace uihealth {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRepStrength))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownSeries))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// labelActivityControl
-			// 
-			this->labelActivityControl->AutoSize = true;
-			this->labelActivityControl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelActivityControl->Location = System::Drawing::Point(66, 36);
-			this->labelActivityControl->Name = L"labelActivityControl";
-			this->labelActivityControl->Size = System::Drawing::Size(387, 39);
-			this->labelActivityControl->TabIndex = 2;
-			this->labelActivityControl->Text = L"Exercises and activities";
-			this->labelActivityControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// dateTimePickerActivity
 			// 
@@ -190,7 +177,7 @@ namespace uihealth {
 			// 
 			this->textBoxSelectedActivitylist->BackColor = System::Drawing::Color::White;
 			this->textBoxSelectedActivitylist->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBoxSelectedActivitylist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+			this->textBoxSelectedActivitylist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->textBoxSelectedActivitylist->Location = System::Drawing::Point(20, 41);
 			this->textBoxSelectedActivitylist->Margin = System::Windows::Forms::Padding(2);
@@ -198,7 +185,7 @@ namespace uihealth {
 			this->textBoxSelectedActivitylist->Name = L"textBoxSelectedActivitylist";
 			this->textBoxSelectedActivitylist->ReadOnly = true;
 			this->textBoxSelectedActivitylist->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBoxSelectedActivitylist->Size = System::Drawing::Size(326, 417);
+			this->textBoxSelectedActivitylist->Size = System::Drawing::Size(324, 417);
 			this->textBoxSelectedActivitylist->TabIndex = 15;
 			// 
 			// labelSelectedActivity
@@ -206,9 +193,9 @@ namespace uihealth {
 			this->labelSelectedActivity->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->labelSelectedActivity->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelSelectedActivity->Location = System::Drawing::Point(132, 13);
+			this->labelSelectedActivity->Location = System::Drawing::Point(114, 13);
 			this->labelSelectedActivity->Name = L"labelSelectedActivity";
-			this->labelSelectedActivity->Size = System::Drawing::Size(97, 26);
+			this->labelSelectedActivity->Size = System::Drawing::Size(101, 26);
 			this->labelSelectedActivity->TabIndex = 14;
 			this->labelSelectedActivity->Text = L"Selected";
 			// 
@@ -291,7 +278,7 @@ namespace uihealth {
 			// 
 			// numericUpDownDurCardio
 			// 
-			this->numericUpDownDurCardio->Location = System::Drawing::Point(151, 19);
+			this->numericUpDownDurCardio->Location = System::Drawing::Point(156, 19);
 			this->numericUpDownDurCardio->Name = L"numericUpDownDurCardio";
 			this->numericUpDownDurCardio->Size = System::Drawing::Size(63, 23);
 			this->numericUpDownDurCardio->TabIndex = 26;
@@ -431,7 +418,6 @@ namespace uihealth {
 			this->Controls->Add(this->labelSearchCardio);
 			this->Controls->Add(this->dateTimePickerActivity);
 			this->Controls->Add(this->labelDateActivity);
-			this->Controls->Add(this->labelActivityControl);
 			this->Name = L"ExcerciseControl";
 			this->Size = System::Drawing::Size(1000, 683);
 			this->Load += gcnew System::EventHandler(this, &ExcerciseControl::ExcerciseControl_Load);

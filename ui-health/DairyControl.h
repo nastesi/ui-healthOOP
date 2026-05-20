@@ -48,7 +48,7 @@ namespace uihealth {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ labelDiaryControl;
+
 
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ labelMealsDairy;
@@ -93,7 +93,6 @@ namespace uihealth {
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			this->labelDiaryControl = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->textActivityDairy = (gcnew System::Windows::Forms::Label());
 			this->textMealsDairy = (gcnew System::Windows::Forms::Label());
@@ -109,18 +108,6 @@ namespace uihealth {
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// labelDiaryControl
-			// 
-			this->labelDiaryControl->AutoSize = true;
-			this->labelDiaryControl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelDiaryControl->Location = System::Drawing::Point(38, 23);
-			this->labelDiaryControl->Name = L"labelDiaryControl";
-			this->labelDiaryControl->Size = System::Drawing::Size(117, 40);
-			this->labelDiaryControl->TabIndex = 3;
-			this->labelDiaryControl->Text = L"DAIRY";
-			this->labelDiaryControl->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panel1
 			// 
@@ -245,7 +232,7 @@ namespace uihealth {
 			this->labelAnalytics->AutoSize = true;
 			this->labelAnalytics->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelAnalytics->Location = System::Drawing::Point(446, 79);
+			this->labelAnalytics->Location = System::Drawing::Point(443, 42);
 			this->labelAnalytics->Name = L"labelAnalytics";
 			this->labelAnalytics->Size = System::Drawing::Size(139, 34);
 			this->labelAnalytics->TabIndex = 40;
@@ -258,14 +245,14 @@ namespace uihealth {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(449, 127);
+			this->chart1->Location = System::Drawing::Point(443, 90);
 			this->chart1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(502, 350);
+			this->chart1->Size = System::Drawing::Size(502, 387);
 			this->chart1->TabIndex = 46;
 			this->chart1->Text = L"chart1";
 			// 
@@ -280,7 +267,6 @@ namespace uihealth {
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->labelEntriesDairy);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->labelDiaryControl);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"DairyControl";
 			this->Size = System::Drawing::Size(1000, 683);

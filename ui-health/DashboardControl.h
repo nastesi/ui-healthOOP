@@ -174,6 +174,7 @@ namespace uihealth {
 			this->labelGreeting->TabIndex = 7;
 			this->labelGreeting->Text = L"Welcome Max! Here is your daily health summary";
 			this->labelGreeting->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelGreeting->Click += gcnew System::EventHandler(this, &DashboardControl::labelGreeting_Click);
 			// 
 			// panelSummary
 			// 
@@ -707,5 +708,6 @@ private: System::Void buttonMoodSave_Click(System::Object^ sender, System::Event
 	}
 }
 private: System::Void radioTerrible_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void labelGreeting_Click(System::Object^ sender, System::EventArgs^ e) {}
 };
 }

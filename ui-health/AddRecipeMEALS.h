@@ -37,8 +37,6 @@ namespace uihealth {
 			}
 		}
 	private: System::Windows::Forms::Label^ labelAddNewRecipeItem;
-	private: System::Windows::Forms::TextBox^ textBoxAddNewRecipename;
-	private: System::Windows::Forms::Label^ labelNameNewRecipe;
 
 
 
@@ -46,19 +44,39 @@ namespace uihealth {
 
 
 
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownCarbsRecipe;
 
-	private: System::Windows::Forms::Label^ labelCarbsAddRecipe;
 
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownFatRecipe;
 
-	private: System::Windows::Forms::Label^ labelFatAddRecipe;
 
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownProteinRecipe;
 
-	private: System::Windows::Forms::Label^ labelProteinAddRecipe;
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ buttonCancelNewRecipe;
 	private: System::Windows::Forms::Button^ buttonSaveNewRecipe;
+	private: System::Windows::Forms::Panel^ panelSelectedActivityADD;
+
+	private: System::Windows::Forms::Button^ buttonRemoveActivityADD;
+
+	private: System::Windows::Forms::TextBox^ textBoxSelectedActivitylistADD;
+
+	private: System::Windows::Forms::Label^ labelSelectedActivityADD;
+
+	private: System::Windows::Forms::ComboBox^ comboBoxFoodADD;
+
+	private: System::Windows::Forms::Label^ labelSearchProdADD;
+	private: System::Windows::Forms::Button^ buttonAddADD;
+
+
+	private: System::Windows::Forms::Label^ labelGramsProdADD;
+	private: System::Windows::Forms::TextBox^ textBoxGramsProdADD;
+
+
 
 
 	protected:
@@ -78,19 +96,18 @@ namespace uihealth {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddRecipeMEALS::typeid));
 			this->labelAddNewRecipeItem = (gcnew System::Windows::Forms::Label());
-			this->textBoxAddNewRecipename = (gcnew System::Windows::Forms::TextBox());
-			this->labelNameNewRecipe = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownCarbsRecipe = (gcnew System::Windows::Forms::NumericUpDown());
-			this->labelCarbsAddRecipe = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownFatRecipe = (gcnew System::Windows::Forms::NumericUpDown());
-			this->labelFatAddRecipe = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownProteinRecipe = (gcnew System::Windows::Forms::NumericUpDown());
-			this->labelProteinAddRecipe = (gcnew System::Windows::Forms::Label());
 			this->buttonCancelNewRecipe = (gcnew System::Windows::Forms::Button());
 			this->buttonSaveNewRecipe = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCarbsRecipe))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownFatRecipe))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownProteinRecipe))->BeginInit();
+			this->panelSelectedActivityADD = (gcnew System::Windows::Forms::Panel());
+			this->buttonRemoveActivityADD = (gcnew System::Windows::Forms::Button());
+			this->textBoxSelectedActivitylistADD = (gcnew System::Windows::Forms::TextBox());
+			this->labelSelectedActivityADD = (gcnew System::Windows::Forms::Label());
+			this->comboBoxFoodADD = (gcnew System::Windows::Forms::ComboBox());
+			this->labelSearchProdADD = (gcnew System::Windows::Forms::Label());
+			this->buttonAddADD = (gcnew System::Windows::Forms::Button());
+			this->labelGramsProdADD = (gcnew System::Windows::Forms::Label());
+			this->textBoxGramsProdADD = (gcnew System::Windows::Forms::TextBox());
+			this->panelSelectedActivityADD->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// labelAddNewRecipeItem
@@ -98,94 +115,18 @@ namespace uihealth {
 			this->labelAddNewRecipeItem->AutoSize = true;
 			this->labelAddNewRecipeItem->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelAddNewRecipeItem->Location = System::Drawing::Point(194, 24);
+			this->labelAddNewRecipeItem->Location = System::Drawing::Point(257, 21);
 			this->labelAddNewRecipeItem->Name = L"labelAddNewRecipeItem";
-			this->labelAddNewRecipeItem->Size = System::Drawing::Size(379, 40);
+			this->labelAddNewRecipeItem->Size = System::Drawing::Size(274, 39);
 			this->labelAddNewRecipeItem->TabIndex = 1;
-			this->labelAddNewRecipeItem->Text = L"ADD NEW RECIPE ITEM";
+			this->labelAddNewRecipeItem->Text = L"Add new recipe";
 			this->labelAddNewRecipeItem->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::labelAddNewRecipeItem_Click);
-			// 
-			// textBoxAddNewRecipename
-			// 
-			this->textBoxAddNewRecipename->Location = System::Drawing::Point(136, 87);
-			this->textBoxAddNewRecipename->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBoxAddNewRecipename->Name = L"textBoxAddNewRecipename";
-			this->textBoxAddNewRecipename->Size = System::Drawing::Size(240, 22);
-			this->textBoxAddNewRecipename->TabIndex = 4;
-			// 
-			// labelNameNewRecipe
-			// 
-			this->labelNameNewRecipe->AutoSize = true;
-			this->labelNameNewRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelNameNewRecipe->Location = System::Drawing::Point(51, 86);
-			this->labelNameNewRecipe->Name = L"labelNameNewRecipe";
-			this->labelNameNewRecipe->Size = System::Drawing::Size(76, 23);
-			this->labelNameNewRecipe->TabIndex = 3;
-			this->labelNameNewRecipe->Text = L"Name:";
-			// 
-			// numericUpDownCarbsRecipe
-			// 
-			this->numericUpDownCarbsRecipe->Location = System::Drawing::Point(158, 212);
-			this->numericUpDownCarbsRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->numericUpDownCarbsRecipe->Name = L"numericUpDownCarbsRecipe";
-			this->numericUpDownCarbsRecipe->Size = System::Drawing::Size(163, 22);
-			this->numericUpDownCarbsRecipe->TabIndex = 47;
-			// 
-			// labelCarbsAddRecipe
-			// 
-			this->labelCarbsAddRecipe->AutoSize = true;
-			this->labelCarbsAddRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelCarbsAddRecipe->Location = System::Drawing::Point(51, 211);
-			this->labelCarbsAddRecipe->Name = L"labelCarbsAddRecipe";
-			this->labelCarbsAddRecipe->Size = System::Drawing::Size(97, 23);
-			this->labelCarbsAddRecipe->TabIndex = 46;
-			this->labelCarbsAddRecipe->Text = L"Carbs, g:";
-			// 
-			// numericUpDownFatRecipe
-			// 
-			this->numericUpDownFatRecipe->Location = System::Drawing::Point(127, 169);
-			this->numericUpDownFatRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->numericUpDownFatRecipe->Name = L"numericUpDownFatRecipe";
-			this->numericUpDownFatRecipe->Size = System::Drawing::Size(163, 22);
-			this->numericUpDownFatRecipe->TabIndex = 45;
-			// 
-			// labelFatAddRecipe
-			// 
-			this->labelFatAddRecipe->AutoSize = true;
-			this->labelFatAddRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelFatAddRecipe->Location = System::Drawing::Point(51, 168);
-			this->labelFatAddRecipe->Name = L"labelFatAddRecipe";
-			this->labelFatAddRecipe->Size = System::Drawing::Size(70, 23);
-			this->labelFatAddRecipe->TabIndex = 44;
-			this->labelFatAddRecipe->Text = L"Fat, g:";
-			// 
-			// numericUpDownProteinRecipe
-			// 
-			this->numericUpDownProteinRecipe->Location = System::Drawing::Point(165, 128);
-			this->numericUpDownProteinRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->numericUpDownProteinRecipe->Name = L"numericUpDownProteinRecipe";
-			this->numericUpDownProteinRecipe->Size = System::Drawing::Size(163, 22);
-			this->numericUpDownProteinRecipe->TabIndex = 43;
-			// 
-			// labelProteinAddRecipe
-			// 
-			this->labelProteinAddRecipe->AutoSize = true;
-			this->labelProteinAddRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelProteinAddRecipe->Location = System::Drawing::Point(51, 127);
-			this->labelProteinAddRecipe->Name = L"labelProteinAddRecipe";
-			this->labelProteinAddRecipe->Size = System::Drawing::Size(105, 23);
-			this->labelProteinAddRecipe->TabIndex = 42;
-			this->labelProteinAddRecipe->Text = L"Protein, g:";
 			// 
 			// buttonCancelNewRecipe
 			// 
 			this->buttonCancelNewRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonCancelNewRecipe->Location = System::Drawing::Point(385, 331);
+			this->buttonCancelNewRecipe->Location = System::Drawing::Point(382, 396);
 			this->buttonCancelNewRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonCancelNewRecipe->Name = L"buttonCancelNewRecipe";
 			this->buttonCancelNewRecipe->Size = System::Drawing::Size(175, 41);
@@ -198,7 +139,7 @@ namespace uihealth {
 			// 
 			this->buttonSaveNewRecipe->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonSaveNewRecipe->Location = System::Drawing::Point(191, 331);
+			this->buttonSaveNewRecipe->Location = System::Drawing::Point(201, 396);
 			this->buttonSaveNewRecipe->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonSaveNewRecipe->Name = L"buttonSaveNewRecipe";
 			this->buttonSaveNewRecipe->Size = System::Drawing::Size(175, 41);
@@ -207,30 +148,129 @@ namespace uihealth {
 			this->buttonSaveNewRecipe->UseVisualStyleBackColor = true;
 			this->buttonSaveNewRecipe->Click += gcnew System::EventHandler(this, &AddRecipeMEALS::buttonSaveNewRecipe_Click);
 			// 
+			// panelSelectedActivityADD
+			// 
+			this->panelSelectedActivityADD->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			this->panelSelectedActivityADD->Controls->Add(this->buttonRemoveActivityADD);
+			this->panelSelectedActivityADD->Controls->Add(this->textBoxSelectedActivitylistADD);
+			this->panelSelectedActivityADD->Controls->Add(this->labelSelectedActivityADD);
+			this->panelSelectedActivityADD->Location = System::Drawing::Point(402, 87);
+			this->panelSelectedActivityADD->Name = L"panelSelectedActivityADD";
+			this->panelSelectedActivityADD->Size = System::Drawing::Size(367, 288);
+			this->panelSelectedActivityADD->TabIndex = 50;
+			// 
+			// buttonRemoveActivityADD
+			// 
+			this->buttonRemoveActivityADD->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->buttonRemoveActivityADD->BackColor = System::Drawing::Color::Lavender;
+			this->buttonRemoveActivityADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->buttonRemoveActivityADD->Location = System::Drawing::Point(267, 256);
+			this->buttonRemoveActivityADD->Name = L"buttonRemoveActivityADD";
+			this->buttonRemoveActivityADD->Size = System::Drawing::Size(84, 25);
+			this->buttonRemoveActivityADD->TabIndex = 30;
+			this->buttonRemoveActivityADD->Text = L"Remove";
+			this->buttonRemoveActivityADD->UseVisualStyleBackColor = false;
+			// 
+			// textBoxSelectedActivitylistADD
+			// 
+			this->textBoxSelectedActivitylistADD->BackColor = System::Drawing::Color::White;
+			this->textBoxSelectedActivitylistADD->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBoxSelectedActivitylistADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->textBoxSelectedActivitylistADD->Location = System::Drawing::Point(20, 38);
+			this->textBoxSelectedActivitylistADD->Margin = System::Windows::Forms::Padding(2);
+			this->textBoxSelectedActivitylistADD->Multiline = true;
+			this->textBoxSelectedActivitylistADD->Name = L"textBoxSelectedActivitylistADD";
+			this->textBoxSelectedActivitylistADD->ReadOnly = true;
+			this->textBoxSelectedActivitylistADD->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->textBoxSelectedActivitylistADD->Size = System::Drawing::Size(331, 213);
+			this->textBoxSelectedActivitylistADD->TabIndex = 15;
+			// 
+			// labelSelectedActivityADD
+			// 
+			this->labelSelectedActivityADD->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->labelSelectedActivityADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelSelectedActivityADD->Location = System::Drawing::Point(139, 7);
+			this->labelSelectedActivityADD->Name = L"labelSelectedActivityADD";
+			this->labelSelectedActivityADD->Size = System::Drawing::Size(94, 24);
+			this->labelSelectedActivityADD->TabIndex = 14;
+			this->labelSelectedActivityADD->Text = L"Selected";
+			// 
+			// comboBoxFoodADD
+			// 
+			this->comboBoxFoodADD->FormattingEnabled = true;
+			this->comboBoxFoodADD->Location = System::Drawing::Point(225, 86);
+			this->comboBoxFoodADD->Name = L"comboBoxFoodADD";
+			this->comboBoxFoodADD->Size = System::Drawing::Size(147, 24);
+			this->comboBoxFoodADD->TabIndex = 52;
+			// 
+			// labelSearchProdADD
+			// 
+			this->labelSearchProdADD->AutoSize = true;
+			this->labelSearchProdADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSearchProdADD->Location = System::Drawing::Point(24, 87);
+			this->labelSearchProdADD->Name = L"labelSearchProdADD";
+			this->labelSearchProdADD->Size = System::Drawing::Size(176, 23);
+			this->labelSearchProdADD->TabIndex = 51;
+			this->labelSearchProdADD->Text = L"Search products:";
+			this->labelSearchProdADD->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// buttonAddADD
+			// 
+			this->buttonAddADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonAddADD->Location = System::Drawing::Point(26, 168);
+			this->buttonAddADD->Name = L"buttonAddADD";
+			this->buttonAddADD->Size = System::Drawing::Size(66, 28);
+			this->buttonAddADD->TabIndex = 55;
+			this->buttonAddADD->Text = L"Add";
+			this->buttonAddADD->UseVisualStyleBackColor = true;
+			// 
+			// labelGramsProdADD
+			// 
+			this->labelGramsProdADD->AutoSize = true;
+			this->labelGramsProdADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelGramsProdADD->Location = System::Drawing::Point(24, 125);
+			this->labelGramsProdADD->Name = L"labelGramsProdADD";
+			this->labelGramsProdADD->Size = System::Drawing::Size(79, 23);
+			this->labelGramsProdADD->TabIndex = 54;
+			this->labelGramsProdADD->Text = L"Grams:";
+			this->labelGramsProdADD->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// textBoxGramsProdADD
+			// 
+			this->textBoxGramsProdADD->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBoxGramsProdADD->Location = System::Drawing::Point(124, 126);
+			this->textBoxGramsProdADD->Name = L"textBoxGramsProdADD";
+			this->textBoxGramsProdADD->Size = System::Drawing::Size(74, 23);
+			this->textBoxGramsProdADD->TabIndex = 53;
+			// 
 			// AddRecipeMEALS
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(781, 473);
+			this->Controls->Add(this->buttonAddADD);
+			this->Controls->Add(this->labelGramsProdADD);
+			this->Controls->Add(this->textBoxGramsProdADD);
+			this->Controls->Add(this->comboBoxFoodADD);
+			this->Controls->Add(this->labelSearchProdADD);
+			this->Controls->Add(this->panelSelectedActivityADD);
 			this->Controls->Add(this->buttonCancelNewRecipe);
 			this->Controls->Add(this->buttonSaveNewRecipe);
-			this->Controls->Add(this->numericUpDownCarbsRecipe);
-			this->Controls->Add(this->labelCarbsAddRecipe);
-			this->Controls->Add(this->numericUpDownFatRecipe);
-			this->Controls->Add(this->labelFatAddRecipe);
-			this->Controls->Add(this->numericUpDownProteinRecipe);
-			this->Controls->Add(this->labelProteinAddRecipe);
-			this->Controls->Add(this->textBoxAddNewRecipename);
-			this->Controls->Add(this->labelNameNewRecipe);
 			this->Controls->Add(this->labelAddNewRecipeItem);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"AddRecipeMEALS";
 			this->Text = L"AddRecipeMEALS";
 			this->Load += gcnew System::EventHandler(this, &AddRecipeMEALS::AddRecipeMEALS_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCarbsRecipe))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownFatRecipe))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownProteinRecipe))->EndInit();
+			this->panelSelectedActivityADD->ResumeLayout(false);
+			this->panelSelectedActivityADD->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

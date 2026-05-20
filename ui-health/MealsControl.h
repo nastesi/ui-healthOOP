@@ -230,7 +230,7 @@ namespace uihealth {
 			// 
 			this->textBoxSelectedFoodlist->BackColor = System::Drawing::Color::White;
 			this->textBoxSelectedFoodlist->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBoxSelectedFoodlist->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+			this->textBoxSelectedFoodlist->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->textBoxSelectedFoodlist->Location = System::Drawing::Point(15, 41);
 			this->textBoxSelectedFoodlist->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);

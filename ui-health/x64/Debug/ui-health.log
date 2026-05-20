@@ -1,3 +1,81 @@
-﻿  ChartCalories.cpp
-  activity.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  ui-health.vcxproj -> D:\2 курс\2 семестр\kurszch\ui-healthOOP\x64\Debug\ui-health.exe
+﻿  AddRecipeMEALS.cpp
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(285,33): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'AddRecipeMEALS.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(289,17): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'AddRecipeMEALS.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(290,28): error C2065: 'numericUpDownProteinRecipe': undeclared identifier
+  (compiling source file 'AddRecipeMEALS.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(291,24): error C2065: 'numericUpDownFatRecipe': undeclared identifier
+  (compiling source file 'AddRecipeMEALS.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(292,26): error C2065: 'numericUpDownCarbsRecipe': undeclared identifier
+  (compiling source file 'AddRecipeMEALS.cpp')
+  
+  DashboardControl.cpp
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(285,33): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'DashboardControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(289,17): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'DashboardControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(290,28): error C2065: 'numericUpDownProteinRecipe': undeclared identifier
+  (compiling source file 'DashboardControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(291,24): error C2065: 'numericUpDownFatRecipe': undeclared identifier
+  (compiling source file 'DashboardControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(292,26): error C2065: 'numericUpDownCarbsRecipe': undeclared identifier
+  (compiling source file 'DashboardControl.cpp')
+  
+  main.cpp
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(285,33): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'main.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(289,17): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'main.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(290,28): error C2065: 'numericUpDownProteinRecipe': undeclared identifier
+  (compiling source file 'main.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(291,24): error C2065: 'numericUpDownFatRecipe': undeclared identifier
+  (compiling source file 'main.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(292,26): error C2065: 'numericUpDownCarbsRecipe': undeclared identifier
+  (compiling source file 'main.cpp')
+  
+  MealsControl.cpp
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(285,33): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'MealsControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(289,17): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'MealsControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(290,28): error C2065: 'numericUpDownProteinRecipe': undeclared identifier
+  (compiling source file 'MealsControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(291,24): error C2065: 'numericUpDownFatRecipe': undeclared identifier
+  (compiling source file 'MealsControl.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(292,26): error C2065: 'numericUpDownCarbsRecipe': undeclared identifier
+  (compiling source file 'MealsControl.cpp')
+  
+  MyForm.cpp
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(285,33): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'MyForm.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(289,17): error C2065: 'textBoxAddNewRecipename': undeclared identifier
+  (compiling source file 'MyForm.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(290,28): error C2065: 'numericUpDownProteinRecipe': undeclared identifier
+  (compiling source file 'MyForm.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(291,24): error C2065: 'numericUpDownFatRecipe': undeclared identifier
+  (compiling source file 'MyForm.cpp')
+  
+C:\Users\Anastasia\source\repos\ui-health\ui-health\AddRecipeMEALS.h(292,26): error C2065: 'numericUpDownCarbsRecipe': undeclared identifier
+  (compiling source file 'MyForm.cpp')
+  
+  Generating Code...
