@@ -534,24 +534,29 @@ private: static std::string FormatActivityForDiary(const std::string& rawActivit
 			this->textMoodDairy->Text = "No data";
 		}
 
-		if (data.size() >= 2 && data[1].length() >= 1)
+		if (data.size() > 1 && !data[1].empty())
 		{
-			std::string mealsText = FormatMealsForDiary(data[1]);
-			this->textMealsDairy->Text = msclr::interop::marshal_as<System::String^>(mealsText);
+			this->textMealsDairy->Text =
+				msclr::interop::marshal_as<System::String^>(data[1]);
 		}
 		else
 		{
 			this->textMealsDairy->Text = "No data";
 		}
 
-		if (data.size() >= 1 && data[0].length() >= 1)
+		if (data.size() > 0 && !data[0].empty())
 		{
-			std::string activityText = FormatActivityForDiary(data[0]);
-			this->textActivityDairy->Text = msclr::interop::marshal_as<System::String^>(activityText);
+			this->textActivityDairy->Text =
+				msclr::interop::marshal_as<System::String^>(data[0]);
 		}
 		else
 		{
 			this->textActivityDairy->Text = "No data";
+		}
+		if (data.size() > 4 && !data[4].empty())
+		{
+			String^ waterText = msclr::interop::marshal_as<System::String^>(data[4]);
+			this->textMealsDairy->Text += " | Water: " + waterText;
 		}
 		ShowMonthlyCaloriesChart(e->Start);
 	}

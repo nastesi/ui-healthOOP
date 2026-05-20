@@ -25,6 +25,7 @@ namespace uihealth {
 			LoadProductsFromFile();
 			meals_rows = "";
 			calories_rows = "";
+			water_rows = "";
 		}
 
 	protected:
@@ -61,6 +62,7 @@ namespace uihealth {
 	private: System::Windows::Forms::Button^ buttonBackMeals;
 	private: System::String^ meals_rows;
 	private: System::String^ calories_rows;
+	private: System::String^ water_rows;
 	System::ComponentModel::Container ^components;
 	
 	public:

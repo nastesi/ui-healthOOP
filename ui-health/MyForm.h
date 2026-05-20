@@ -4,6 +4,7 @@
 #include "ExcerciseControl.h"
 #include "DairyControl.h"
 #include "UserData1.h"
+#include "UserSetup.h"
 namespace uihealth {
 
 	using namespace System;
@@ -253,10 +254,40 @@ namespace uihealth {
 	private: System::Void labelWeightnumber_Click(System::Object^ sender, System::EventArgs^ e) {}
 	private: System::Void labelActivityoption_Click(System::Object^ sender, System::EventArgs^ e) {}
 	private: System::Void label1_Click_5(System::Object^ sender, System::EventArgs^ e) {}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {}
-	private: System::Void labelNameUser_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		//Maks!! to insert logic of opening user profile as alert window (change profile info yes/no?) -> then apply UserSetup window and save new information
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		LoadUserNameFromFile();
+	}
+	private: System::Void labelNameUser_Click(System::Object^ sender, System::EventArgs^ e){
+		System::Windows::Forms::DialogResult result;
+		result = MessageBox::Show(
+			"Change profile info?",
+			"Confirm",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Question
+		);
+		if (result == System::Windows::Forms::DialogResult::Yes) {
+			UserSetup^ UserSetupForm = gcnew UserSetup();
+			UserSetupForm->ShowDialog();
+			LoadUserNameFromFile();
+		}
+	}
+	private: System::Void LoadUserNameFromFile() {
+		if (!System::IO::File::Exists("user_data.txt")) {
+			labelNameUser->Text = "User";
+			return;
+		}
+		array<String^>^ lines = System::IO::File::ReadAllLines("user_data.txt");
+		for each (String ^ line in lines) {
+			if (String::IsNullOrWhiteSpace(line)) {
+				continue;
+			}
+			array<String^>^ parts = line->Split(';');
+			if (parts->Length >= 2 && parts[0] == "Name") {
+				labelNameUser->Text = parts[1];
+				return;
+			}
+		}
+		labelNameUser->Text = "User";
 	}
 	};
 }

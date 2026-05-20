@@ -61,10 +61,11 @@ System::Void MealsControl::buttonAdd1_Click(System::Object^ sender, System::Even
 	double fats = selectedProduct.get_fats();
 	double carbs = selectedProduct.get_carbs();
 	double calories = selectedProduct.get_calories();
-	textBoxSelectedFoodlist->Text +=
-		productName + " - " + grams.ToString("F0") + " g\n";
-	meals_rows += date + " " + productName + " " + grams.ToString("F0") + " " + proteins.ToString("F1") + " " + fats.ToString("F1") + " " + carbs.ToString("F1") + "\n";
-	calories_rows += date + " " + calories.ToString("F1") + " kcal from " + productName + "\n";
+	textBoxSelectedFoodlist->AppendText(
+		productName + " - " + grams.ToString("F0") + " g" + Environment::NewLine
+	);
+	meals_rows += date + ";" + productName + ";" + grams.ToString("F0") + ";" + proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" + carbs.ToString("F1") + "\n";
+	calories_rows += date + ";" + calories.ToString("F1") + ";" + productName + "\n";
 	textBoxGramsProducts->Clear();
 }
 
@@ -92,10 +93,11 @@ System::Void MealsControl::buttonAdd2_Click(System::Object^ sender, System::Even
 	double fats = selectedDish.get_fats();
 	double carbs = selectedDish.get_carbs();
 	double calories = selectedDish.get_calories();
-	textBoxSelectedFoodlist->Text +=
-		dishName + " - " + grams.ToString("F0") + " g\n";
-	meals_rows += date + " " + dishName + " " + grams.ToString("F0") + proteins.ToString("F1") + " " + fats.ToString("F1") + " " + carbs.ToString("F1") + "\n";
-	calories_rows += date + " " + calories.ToString("F1") + dishName + "\n";
+	textBoxSelectedFoodlist->AppendText(
+		dishName + " - " + grams.ToString("F0") + " g" + Environment::NewLine
+	);
+	meals_rows += date + ";" + dishName + ";" + grams.ToString("F0") + ";" + proteins.ToString("F1") + ";" + fats.ToString("F1") + ";" + carbs.ToString("F1") + "\n";
+	calories_rows += date + ";" + calories.ToString("F1") + ";" + dishName + "\n";
 	textBoxPortionsDishes->Clear();
 }
 
@@ -110,16 +112,17 @@ System::Void MealsControl::buttonAdd4_Click(System::Object^ sender, System::Even
 		MessageBox::Show("Water amount must be more than 0");
 		return;
 	}
-	textBoxSelectedFoodlist->Text +=
-		"Water - " + waterMl.ToString("F0") + " ml\n";
-	meals_rows +=
-		date + " Water " + waterMl.ToString("F0") + "ml " + "P:0.0 F:0.0 C:0.0\n";
-		textBoxWaterAdd->Clear();
-	}
+	textBoxSelectedFoodlist->AppendText(
+		"Water" + " - " + waterMl.ToString("F0") + " ml" + Environment::NewLine
+	);
+	water_rows += date + ";" + waterMl.ToString("F0") + " ml\n";
+	textBoxWaterAdd->Clear();
+}
 
 System::Void MealsControl::buttonSaveMeal_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (String::IsNullOrWhiteSpace(meals_rows) &&
-		String::IsNullOrWhiteSpace(calories_rows)) {
+		String::IsNullOrWhiteSpace(calories_rows) &&
+		String::IsNullOrWhiteSpace(water_rows)) {
 		MessageBox::Show("Nothing to save");
 		return;
 	}
@@ -137,9 +140,17 @@ System::Void MealsControl::buttonSaveMeal_Click(System::Object^ sender, System::
 	for each (String ^ line in calorieLines) {
 		add_to_calendar("[calories]", line);
 	}
+	array<String^>^ waterLines = water_rows->Split(
+		gcnew array<wchar_t>{ '\n' },
+		System::StringSplitOptions::RemoveEmptyEntries
+	);
+	for each(String ^ line in waterLines) {
+		add_to_calendar("[water]", line);
+	}
 	MessageBox::Show("Meal saved");
 	meals_rows = "";
 	calories_rows = "";
+	water_rows = "";
 	textBoxSelectedFoodlist->Text = "";
 }
 
@@ -160,7 +171,7 @@ System::Void MealsControl::add_to_calendar(String^ sectionName, String^ newLine)
 	if (!System::IO::File::Exists(fileName)) {
 		System::IO::File::WriteAllText(
 			fileName,
-			"[activity]\n[food]\n[calories]\n[mood]\n"
+			"[activity]\n[food]\n[calories]\n[mood]\n[water]\n"
 		);
 	}
 	array<String^>^ lines = System::IO::File::ReadAllLines(fileName);
@@ -228,8 +239,11 @@ System::Void MealsControl::buttonRemoveFood_Click(System::Object^ sender, System
 	}
 	String^ lastVisibleLine = get_last_line(textBoxSelectedFoodlist->Text);
 	textBoxSelectedFoodlist->Text = remove_last_line(textBoxSelectedFoodlist->Text);
-	meals_rows = remove_last_line(meals_rows);
-	if (!lastVisibleLine->StartsWith("Water")) {
+	if (lastVisibleLine->StartsWith("Water")) {
+		water_rows = remove_last_line(water_rows);
+	}
+	else {
+		meals_rows = remove_last_line(meals_rows);
 		calories_rows = remove_last_line(calories_rows);
 	}
 }

@@ -1,6 +1,29 @@
 #include "ExcerciseControl.h"
 using namespace uihealth;
 
+static double load_user_number(System::String^ key, double defaultValue) {
+	System::String^ fileName = "user_data.txt";
+	if (!System::IO::File::Exists(fileName)) {
+		return defaultValue;
+	}
+	array<System::String^>^ lines = System::IO::File::ReadAllLines(fileName);
+	for each (System::String ^ line in lines) {
+		if (System::String::IsNullOrWhiteSpace(line)) {
+			continue;
+		}
+		array<System::String^>^ parts = line->Split(';');
+		if (parts->Length >= 2 && parts[0]->Trim() == key) {
+			try {
+				return System::Convert::ToDouble(parts[1]->Trim());
+			}
+			catch (...) {
+				return defaultValue;
+			}
+		}
+	}
+	return defaultValue;
+}
+
 	System::Void ExcerciseControl::buttonAddStrength_Click(System::Object^ sender, System::EventArgs^ e) {
 		double series = Convert::ToDouble(numericUpDownSeries->Value);
 		double reps = Convert::ToDouble(numericUpDownRepStrength->Value);
@@ -10,7 +33,7 @@ using namespace uihealth;
 			return;
 		}
 		String^ date = dateTimePickerActivity->Value.ToString("dd-MM-yyyy");
-		double userWeight = 60.0;
+		double userWeight = load_user_number("Weight", 60.0);
 		double duration = series * reps;
 		ActivityInfo info = ActivityInfo::find_activity("Strength_Training");
 		activity selectedActivity(info, duration, userWeight);
@@ -21,15 +44,8 @@ using namespace uihealth;
 			reps.ToString("F0") + " reps, " +
 			trainingWeight.ToString("F1") + " kg, " +
 			burnedCalories.ToString("F1") + " kcal\n";
-		activity_rows_calendar += date + " " + "Strength Training" + " " + duration.ToString("F0") + " " + burnedCalories.ToString("F1") + "\n";
-		activity_rows_save +=
-			date + ";" +
-			"Strength Training" + ";" +
-			duration.ToString("F0") + ";" +
-			"0;0;" +
-			series.ToString("F0") + ";" +
-			reps.ToString("F0") + ";" +
-			trainingWeight.ToString("F1") + ";" +
+		activity_rows_calendar += date + ";" + "Strength Training" + ";" + duration.ToString("F0") + ";" + burnedCalories.ToString("F1") + "\n";
+		activity_rows_save += date + ";" + "Strength Training" + ";" + duration.ToString("F0") + ";" + "0;0;" + series.ToString("F0") + ";" + reps.ToString("F0") + ";" + trainingWeight.ToString("F1") + ";" +
 			burnedCalories.ToString("F0") + "\n";
 		numericUpDownSeries->Value = 0;
 		numericUpDownRepStrength->Value = 0;
@@ -51,11 +67,11 @@ using namespace uihealth;
 		String^ date = dateTimePickerActivity->Value.ToString("dd-MM-yyyy");
 		String^ activityName = comboBoxCardioType->Text;
 		std::string activityNameStd = msclr::interop::marshal_as<std::string>(activityName);
-		double userWeight = 60.0;
+		double userWeight = load_user_number("Weight", 60.0);
 		ActivityInfo info = ActivityInfo::find_activity(activityNameStd);
 		activity selectedActivity(info, duration, userWeight);
 		double burnedCalories = selectedActivity.calculate();
-		activity_rows_calendar += date + " " + activityName + " " + duration.ToString("F0") + " " + burnedCalories.ToString("F1") + "\n";
+		activity_rows_calendar += date + ";" + activityName + ";" + duration.ToString("F0") + ";" + burnedCalories.ToString("F1") + "\n";
 		textBoxSelectedActivitylist->Text +=
 			activityName + " - " +
 			duration.ToString("F0") + " min, " +

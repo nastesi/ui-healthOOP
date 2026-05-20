@@ -65,11 +65,11 @@ Class uihealth.DashboardControl: AutoLayout, AnsiClass, Class, Public, BeforeFie
   Methods:
     RefreshDashboard(): PrivateScope, Public, HideBySig
     InitializeComponent(): PrivateScope, Public, HideBySig
+Class uihealth.UserSetup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class uihealth.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     ShowDashboard(): PrivateScope, Public, HideBySig
-Class uihealth.UserSetup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

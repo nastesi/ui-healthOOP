@@ -39,28 +39,15 @@ namespace uihealth {
 	protected:
 	private: System::Windows::Forms::Label^ labelNameNewFood;
 	private: System::Windows::Forms::TextBox^ textBoxAddNewProductname;
-
-
-
 	private: System::Windows::Forms::Label^ labelProteinAddnewproduct;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownProtein;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownFat;
-
 	private: System::Windows::Forms::Label^ labelFatAddnewProduct;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownCarbs;
 	private: System::Windows::Forms::Label^ labelCarbsAddNewproduct;
 	private: System::Windows::Forms::Button^ buttonSaveNewProduct;
 	private: System::Windows::Forms::Button^ buttonCancelNewProduct;
-
-
-
-	protected:
-
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+	private: System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -233,7 +220,9 @@ namespace uihealth {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 private: System::Void buttonSaveNewProduct_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (String::IsNullOrWhiteSpace(textBoxAddNewProductname->Text)) {
 		MessageBox::Show("Enter product name");

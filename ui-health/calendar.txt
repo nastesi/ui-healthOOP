@@ -1,29 +1,18 @@
 [activity]
-14-05-2026 Dancing 60 63,0
-03-05-2026 Dancing 60 63,0
-02-05-2026 Dancing 60 63,0
-02-05-2026 Dancing 60 63,0
-02-05-2026 Dancing 60 63,0
-16-05-2026 Yoga 25 26.3
-17-05-2026 Dancing 60 63,0
-17-05-2026 Football 50 52,5
-10-05-2026 Dancing 60 63,0
-18-05-2026 Stretching 90 94,5
 [food]
-02-05-2026 Chicken_Rice 5000,0 0,0 0,0
-17-05-2026 Borsh 2000,0 0,0 0,0
-17-05-2026 Chicken_Rice 100,0 0,0 0,0
-18-05-2026 Omelete_with_veggies 1000,0 0,0 0,0
-18-05-2026 Borsh 500,0 0,0 0,0
+20-05-2026;Spaghetti Bolognese;250;12.5;7.5;45.0
+20-05-2026;Chicken Rice;150;30.0;6.0;37.5
+20-05-2026;Chicken Rice;260;52.0;10.4;65.0
+20-05-2026;Omelete with veggies;142;12.8;9.9;2.8
+19-05-2026;Beef with veggies;170;22.1;15.3;23.8
 [calories]
-17-05-2026 0,0Borsh
-17-05-2026 0,0Chicken_Rice
-18-05-2026 0,0Omelete_with_veggies
-18-05-2026 0,0Borsh
+20-05-2026;297.5;Spaghetti Bolognese
+20-05-2026;324.0;Chicken Rice
+20-05-2026;561.6;Chicken Rice
+20-05-2026;151.9;Omelete with veggies
+19-05-2026;321.3;Beef with veggies
 [mood]
-17-05-2026 4 Good
-17-05-2026 2 Poor
-17-05-2026 1 Terrible
-18-05-2026 1 Terrible
-
 20-05-2026 1 Terrible
+[water]
+20-05-2026;250 ml
+19-05-2026;1000 ml

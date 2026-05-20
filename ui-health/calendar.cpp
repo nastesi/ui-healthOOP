@@ -73,7 +73,8 @@ bool CalendarHealth::ensureSkeleton() const
         "[activity]\n\n"
         "[food]\n\n"
         "[calories]\n\n"
-        "[mood]\n";
+        "[mood]\n\n"
+        "[water]\n";
 
     return writeAll(path_, skel);
 }
@@ -249,10 +250,11 @@ bool CalendarHealth::listByDate(const std::string& date,
     out.clear();
 
     // out[0] - activity
-    // out[1] - food / meals
+    // out[1] - food
     // out[2] - calories
     // out[3] - mood
-    out.resize(4);
+    // out[4] - water
+    out.resize(5);
 
     std::ifstream in(path_);
     if (!in)
@@ -278,48 +280,101 @@ bool CalendarHealth::listByDate(const std::string& date,
             continue;
         }
 
-        if (s.size() < 10)
-        {
-            continue;
-        }
-
         if (!startsWith(s, date))
         {
             continue;
         }
 
-        std::string value = s.size() > 11 ? s.substr(11) : std::string();
+        std::vector<std::string> parts;
+        std::stringstream ss(s);
+        std::string item;
 
-        if (curSec == "[activity]")
+        while (std::getline(ss, item, ';'))
         {
-            if (!out[0].empty())
-            {
-                out[0] += "; ";
-            }
-
-            out[0] += value;
+            parts.push_back(trim(item));
         }
-        else if (curSec == "[food]")
-        {
-            if (!out[1].empty())
-            {
-                out[1] += "; ";
-            }
 
-            out[1] += value;
+        if (curSec == "[food]")
+        {
+            // формат:
+            // date;dish;grams;protein;fat;carbs
+
+            if (parts.size() >= 6)
+            {
+                std::string dish = parts[1];
+                std::string grams = parts[2];
+
+                if (!out[1].empty())
+                {
+                    out[1] += "; ";
+                }
+
+                out[1] += dish + " " + grams + "g";
+            }
         }
         else if (curSec == "[calories]")
         {
-            if (!out[2].empty())
-            {
-                out[2] += "; ";
-            }
+            // формат:
+            // date;kcal;dish
 
-            out[2] += value;
+            if (parts.size() >= 3)
+            {
+                std::string kcal = parts[1];
+                std::string dish = parts[2];
+
+                if (!out[2].empty())
+                {
+                    out[2] += "; ";
+                }
+
+                out[2] += dish + " " + kcal + " kcal";
+            }
+        }
+        else if (curSec == "[water]")
+        {
+            // формат:
+            // date;250 ml
+
+            if (parts.size() >= 2)
+            {
+                if (!out[4].empty())
+                {
+                    out[4] += "; ";
+                }
+
+                out[4] += parts[1];
+            }
+        }
+        else if (curSec == "[activity]")
+        {
+            if (parts.size() >= 2)
+            {
+                if (!out[0].empty())
+                {
+                    out[0] += "; ";
+                }
+
+                for (size_t i = 1; i < parts.size(); i++)
+                {
+                    if (i > 1)
+                    {
+                        out[0] += " ";
+                    }
+
+                    out[0] += parts[i];
+                }
+            }
         }
         else if (curSec == "[mood]")
         {
-            out[3] = value;
+            if (parts.size() >= 2)
+            {
+                out[3] = parts[1];
+            }
+            else if (s.size() > 11)
+            {
+                out[3] = s.substr(11);
+            }
         }
     }
 
