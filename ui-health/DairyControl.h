@@ -478,42 +478,24 @@ private: static std::string FormatMealsForDiary(const std::string& rawMeals)
 	return result;
 }
 
-private: static std::string FormatActivityForDiary(const std::string& rawActivity)
+	private: static std::string FormatActivityForDiary(const std::string& rawActivity)
 {
-	std::vector<std::string> items = SplitDiaryItems(rawActivity);
-	std::string result;
+	std::stringstream ss(rawActivity);
 
-	for (std::size_t i = 0; i < items.size(); i++)
+	std::string activityName;
+	std::string minutesText;
+	std::string weightText;
+
+	ss >> activityName >> minutesText >> weightText;
+
+	if (!activityName.empty() && !minutesText.empty())
 	{
-		std::istringstream ss(items[i]);
-
-		std::string activityName;
-		std::string minutesText;
-
-		ss >> activityName;
-		ss >> minutesText;
-
-		if (activityName.empty() || minutesText.empty())
-		{
-			continue;
-		}
-
 		double minutes = ParseDiaryNumber(minutesText);
 
-		if (!result.empty())
-		{
-			result += "; ";
-		}
-
-		result += activityName + " " + FormatDiaryNumber(minutes) + "m";
+		return activityName + " " + FormatDiaryNumber(minutes) + "min";
 	}
 
-	if (result.empty())
-	{
-		return rawActivity;
-	}
-
-	return result;
+	return rawActivity;
 }
 	private: System::Void DairyControl_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -555,6 +537,7 @@ private: static std::string FormatActivityForDiary(const std::string& rawActivit
 		{
 			this->textActivityDairy->Text = "No data";
 		}
+	
 		if (data.size() > 4 && !data[4].empty())
 		{
 			String^ waterText = msclr::interop::marshal_as<System::String^>(data[4]);

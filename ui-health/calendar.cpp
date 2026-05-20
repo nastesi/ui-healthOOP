@@ -248,12 +248,6 @@ bool CalendarHealth::listByDate(const std::string& date,
     std::vector<std::string>& out) const
 {
     out.clear();
-
-    // out[0] - activity
-    // out[1] - food
-    // out[2] - calories
-    // out[3] - mood
-    // out[4] - water
     out.resize(5);
 
     std::ifstream in(path_);
@@ -296,9 +290,6 @@ bool CalendarHealth::listByDate(const std::string& date,
 
         if (curSec == "[food]")
         {
-            // формат:
-            // date;dish;grams;protein;fat;carbs
-
             if (parts.size() >= 6)
             {
                 std::string dish = parts[1];
@@ -314,9 +305,7 @@ bool CalendarHealth::listByDate(const std::string& date,
         }
         else if (curSec == "[calories]")
         {
-            // формат:
-            // date;kcal;dish
-
+ 
             if (parts.size() >= 3)
             {
                 std::string kcal = parts[1];
@@ -332,8 +321,6 @@ bool CalendarHealth::listByDate(const std::string& date,
         }
         else if (curSec == "[water]")
         {
-            // формат:
-            // date;250 ml
 
             if (parts.size() >= 2)
             {
@@ -347,22 +334,14 @@ bool CalendarHealth::listByDate(const std::string& date,
         }
         else if (curSec == "[activity]")
         {
-            if (parts.size() >= 2)
+            if (parts.size() >= 3)
             {
                 if (!out[0].empty())
                 {
                     out[0] += "; ";
                 }
 
-                for (size_t i = 1; i < parts.size(); i++)
-                {
-                    if (i > 1)
-                    {
-                        out[0] += " ";
-                    }
-
-                    out[0] += parts[i];
-                }
+                out[0] += parts[1] + " " + parts[2] + "min";
             }
         }
         else if (curSec == "[mood]")

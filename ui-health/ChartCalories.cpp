@@ -125,6 +125,19 @@ static bool startsWithChartString(const std::string& s, const std::string& prefi
     return s.size() >= prefix.size()
         && std::equal(prefix.begin(), prefix.end(), s.begin());
 }
+static std::vector<std::string> splitChartLine(const std::string& text, char delimiter)
+{
+    std::vector<std::string> result;
+    std::stringstream ss(text);
+    std::string item;
+
+    while (std::getline(ss, item, delimiter))
+    {
+        result.push_back(trimChartString(item));
+    }
+
+    return result;
+}
 
 void CaloriesChartLogic::calculateCaloriesForDate(
     const std::string& calendarPath,
@@ -166,60 +179,21 @@ void CaloriesChartLogic::calculateCaloriesForDate(
             continue;
         }
 
-        std::string payload = s.size() > 11 ? s.substr(11) : std::string();
+        std::vector<std::string> parts = splitChartLine(s, ';');
 
-        if (currentSection == "[food]") {
-            auto kcalPos = payload.find("kcal=");
-
-            if (kcalPos != std::string::npos) {
-                kcalPos += 5;
-
-                std::size_t end = kcalPos;
-                while (end < payload.size() &&
-                    (std::isdigit((unsigned char)payload[end]) ||
-                        payload[end] == '.' ||
-                        payload[end] == ',')) {
-                    ++end;
-                }
-
-                std::string kcalText = payload.substr(kcalPos, end - kcalPos);
-                std::replace(kcalText.begin(), kcalText.end(), ',', '.');
-
-                try {
-                    eatenCalories += std::stod(kcalText);
-                }
-                catch (...) {
-                }
-            }
-            else {
-                std::istringstream ss(payload);
-                std::string foodName;
-                ss >> foodName;
-
-                double grams = parseGramsFromFoodPayload(payload);
-                double kcalPer100g = getCaloriesPer100g(foodName);
-
-                eatenCalories += grams * kcalPer100g / 100.0;
+        if (currentSection == "[calories]")
+        {
+            if (parts.size() >= 2)
+            {
+                eatenCalories += parseDoubleValue(parts[1]);
             }
         }
-        else if (currentSection == "[activity]") {
-            std::istringstream ss(payload);
-
-            std::string activityName;
-            std::string durationText;
-            std::string weightText;
-
-            ss >> activityName >> durationText >> weightText;
-
-            double duration = parseDoubleValue(durationText);
-            double weight = parseDoubleValue(weightText);
-
-            if (duration > 0.0 && weight > 0.0) {
-                ActivityInfo info = ActivityInfo::find_activity(activityName);
-
-                double burned = duration * info.MET * weight * 0.0175;
-
-                burnedCalories += burned;
+        else if (currentSection == "[activity]")
+        {
+  
+            if (parts.size() >= 4)
+            {
+                burnedCalories += parseDoubleValue(parts[3]);
             }
         }
     }

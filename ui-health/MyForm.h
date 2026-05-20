@@ -85,6 +85,7 @@ namespace uihealth {
 	{
 		labelSecTitle->Text = L"Home";
 		MessageBox::Show("Back to home");
+		dashboard->RefreshDashboard();
 		ShowPage(dashboard);
 	}
 	protected:

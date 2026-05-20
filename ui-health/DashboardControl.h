@@ -4,6 +4,13 @@
 #include "calendar.h"
 #include "mood.h"
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <iomanip>
+#include <ctime>
+#include <msclr/marshal_cppstd.h>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -86,46 +93,226 @@ namespace uihealth {
 	private: System::Windows::Forms::Panel^ panelContent;
 
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
-	public:
-		void RefreshDashboard()
+		System::ComponentModel::Container^ components;
+
+	private:
+		static std::string TrimDashboardText(const std::string& text)
 		{
-			String^ name = "User";
-			String^ age = "0";
-			String^ weight = "0";
-			String^ height = "0";
+			size_t start = text.find_first_not_of(" \t\r\n");
 
-			if (System::IO::File::Exists("user_data.txt"))
+			if (start == std::string::npos)
 			{
-				array<String^>^ lines = System::IO::File::ReadAllLines("user_data.txt");
+				return "";
+			}
 
-				for each (String ^ line in lines)
+			size_t end = text.find_last_not_of(" \t\r\n");
+
+			return text.substr(start, end - start + 1);
+		}
+
+		static std::vector<std::string> SplitDashboardLine(const std::string& text, char delimiter)
+		{
+			std::vector<std::string> result;
+			std::stringstream ss(text);
+			std::string item;
+
+			while (std::getline(ss, item, delimiter))
+			{
+				result.push_back(TrimDashboardText(item));
+			}
+
+			return result;
+		}
+
+		static double ParseDashboardNumber(std::string value)
+		{
+			value = TrimDashboardText(value);
+
+			for (char& c : value)
+			{
+				if (c == ',')
 				{
-					array<String^>^ parts = line->Split(';');
-
-					if (parts->Length == 2)
-					{
-						if (parts[0] == "Name") name = parts[1];
-						else if (parts[0] == "Age") age = parts[1];
-						else if (parts[0] == "Weight") weight = parts[1];
-						else if (parts[0] == "Height") height = parts[1];
-					}
+					c = '.';
 				}
 			}
 
-			labelGreeting->Text = "Welcome! Here is your daily health summary";
-
-			labelConsumednumber->Text = "2300 kcal";
-			labelBurnednumber->Text = "500 kcal";
-			labelWaternumber->Text = "1.5 l";
-
-			labelAgeNum->Text = age;
-			labelWeightnumber->Text = weight + " kg";
-			labelHeightNum->Text = height + " cm";
+			try
+			{
+				return std::stod(value);
+			}
+			catch (...)
+			{
+				return 0.0;
+			}
 		}
+
+		static std::string FormatDashboardNumber(double value)
+		{
+			std::ostringstream out;
+
+			if (value == (int)value)
+			{
+				out << (int)value;
+			}
+			else
+			{
+				out << std::fixed << std::setprecision(1) << value;
+			}
+
+			return out.str();
+		}
+
+	public: 
+public:
+	void RefreshDashboard()
+	{
+		String^ name = "User";
+		String^ age = "0";
+		String^ weight = "0";
+		String^ height = "0";
+
+		if (System::IO::File::Exists("user_data.txt"))
+		{
+			array<String^>^ lines = System::IO::File::ReadAllLines("user_data.txt");
+
+			for each (String ^ line in lines)
+			{
+				array<String^>^ parts = line->Split(';');
+
+				if (parts->Length == 2)
+				{
+					if (parts[0] == "Name") name = parts[1];
+					else if (parts[0] == "Age") age = parts[1];
+					else if (parts[0] == "Weight") weight = parts[1];
+					else if (parts[0] == "Height") height = parts[1];
+				}
+			}
+		}
+
+		labelGreeting->Text = "Welcome! Here is your daily health summary";
+
+		std::string today = CalendarHealth::today_ddmmyyyy();
+
+		double consumedCalories = 0.0;
+		double burnedCalories = 0.0;
+		double waterMl = 0.0;
+		std::string moodText = "No data";
+
+		std::ifstream file("calendar.txt");
+
+		if (file)
+		{
+			std::string line;
+			std::string currentSection;
+
+			while (std::getline(file, line))
+			{
+				line = TrimDashboardText(line);
+
+				if (line.empty())
+				{
+					continue;
+				}
+
+				if (line.front() == '[' && line.back() == ']')
+				{
+					currentSection = line;
+					continue;
+				}
+
+				if (currentSection == "[calories]")
+				{
+					// ‘ормат:
+					// 20-05-2026;297.5;Spaghetti Bolognese
+
+					std::vector<std::string> parts = SplitDashboardLine(line, ';');
+
+					if (parts.size() >= 2 && parts[0] == today)
+					{
+						consumedCalories += ParseDashboardNumber(parts[1]);
+					}
+				}
+				else if (currentSection == "[activity]")
+				{
+					// ‘ормат:
+					// 20-05-2026;Walking;10;11,7
+					// parts[3] Ч вже порахован≥ витрачен≥ калор≥њ
+
+					std::vector<std::string> parts = SplitDashboardLine(line, ';');
+
+					if (parts.size() >= 4 && parts[0] == today)
+					{
+						burnedCalories += ParseDashboardNumber(parts[3]);
+					}
+				}
+				else if (currentSection == "[water]")
+				{
+					// ‘ормат:
+					// 20-05-2026;250 ml
+
+					std::vector<std::string> parts = SplitDashboardLine(line, ';');
+
+					if (parts.size() >= 2 && parts[0] == today)
+					{
+						std::string waterText = parts[1];
+
+						size_t spacePos = waterText.find(' ');
+
+						if (spacePos != std::string::npos)
+						{
+							waterText = waterText.substr(0, spacePos);
+						}
+
+						waterMl += ParseDashboardNumber(waterText);
+					}
+				}
+				else if (currentSection == "[mood]")
+				{
+					// ‘ормат:
+					// 20-05-2026 2 Poor
+
+					std::stringstream ss(line);
+
+					std::string dateText;
+					std::string moodValue;
+					std::string currentMoodText;
+
+					ss >> dateText >> moodValue >> currentMoodText;
+
+					if (dateText == today && !currentMoodText.empty())
+					{
+						// якщо за день к≥лька настроњв,
+						// показуЇмо останн≥й запис.
+						moodText = currentMoodText;
+					}
+				}
+			}
+		}
+
+		double waterLiters = waterMl / 1000.0;
+
+		labelConsumednumber->Text =
+			msclr::interop::marshal_as<String^>(
+				FormatDashboardNumber(consumedCalories) + " kcal"
+			);
+
+		labelBurnednumber->Text =
+			msclr::interop::marshal_as<String^>(
+				FormatDashboardNumber(burnedCalories) + " kcal"
+			);
+
+		labelWaternumber->Text =
+			msclr::interop::marshal_as<String^>(
+				FormatDashboardNumber(waterLiters) + " l"
+			);
+
+		labelMoodoption->Text =
+			msclr::interop::marshal_as<String^>(moodText);
+
+		labelAgeNum->Text = age;
+		labelWeightnumber->Text = weight + " kg";
+		labelHeightNum->Text = height + " cm";
+	}
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
