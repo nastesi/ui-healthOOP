@@ -95,9 +95,6 @@
     <ClInclude Include="calendar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UserData1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ChartCalories.h">
       <Filter>Header Files</Filter>
     </ClInclude>

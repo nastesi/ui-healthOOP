@@ -163,7 +163,6 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="UserData1.h" />
     <ClInclude Include="UserSetup.h">
       <FileType>CppForm</FileType>
     </ClInclude>

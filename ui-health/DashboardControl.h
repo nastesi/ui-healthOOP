@@ -1,7 +1,6 @@
 #pragma once
 #include "MealsControl.h"
 #include "ExcerciseControl.h"
-#include "UserData1.h"
 #include "calendar.h"
 #include "mood.h"
 #include <string>
@@ -24,12 +23,9 @@ namespace uihealth {
 		DashboardControl(void)
 		{
 			InitializeComponent();
-			userData = gcnew UserData1();
 			RefreshDashboard();
 		}
 	private: System::Windows::Forms::Button^ buttonMoodSave;
-	private:
-		UserData1^ userData;
 	public:
 	public:
 		System::EventHandler^ MealsRequested;
@@ -58,14 +54,18 @@ namespace uihealth {
 	private: System::Windows::Forms::Label^ labelConsumed;
 	private: System::Windows::Forms::Label^ labelSummary;
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Label^ labelActivityoption;
-	private: System::Windows::Forms::Label^ labelWeightgoal;
+
+	private: System::Windows::Forms::Label^ labelHeightNum;
+
 	private: System::Windows::Forms::Label^ labelWeightnumber;
-	private: System::Windows::Forms::Label^ labelStepsnumber;
-	private: System::Windows::Forms::Label^ labelActivity;
-	private: System::Windows::Forms::Label^ labelGoal;
+	private: System::Windows::Forms::Label^ labelAgeNum;
+
+
+	private: System::Windows::Forms::Label^ labelHeight;
+
 	private: System::Windows::Forms::Label^ labelWeight;
-	private: System::Windows::Forms::Label^ labelSteps;
+	private: System::Windows::Forms::Label^ labelAge;
+
 	private: System::Windows::Forms::Label^ labelProgresspanel;
 	private: System::Windows::Forms::Panel^ panelQuickactions;
 
@@ -93,17 +93,38 @@ namespace uihealth {
 	public:
 		void RefreshDashboard()
 		{
-			labelGreeting->Text = "Welcome " + userData->Name + "! Here is your daily health summary";
+			String^ name = "User";
+			String^ age = "0";
+			String^ weight = "0";
+			String^ height = "0";
 
-			labelConsumednumber->Text = userData->ConsumedCalories.ToString() + " kcal";
-			labelBurnednumber->Text = userData->BurnedCalories.ToString() + " kcal";
-			labelWaternumber->Text = userData->Water.ToString() + " l";
-			labelMoodoption->Text = userData->Mood;
+			if (System::IO::File::Exists("user_data.txt"))
+			{
+				array<String^>^ lines = System::IO::File::ReadAllLines("user_data.txt");
 
-			labelStepsnumber->Text = userData->Steps.ToString();
-			labelWeightnumber->Text = userData->Weight.ToString() + " kg";
-			labelWeightgoal->Text = userData->GoalWeight.ToString() + " kg";
-			labelActivityoption->Text = userData->ActivityLevel;
+				for each (String ^ line in lines)
+				{
+					array<String^>^ parts = line->Split(';');
+
+					if (parts->Length == 2)
+					{
+						if (parts[0] == "Name") name = parts[1];
+						else if (parts[0] == "Age") age = parts[1];
+						else if (parts[0] == "Weight") weight = parts[1];
+						else if (parts[0] == "Height") height = parts[1];
+					}
+				}
+			}
+
+			labelGreeting->Text = "Welcome! Here is your daily health summary";
+
+			labelConsumednumber->Text = "2300 kcal";
+			labelBurnednumber->Text = "500 kcal";
+			labelWaternumber->Text = "1.5 l";
+
+			labelAgeNum->Text = age;
+			labelWeightnumber->Text = weight + " kg";
+			labelHeightNum->Text = height + " cm";
 		}
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -125,14 +146,12 @@ namespace uihealth {
 			this->labelConsumed = (gcnew System::Windows::Forms::Label());
 			this->labelSummary = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->labelActivityoption = (gcnew System::Windows::Forms::Label());
-			this->labelWeightgoal = (gcnew System::Windows::Forms::Label());
+			this->labelHeightNum = (gcnew System::Windows::Forms::Label());
 			this->labelWeightnumber = (gcnew System::Windows::Forms::Label());
-			this->labelStepsnumber = (gcnew System::Windows::Forms::Label());
-			this->labelActivity = (gcnew System::Windows::Forms::Label());
-			this->labelGoal = (gcnew System::Windows::Forms::Label());
+			this->labelAgeNum = (gcnew System::Windows::Forms::Label());
+			this->labelHeight = (gcnew System::Windows::Forms::Label());
 			this->labelWeight = (gcnew System::Windows::Forms::Label());
-			this->labelSteps = (gcnew System::Windows::Forms::Label());
+			this->labelAge = (gcnew System::Windows::Forms::Label());
 			this->labelProgresspanel = (gcnew System::Windows::Forms::Label());
 			this->panelQuickactions = (gcnew System::Windows::Forms::Panel());
 			this->buttonAddActivity = (gcnew System::Windows::Forms::Button());
@@ -170,9 +189,9 @@ namespace uihealth {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->labelGreeting->Location = System::Drawing::Point(7, 13);
 			this->labelGreeting->Name = L"labelGreeting";
-			this->labelGreeting->Size = System::Drawing::Size(686, 34);
+			this->labelGreeting->Size = System::Drawing::Size(619, 34);
 			this->labelGreeting->TabIndex = 7;
-			this->labelGreeting->Text = L"Welcome Max! Here is your daily health summary";
+			this->labelGreeting->Text = L"Welcome! Here is your daily health summary";
 			this->labelGreeting->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->labelGreeting->Click += gcnew System::EventHandler(this, &DashboardControl::labelGreeting_Click);
 			// 
@@ -314,47 +333,32 @@ namespace uihealth {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->panel1->Controls->Add(this->labelActivityoption);
-			this->panel1->Controls->Add(this->labelWeightgoal);
+			this->panel1->Controls->Add(this->labelHeightNum);
 			this->panel1->Controls->Add(this->labelWeightnumber);
-			this->panel1->Controls->Add(this->labelStepsnumber);
-			this->panel1->Controls->Add(this->labelActivity);
-			this->panel1->Controls->Add(this->labelGoal);
+			this->panel1->Controls->Add(this->labelAgeNum);
+			this->panel1->Controls->Add(this->labelHeight);
 			this->panel1->Controls->Add(this->labelWeight);
-			this->panel1->Controls->Add(this->labelSteps);
+			this->panel1->Controls->Add(this->labelAge);
 			this->panel1->Controls->Add(this->labelProgresspanel);
 			this->panel1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->panel1->Location = System::Drawing::Point(44, 356);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(240, 200);
+			this->panel1->Size = System::Drawing::Size(240, 163);
 			this->panel1->TabIndex = 17;
 			// 
-			// labelActivityoption
+			// labelHeightNum
 			// 
-			this->labelActivityoption->AutoSize = true;
-			this->labelActivityoption->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->labelActivityoption->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelHeightNum->AutoSize = true;
+			this->labelHeightNum->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->labelHeightNum->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelActivityoption->Location = System::Drawing::Point(91, 154);
-			this->labelActivityoption->Name = L"labelActivityoption";
-			this->labelActivityoption->Size = System::Drawing::Size(78, 21);
-			this->labelActivityoption->TabIndex = 16;
-			this->labelActivityoption->Text = L"Medium";
-			this->labelActivityoption->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelWeightgoal
-			// 
-			this->labelWeightgoal->AutoSize = true;
-			this->labelWeightgoal->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->labelWeightgoal->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelWeightgoal->Location = System::Drawing::Point(72, 120);
-			this->labelWeightgoal->Name = L"labelWeightgoal";
-			this->labelWeightgoal->Size = System::Drawing::Size(53, 21);
-			this->labelWeightgoal->TabIndex = 15;
-			this->labelWeightgoal->Text = L"85 kg";
-			this->labelWeightgoal->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelHeightNum->Location = System::Drawing::Point(86, 120);
+			this->labelHeightNum->Name = L"labelHeightNum";
+			this->labelHeightNum->Size = System::Drawing::Size(68, 21);
+			this->labelHeightNum->TabIndex = 15;
+			this->labelHeightNum->Text = L"180 cm";
+			this->labelHeightNum->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelWeightnumber
 			// 
@@ -369,44 +373,31 @@ namespace uihealth {
 			this->labelWeightnumber->Text = L"76 kg";
 			this->labelWeightnumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// labelStepsnumber
+			// labelAgeNum
 			// 
-			this->labelStepsnumber->AutoSize = true;
-			this->labelStepsnumber->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->labelStepsnumber->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelAgeNum->AutoSize = true;
+			this->labelAgeNum->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->labelAgeNum->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelStepsnumber->Location = System::Drawing::Point(79, 50);
-			this->labelStepsnumber->Name = L"labelStepsnumber";
-			this->labelStepsnumber->Size = System::Drawing::Size(46, 21);
-			this->labelStepsnumber->TabIndex = 13;
-			this->labelStepsnumber->Text = L"8000";
-			this->labelStepsnumber->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelAgeNum->Location = System::Drawing::Point(76, 50);
+			this->labelAgeNum->Name = L"labelAgeNum";
+			this->labelAgeNum->Size = System::Drawing::Size(28, 21);
+			this->labelAgeNum->TabIndex = 13;
+			this->labelAgeNum->Text = L"19";
+			this->labelAgeNum->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// labelActivity
+			// labelHeight
 			// 
-			this->labelActivity->AutoSize = true;
-			this->labelActivity->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->labelActivity->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelHeight->AutoSize = true;
+			this->labelHeight->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->labelHeight->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelActivity->Location = System::Drawing::Point(17, 154);
-			this->labelActivity->Name = L"labelActivity";
-			this->labelActivity->Size = System::Drawing::Size(74, 19);
-			this->labelActivity->TabIndex = 12;
-			this->labelActivity->Text = L"Activity:";
-			this->labelActivity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelGoal
-			// 
-			this->labelGoal->AutoSize = true;
-			this->labelGoal->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->labelGoal->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelGoal->Location = System::Drawing::Point(17, 120);
-			this->labelGoal->Name = L"labelGoal";
-			this->labelGoal->Size = System::Drawing::Size(54, 19);
-			this->labelGoal->TabIndex = 11;
-			this->labelGoal->Text = L"Goal:";
-			this->labelGoal->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelHeight->Location = System::Drawing::Point(17, 120);
+			this->labelHeight->Name = L"labelHeight";
+			this->labelHeight->Size = System::Drawing::Size(66, 19);
+			this->labelHeight->TabIndex = 11;
+			this->labelHeight->Text = L"Height:";
+			this->labelHeight->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelWeight
 			// 
@@ -421,29 +412,29 @@ namespace uihealth {
 			this->labelWeight->Text = L"Weight:";
 			this->labelWeight->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// labelSteps
+			// labelAge
 			// 
-			this->labelSteps->AutoSize = true;
-			this->labelSteps->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->labelSteps->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelAge->AutoSize = true;
+			this->labelAge->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->labelAge->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelSteps->Location = System::Drawing::Point(16, 50);
-			this->labelSteps->Name = L"labelSteps";
-			this->labelSteps->Size = System::Drawing::Size(57, 19);
-			this->labelSteps->TabIndex = 9;
-			this->labelSteps->Text = L"Steps:";
-			this->labelSteps->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelAge->Location = System::Drawing::Point(18, 52);
+			this->labelAge->Name = L"labelAge";
+			this->labelAge->Size = System::Drawing::Size(49, 19);
+			this->labelAge->TabIndex = 9;
+			this->labelAge->Text = L"Age:";
+			this->labelAge->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelProgresspanel
 			// 
 			this->labelProgresspanel->AutoSize = true;
 			this->labelProgresspanel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelProgresspanel->Location = System::Drawing::Point(51, 9);
+			this->labelProgresspanel->Location = System::Drawing::Point(15, 13);
 			this->labelProgresspanel->Name = L"labelProgresspanel";
-			this->labelProgresspanel->Size = System::Drawing::Size(134, 19);
+			this->labelProgresspanel->Size = System::Drawing::Size(198, 19);
 			this->labelProgresspanel->TabIndex = 8;
-			this->labelProgresspanel->Text = L"Progress/Goals";
+			this->labelProgresspanel->Text = L"Your profile information";
 			this->labelProgresspanel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panelQuickactions
@@ -456,12 +447,12 @@ namespace uihealth {
 				static_cast<System::Byte>(0)));
 			this->panelQuickactions->Location = System::Drawing::Point(331, 352);
 			this->panelQuickactions->Name = L"panelQuickactions";
-			this->panelQuickactions->Size = System::Drawing::Size(413, 199);
+			this->panelQuickactions->Size = System::Drawing::Size(413, 167);
 			this->panelQuickactions->TabIndex = 18;
 			// 
 			// buttonAddActivity
 			// 
-			this->buttonAddActivity->Location = System::Drawing::Point(19, 86);
+			this->buttonAddActivity->Location = System::Drawing::Point(19, 89);
 			this->buttonAddActivity->Name = L"buttonAddActivity";
 			this->buttonAddActivity->Size = System::Drawing::Size(151, 30);
 			this->buttonAddActivity->TabIndex = 11;
@@ -484,7 +475,7 @@ namespace uihealth {
 			this->labelQuickActions->AutoSize = true;
 			this->labelQuickActions->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelQuickActions->Location = System::Drawing::Point(13, 9);
+			this->labelQuickActions->Location = System::Drawing::Point(14, 9);
 			this->labelQuickActions->Name = L"labelQuickActions";
 			this->labelQuickActions->Size = System::Drawing::Size(122, 19);
 			this->labelQuickActions->TabIndex = 9;
@@ -642,25 +633,25 @@ private: System::Void buttonMoodSave_Click(System::Object^ sender, System::Event
 	{
 		moodValue = 5;
 		moodText = "Perfect";
-		userData->Mood = "Perfect";
+		labelMoodoption->Text = "Perfect";
 	}
 	else if (radioGood->Checked)
 	{
 		moodValue = 4;
 		moodText = "Good";
-		userData->Mood = "Good";
+		labelMoodoption->Text = "Good";
 	}
 	else if (radioPoor->Checked)
 	{
 		moodValue = 2;
 		moodText = "Poor";
-		userData->Mood = "Poor";
+		labelMoodoption->Text = "Poor";
 	}
 	else if (radioTerrible->Checked)
 	{
 		moodValue = 1;
 		moodText = "Terrible";
-		userData->Mood = "Terrible";
+		labelMoodoption->Text = "Terrible";
 	}
 	else
 	{

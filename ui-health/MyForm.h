@@ -3,7 +3,6 @@
 #include "MealsControl.h"
 #include "ExcerciseControl.h"
 #include "DairyControl.h"
-#include "UserData1.h"
 #include "UserSetup.h"
 namespace uihealth {
 
@@ -26,9 +25,7 @@ namespace uihealth {
 			//
 			//TODO: Add the constructor code here
 			//
-			UserData1^ userData;
-			userData = gcnew UserData1();
-			labelNameUser->Text = userData->Name;
+			LoadUserNameFromFile();
 
 			dashboard = gcnew DashboardControl();
 			dashboard->MealsRequested += gcnew System::EventHandler(this, &MyForm::OnOpenMeals);
@@ -146,11 +143,11 @@ namespace uihealth {
 			// 
 			this->labelNameUser->AutoSize = true;
 			this->labelNameUser->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelNameUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelNameUser->Location = System::Drawing::Point(760, 20);
+			this->labelNameUser->Location = System::Drawing::Point(671, 18);
 			this->labelNameUser->Name = L"labelNameUser";
-			this->labelNameUser->Size = System::Drawing::Size(74, 34);
+			this->labelNameUser->Size = System::Drawing::Size(61, 27);
 			this->labelNameUser->TabIndex = 9;
 			this->labelNameUser->Text = L"Max";
 			this->labelNameUser->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -161,7 +158,7 @@ namespace uihealth {
 			this->labelUser->AutoSize = true;
 			this->labelUser->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelUser->Location = System::Drawing::Point(680, 19);
+			this->labelUser->Location = System::Drawing::Point(589, 18);
 			this->labelUser->Name = L"labelUser";
 			this->labelUser->Size = System::Drawing::Size(76, 34);
 			this->labelUser->TabIndex = 8;

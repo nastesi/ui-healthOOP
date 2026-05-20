@@ -44,18 +44,6 @@ Class uihealth.ExcerciseControl: AutoLayout, AnsiClass, Class, Public, BeforeFie
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.EventHandler BackRequested : Public
-Class uihealth.UserData1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.String Name : Public
-    Int32 Steps : Public
-    Double Weight : Public
-    Double GoalWeight : Public
-    System.String ActivityLevel : Public
-    Int32 ConsumedCalories : Public
-    Int32 BurnedCalories : Public
-    Double Water : Public
-    System.String Mood : Public
 Class uihealth.DashboardControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

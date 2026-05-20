@@ -118,6 +118,8 @@ namespace uihealth {
 			this->panel1->Controls->Add(this->labelActivityDairy);
 			this->panel1->Controls->Add(this->labelMealsDairy);
 			this->panel1->Controls->Add(this->labelMoodDairy);
+			this->panel1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->panel1->Location = System::Drawing::Point(43, 513);
 			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
@@ -175,11 +177,11 @@ namespace uihealth {
 			this->labelMealsDairy->AutoSize = true;
 			this->labelMealsDairy->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelMealsDairy->Location = System::Drawing::Point(15, 52);
+			this->labelMealsDairy->Location = System::Drawing::Point(15, 53);
 			this->labelMealsDairy->Name = L"labelMealsDairy";
-			this->labelMealsDairy->Size = System::Drawing::Size(67, 23);
+			this->labelMealsDairy->Size = System::Drawing::Size(72, 23);
 			this->labelMealsDairy->TabIndex = 19;
-			this->labelMealsDairy->Text = L"Meals";
+			this->labelMealsDairy->Text = L"Meals:";
 			this->labelMealsDairy->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelMoodDairy
